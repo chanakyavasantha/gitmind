@@ -88,7 +88,8 @@ def analyze_diff(diff: str, commit_message: str = "", changed_files: list = None
             json={
                 "model": MODEL,
                 "prompt": prompt,
-                "stream": False
+                "stream": False,
+                "format": "json"
             },
             timeout=90
         )
