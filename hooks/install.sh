@@ -43,6 +43,11 @@ if [ -f "$VENV/bin/python" ]; then
 else
     python3 "$ENGINE"
 fi
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+if [ -f "$REPO_ROOT/metadata.json" ]; then
+    git add "$REPO_ROOT/metadata.json"
+    git commit --amend --no-edit --no-verify --quiet
+fi
 EOF
 
 chmod +x "$HOOK_PATH"

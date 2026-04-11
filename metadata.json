@@ -91,6 +91,776 @@
       "last_built_upon": "2026-04-10T21:48:08.205152",
       "is_new_feature": true,
       "commit_count": 1
+    },
+    "unknown": {
+      "introduced": "2026-04-10T21:53:26.772676",
+      "files_touched": [
+        ".github/workflows/docs.yml",
+        "core/metadata.py",
+        "docs/build-log.md",
+        "metadata.json",
+        "scripts/generate_build_log.py",
+        "hooks/install.sh",
+        "hooks/post-commit"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:19:29.600859",
+      "is_new_feature": false,
+      "commit_count": 8
+    },
+    "repo_root_function_added_to_get": {
+      "introduced": "2026-04-10T21:59:10.111469",
+      "files_touched": [
+        "_repo_root",
+        "_fileio",
+        "./hooks/install.sh",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:15:54.472427",
+      "is_new_feature": true,
+      "commit_count": 2
+    },
+    "ci_yml": {
+      "introduced": "2026-04-10T22:04:33.230385",
+      "files_touched": [
+        "'.github/workflows/ci.yml'",
+        ".gitignore"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:04:33.230385",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "install_hooks_python3_metadata": {
+      "introduced": "2026-04-10T22:14:41.280900",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:14:41.280900",
+      "is_new_feature": false,
+      "commit_count": 1
+    },
+    "snake_case_filename_is_new_featuretrue": {
+      "introduced": "2026-04-10T22:14:43.082642",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json",
+        "snake_case_filename",
+        "./hooks/install.sh",
+        "./metadata.json",
+        ".gitignore",
+        "_repo_root"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:17:37.567925",
+      "is_new_feature": false,
+      "commit_count": 12
+    },
+    "update_to_python3_json": {
+      "introduced": "2026-04-10T22:14:45.309457",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json",
+        "/hooks/install.sh",
+        "/metadata.json",
+        "metadata.py",
+        "hooks/installer .sh"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:19:40.390880",
+      "is_new_feature": false,
+      "commit_count": 14
+    },
+    "snake_case_name_e_g_repo_root": {
+      "introduced": "2026-04-10T22:14:47.226466",
+      "files_touched": [
+        "file1.py",
+        "file2.py"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:14:47.226466",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "snake_case_filename": {
+      "introduced": "2026-04-10T22:14:52.259570",
+      "files_touched": [
+        "file1.py",
+        "updated-metadata",
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json",
+        "snake_case_filename",
+        "/hooks/install.sh",
+        "file1.py, ",
+        "file2.py"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:19:10.603612",
+      "is_new_feature": false,
+      "commit_count": 15
+    },
+    "snake_case_format": {
+      "introduced": "2026-04-10T22:15:08.926708",
+      "files_touched": [
+        "./setup.py",
+        "blacken_config.cfg"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:15:08.926708",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "snake_case_metadata": {
+      "introduced": "2026-04-10T22:15:11.192649",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:15:11.192649",
+      "is_new_feature": false,
+      "commit_count": 1
+    },
+    "snake_case_name_true": {
+      "introduced": "2026-04-10T22:15:16.347758",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:15:16.347758",
+      "is_new_feature": false,
+      "commit_count": 1
+    },
+    "snake_case_filename_e_g_repo_root": {
+      "introduced": "2026-04-10T22:15:39.138222",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:15:39.138222",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "fileio_repo_root_function_additions_and": {
+      "introduced": "2026-04-10T22:15:44.261182",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:15:44.261182",
+      "is_new_feature": false,
+      "commit_count": 1
+    },
+    "snake_case_name_of_feature_no_spaces": {
+      "introduced": "2026-04-10T22:15:46.746609",
+      "files_touched": [
+        "file1.py",
+        "File2.Py"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:15:46.746609",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "snake_case_feature_name_e_g_repo_root": {
+      "introduced": "2026-04-10T22:15:51.913740",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:15:51.913740",
+      "is_new_feature": false,
+      "commit_count": 1
+    },
+    "snakecasefeaturenamehere": {
+      "introduced": "2026-04-10T22:15:57.288292",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:15:57.288292",
+      "is_new_feature": false,
+      "commit_count": 1
+    },
+    "repo_root": {
+      "introduced": "2026-04-10T22:16:03.514917",
+      "files_touched": [
+        "_repo_root",
+        "file1.py",
+        "_fileio",
+        "metadata.json",
+        "file2.py",
+        "./hooks/install.sh",
+        "../metadata.json",
+        "hooks/install.sh",
+        "hooks/post-commit"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:19:02.898921",
+      "is_new_feature": false,
+      "commit_count": 8
+    },
+    "snake_case_name": {
+      "introduced": "2026-04-10T22:16:10.299514",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json",
+        "file1.py",
+        "file2.py"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:17:27.942845",
+      "is_new_feature": false,
+      "commit_count": 2
+    },
+    "snakecasename": {
+      "introduced": "2026-04-10T22:16:16.447942",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:16:16.447942",
+      "is_new_feature": false,
+      "commit_count": 1
+    },
+    "fileio": {
+      "introduced": "2026-04-10T22:16:20.483304",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json",
+        "metadata.py"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:18:06.948596",
+      "is_new_feature": false,
+      "commit_count": 3
+    },
+    "update_to_python3_json_feature_added": {
+      "introduced": "2026-04-10T22:16:26.272302",
+      "files_touched": [
+        "metadata.json",
+        "/hooks/install.sh",
+        "file1.py"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:16:26.272302",
+      "is_new_feature": false,
+      "commit_count": 1
+    },
+    "updatetopython3json": {
+      "introduced": "2026-04-10T22:16:45.212453",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:16:45.212453",
+      "is_new_feature": false,
+      "commit_count": 1
+    },
+    "snake_case_filename_is_new_fea_true": {
+      "introduced": "2026-04-10T22:16:46.855744",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:16:46.855744",
+      "is_new_feature": false,
+      "commit_count": 1
+    },
+    "amend_commit_metadatajson": {
+      "introduced": "2026-04-10T22:16:50.539497",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:16:50.539497",
+      "is_new_feature": false,
+      "commit_count": 1
+    },
+    "amend_metadata_json": {
+      "introduced": "2026-04-10T22:16:52.629673",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:16:52.629673",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "snake_case_file": {
+      "introduced": "2026-04-10T22:16:55.644870",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:16:55.644870",
+      "is_new_feature": false,
+      "commit_count": 1
+    },
+    "snakecasenamehere": {
+      "introduced": "2026-04-10T22:17:04.089442",
+      "files_touched": [
+        "file1.py",
+        "_otherFileInGitRepo",
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:17:35.899362",
+      "is_new_feature": true,
+      "commit_count": 3
+    },
+    "generate_build_log": {
+      "introduced": "2026-04-10T22:17:13.291524",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:17:13.291524",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "the_name_of_the_feature_that_was": {
+      "introduced": "2026-04-10T22:17:15.293381",
+      "files_touched": [
+        "file to be modified"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:17:15.293381",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "format_tests": {
+      "introduced": "2026-04-10T22:17:17.356011",
+      "files_touched": [
+        "black/__init__.py",
+        "hooks/install.sh"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:17:17.356011",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "snakecasenameoffeaturetobechangedinfile1": {
+      "introduced": "2026-04-10T22:17:20.624893",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:17:20.624893",
+      "is_new_feature": false,
+      "commit_count": 1
+    },
+    "fileio_py_updated_python3json": {
+      "introduced": "2026-04-10T22:17:23.723584",
+      "files_touched": [
+        "_fileio.py",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:17:23.723584",
+      "is_new_feature": false,
+      "commit_count": 1
+    },
+    "snakecasefilenameisnewfeaturetrue": {
+      "introduced": "2026-04-10T22:17:32.221155",
+      "files_touched": [
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:17:32.221155",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "amend": {
+      "introduced": "2026-04-10T22:17:33.799014",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:18:38.524781",
+      "is_new_feature": true,
+      "commit_count": 3
+    },
+    "snake_case_name_here_no_spaces_allowed": {
+      "introduced": "2026-04-10T22:17:39.577371",
+      "files_touched": [
+        "file1.py",
+        "file2.py"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:17:39.577371",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "use_python3_compatible_environments": {
+      "introduced": "2026-04-10T22:17:41.707679",
+      "files_touched": [
+        "hooks/install.sh"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:17:41.707679",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "repo_root_fileio_are_added_as_they_were": {
+      "introduced": "2026-04-10T22:17:46.019120",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:17:46.019120",
+      "is_new_feature": false,
+      "commit_count": 1
+    },
+    "snake_case_filename_hooks": {
+      "introduced": "2026-04-10T22:17:48.339630",
+      "files_touched": [
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:17:48.339630",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "snakecasefilename": {
+      "introduced": "2026-04-10T22:17:50.081557",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:17:50.081557",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "snake_case_feature_name_of_what_changed": {
+      "introduced": "2026-04-10T22:17:51.891325",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:17:51.891325",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "new_feature_name": {
+      "introduced": "2026-04-10T22:17:57.201558",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:17:57.201558",
+      "is_new_feature": false,
+      "commit_count": 1
+    },
+    "snake_case_name_here_no_spaces_or": {
+      "introduced": "2026-04-10T22:18:02.664032",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:18:02.664032",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "snake_case_name_of_the_feature_or": {
+      "introduced": "2026-04-10T22:18:09.089474",
+      "files_touched": [
+        "file1",
+        "changed by user"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:18:09.089474",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "snake_case_name_of_feature_or_component": {
+      "introduced": "2026-04-10T22:18:10.863388",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:18:10.863388",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "update_to_python3_and_repo_root": {
+      "introduced": "2026-04-10T22:18:15.038703",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:18:15.038703",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "snake_case_feature_name": {
+      "introduced": "2026-04-10T22:18:16.960408",
+      "files_touched": [
+        "file1.py",
+        "file2.py",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:18:51.400116",
+      "is_new_feature": true,
+      "commit_count": 3
+    },
+    "featurenamesnakecase": {
+      "introduced": "2026-04-10T22:18:18.877009",
+      "files_touched": [
+        "file1.py",
+        "file2.py"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:18:18.877009",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "snake_case_repo_root_function_added_to": {
+      "introduced": "2026-04-10T22:18:22.012936",
+      "files_touched": [
+        "snake_case"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:18:22.012936",
+      "is_new_feature": false,
+      "commit_count": 1
+    },
+    "snakecase_filename": {
+      "introduced": "2026-04-10T22:18:26.682349",
+      "files_touched": [
+        "file1.py",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:18:26.682349",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "metadata_json_is_new_feature_true_and": {
+      "introduced": "2026-04-10T22:18:30.493979",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:18:30.493979",
+      "is_new_feature": false,
+      "commit_count": 1
+    },
+    "snakecasenamethatreferencespythonversion": {
+      "introduced": "2026-04-10T22:18:34.020991",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:18:34.020991",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "snake_case_name_of_the_feature_here_no": {
+      "introduced": "2026-04-10T22:18:40.861436",
+      "files_touched": [
+        "file where it changed"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:18:40.861436",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "snake_case_name_of_feature": {
+      "introduced": "2026-04-10T22:18:43.058169",
+      "files_touched": [
+        "file1.py",
+        "file2.py"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:18:43.058169",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "snake_case_feature_was_added_to_the": {
+      "introduced": "2026-04-10T22:18:49.007993",
+      "files_touched": [
+        ".gitignore",
+        "_repo_root"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:18:49.007993",
+      "is_new_feature": false,
+      "commit_count": 1
+    },
+    "repo_root_function_added_to_get_and": {
+      "introduced": "2026-04-10T22:18:56.304653",
+      "files_touched": [
+        "_repo_root",
+        "hooks/post-commit",
+        "snake case filename"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:18:56.304653",
+      "is_new_feature": false,
+      "commit_count": 1
+    },
+    "update_hooks_to_python3_md": {
+      "introduced": "2026-04-10T22:19:00.759768",
+      "files_touched": [
+        "metadata.py",
+        "installer  .sh"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:19:00.759768",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "snake_case_name_of_feature_module_being": {
+      "introduced": "2026-04-10T22:19:05.402991",
+      "files_touched": [
+        "file1.py",
+        "File2.Py"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:19:05.402991",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "snake_case_filename_is_new": {
+      "introduced": "2026-04-10T22:19:13.662080",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:19:13.662080",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "update_to_python3_json_feature_add": {
+      "introduced": "2026-04-10T22:19:17.061293",
+      "files_touched": [
+        "_update_to_python3_json feature - Add support and refactor codebase from json module",
+        "metadata.py"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:19:17.061293",
+      "is_new_feature": false,
+      "commit_count": 1
+    },
+    "snake_case_fileio_repo_root_etc_no": {
+      "introduced": "2026-04-10T22:19:19.475912",
+      "files_touched": [
+        ".github/workflows/docs.yml",
+        "/hooks/_fileio"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:19:19.475912",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "snakecasednamehere": {
+      "introduced": "2026-04-10T22:19:23.340583",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:19:23.340583",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "snake_case_filename_is_now_also": {
+      "introduced": "2026-04-10T22:19:27.698649",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:19:27.698649",
+      "is_new_feature": false,
+      "commit_count": 1
+    },
+    "snake_case_value_describing_feature_name": {
+      "introduced": "2026-04-10T22:19:34.117178",
+      "files_touched": [
+        {
+          "file-path": "List of all affected files"
+        },
+        true
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:19:34.117178",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "update_to_python3_json_py": {
+      "introduced": "2026-04-10T22:19:36.411670",
+      "files_touched": [
+        "hooks/installer  .sh",
+        "metadata.npym"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:19:36.411670",
+      "is_new_feature": false,
+      "commit_count": 1
     }
   },
   "history": [
@@ -196,6 +966,1785 @@
       "files_touched": [
         "./.gitignore",
         "/core/diff_reader.py"
+      ]
+    },
+    {
+      "commit_hash": "1c52311ba9a43b204311936d986d9d69ddd65337",
+      "timestamp": "2026-04-10T21:53:26.772676",
+      "what_changed": "'handle first commit diff, add .gitignore to exclude venv'",
+      "why_it_likely_changed": "",
+      "impact": "",
+      "feature_name": "unknown",
+      "files_touched": [
+        ".github/workflows/docs.yml",
+        "core/metadata.py",
+        "docs/build-log.md",
+        "metadata.json",
+        "scripts/generate_build_log.py"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "81e9625a6ba29c6ef1fb5eea4ef1776a4b7ce0cb",
+      "timestamp": "2026-04-10T21:59:10.111469",
+      "what_changed": "The `metadata` module has been updated to use the Python's builtin json library instead of a separate file.",
+      "why_it_likely_changed": "'json.pyi' was removed from this commit, which is likely because it didn\u2019t impact users that are still using 'python-jsonlite', an outdated package for handling JSON data in Python 3 and below version",
+      "feature_name": "repo_root_function_added_to_get",
+      "is_new_feature": true,
+      "impact": "'json' has been updated in all affected Python scripts for better handling and compatibility with 'python-jsonlite'. It also makes it easier to handle JSON data as json.load() method is used instead of a separate file reader.",
+      "files_touched": [
+        "_repo_root",
+        "_fileio"
+      ]
+    },
+    {
+      "commit_hash": "2b335c7d895c3585c17ead3ba190382f41c825dd",
+      "timestamp": "2026-04-10T22:04:33.230385",
+      "what_changed": "'Checking all source dirs in Black CI check'",
+      "why_it_likely_changed": " 'Ensure the correctness and maintainability of our code by using a comprehensive black formatter.",
+      "feature_name": "ci_yml",
+      "is_new_feature": true,
+      "impact": "The use of pytest for testing ensures better coverage across different parts in larger applications.",
+      "files_touched": [
+        "'.github/workflows/ci.yml'",
+        ".gitignore"
+      ]
+    },
+    {
+      "commit_hash": "b97da239cbaea50abb5e386a6d43ab887305b7e3",
+      "timestamp": "2026-04-10T22:14:41.280900",
+      "what_changed": "Fixes in the install script",
+      "why_it_likely_changed": "The installer now includes a check to determine if metadata.json exists and should be added or amended, instead of always failing.",
+      "feature_name": "install_hooks_python3_metadata",
+      "is_new_feature": false,
+      ", IMPACT": "The check has been added to handle the situation where metadata json file might not exist.",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit"
+      ],
+      "impact": ""
+    },
+    {
+      "commit_hash": "05d2cabb9fc34060b81c674ae58bf123718190ba",
+      "timestamp": "2026-04-10T22:14:43.082642",
+      "what_changed": "One sentence describing what changed",
+      "why_it_likely_changed": "Why the change might have occurred, not necessarily immediately obvious from reading this commit message.",
+      "feature_name": "snake_case_filename_is_new_featuretrue",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "impact": "",
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "277f5307bb24bb0c7fe84998a75e77a547136b34",
+      "timestamp": "2026-04-10T22:14:45.309457",
+      "what_changed": "`metadata` module has been updated to use the Python\u2019s builtin json library instead of a separate file.",
+      ",     // ONLY sentence here. No markdown or backticks allowed, and no additional explanation needed for this field in JSON structure as per requirements mentioned above (snake case namespaces).  The commit likely changed functionality but was not fully implemented due to some other issues - such changes should be investigated further if necessary.": "One more sentence here",
+      "feature_name": "update_to_python3_json",
+      "why_it_likely_changed": "",
+      "impact": "",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "aaf245bee491ba6fc2503bec3e48729a1db67dd7",
+      "timestamp": "2026-04-10T22:14:47.226466",
+      "what_changed": "one sentence string describing what changed",
+      "why_it_likely_changed": "One Sentence String on the likely reason",
+      "files_touched": [
+        "file1.py",
+        "file2.py"
+      ],
+      "feature_name": "snake_case_name_e_g_repo_root",
+      "is_new_feature": true,
+      "impact": "one sentence string on the impact"
+    },
+    {
+      "commit_hash": "d5b037c4638cedff944316a5903c0d9e673e88ff",
+      "timestamp": "2026-04-10T22:14:49.773215",
+      "what_changed": "The script 'install.sh', which installs hooks for git and adds a post-commit\u94a9\u5b50, has been updated.",
+      "feature_name": "update_to_python3_json",
+      ", isNewFeature": true,
+      "impact": "The feature will allow python to handle json metadata in repo root and its subdirectories. This would improve compatibility between different projects by allowing them to share common configurations.",
+      "files_touched": [
+        "/hooks/install.sh",
+        "/metadata.json"
+      ],
+      "isNewFeature": "true",
+      "why_it_likely_changed": "",
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "615fd12b510145730d2f7738d5c514a3d1619108",
+      "timestamp": "2026-04-10T22:14:52.259570",
+      "what_changed": "One sentence describing what changed.",
+      "why_it_likely_changed": "Sentence explaining likely reasons for the change in a feature name and impact",
+      "feature_name": "snake_case_filename",
+      "is_new_feature": false,
+      "impact": "Sentence describing what happened after the change. Usually ends with a question mark and there are multiple versions if necessary for different scenarios of impact",
+      "files_touched": [
+        "file1.py",
+        "updated-metadata"
+      ]
+    },
+    {
+      "commit_hash": "d9baf3080c82eebd2cb59cbb04f46f60a8c35004",
+      "timestamp": "2026-04-10T22:14:54.993733",
+      "what_changed": "The commit includes the installation and post-installation of hooks in Git.",
+      "why_it_likely_changed": "This change likely benefits developers as it enables them to work with different environments more comfortably, while also improving productivity by managing common tasks efficiently.",
+      "#featureName": "update_to_python3_json",
+      "#isNewFeature": "true",
+      "impact": "This change introduces a new feature in Git that allows developers to manage and track changes more easily, while also improving productivity by allowing for efficient management of common tasks.",
+      "filesTouched": [
+        "hooks/install.sh",
+        "post-commit",
+        "/metadata.json"
+      ],
+      "feature_name": "unknown",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "5ad51f58d4022a95e925b0648dd7e3e8893b2ef0",
+      "timestamp": "2026-04-10T22:14:57.665058",
+      "what_changed": "The commit message format has been changed from 'fix' to 'amend'. Additionally, a new feature - metadata generation and amending in the hooks for Python 3 integration.",
+      "why_it_likely_changed": "'metadata.json', especially when it is not updated after changes",
+      "feature_name": "snake_case_filename_is_new_featuretrue",
+      "impact": "If 'file1.py' and/or \u2018updated-metadata\u2019 are modified in the future, this feature could be used to track these modifications.",
+      "files_touched": [
+        "snake_case_filename"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "89d24519c91bede8d15febf9476d901988bf9c26",
+      "timestamp": "2026-04-10T22:14:59.543266",
+      "what_changed": "One sentence describing what changed.",
+      "why_it_likely_changed": "Why it likely has this change?",
+      "feature_name": "snake_case_filename",
+      ".isNewFeature": true,
+      "impact": "What impact does the feature have on users or systems?",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "52b302d03a8948d45c24ca7a186a1229cfc49620",
+      "timestamp": "2026-04-10T22:15:01.457789",
+      "what_changed": "The commit includes a new file called `format tests with black`, it was added to the repo.",
+      "why_it_likely_changed": "",
+      "\nI am not sure why this change might be necessary at present. It could potentially have been a mistake in our previous commits.": "",
+      "impact": "",
+      "feature_name": "unknown",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "25cfb388797c5048a5df2d78a2bfbeb8b2d9cdd3",
+      "timestamp": "2026-04-10T22:15:04.734706",
+      "what_changed": "One sentence describing what changed.",
+      "why_it_likely_changed": "'Why likely it changes?' description of the reason why this change was made, and not later in version history due to a new feature that has been added or removed. ",
+      "feature_name": "snake_case_filename",
+      "is_new_feature": true,
+      "impact": "Impact description of what changes when this commit is included.",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "_repo_root": [
+        "core/metadata.json"
+      ],
+      "ci_yml": "['.github/workflows/ci.yaml' , '.gitignore'],       // description of the files and changes made in this commit, not later on due to a new feature being added or removed"
+    },
+    {
+      "commit_hash": "85801b3094250d816a826d5b7d51e6b3526034cd",
+      "timestamp": "2026-04-10T22:15:06.768948",
+      "what_changed": "Amended the commit to include metadata.json.",
+      "why_it_likely_changed": "",
+      "": "metadata.json is now in use as a centralized configuration file for all scripts, modules and processes within this repository",
+      "feature_name": "snake_case_filename_is_new_featuretrue",
+      "impact": "",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "5642aee891f37c1a286abb587b559a193e038bc0",
+      "timestamp": "2026-04-10T22:15:08.926708",
+      "what_changed": "The commit message amendment includes a metadata file, and formats the tests with black.",
+      "why_it_likely_changed": "",
+      "feature_name": "snake_case_format",
+      "is_new_feature": true,
+      "impact": "It may improve code formatting in testing tools by automatically using pre-configured formats.",
+      "files_touched": [
+        "./setup.py",
+        "blacken_config.cfg"
+      ]
+    },
+    {
+      "commit_hash": "fa140bab9f2550a8ba6a5316bfb1ff05fa405199",
+      "timestamp": "2026-04-10T22:15:11.192649",
+      "what_changed": "The commit message amendment to include metadata in the format tests with black.",
+      "why_it_likely_changed": "",
+      "feature_name": "snake_case_metadata",
+      "is_new_feature": false,
+      "impact": "Enhancements are made to support metadata in the test suite, formatting tests with black.",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "9cb11ab04a410c7ab39bad07aa9ff20df708e131",
+      "timestamp": "2026-04-10T22:15:14.529534",
+      "what_changed": "The commit message formatting has been adjusted to include metadata in the JSON file.",
+      "why_it_likely_changed": "'black' is now being used as an engine for testing Python code. This can speed up tests and improve readability of source codes by using a more powerful formatter, such than pylint or pyflakes which are faster to run but less informative in some cases.",
+      "feature_name": "update_to_python3_json",
+      "is_new_feature": true,
+      "impact": "The update action has been modified so that it now adds updated metadata.json and its contents into the commit instead of just adding a reference to existing files or changes.",
+      "files_touched": [
+        "metadata.json",
+        "/hooks/install.sh"
+      ],
+      "last_built_upon": "2026-10-30T24:59:58+07"
+    },
+    {
+      "commit_hash": "3d2abcafc058c964082e4b77609111a3d8e7e9ce",
+      "timestamp": "2026-04-10T22:15:16.347758",
+      "what_changed": "One sentence describing what changed in this commit.",
+      "why_it_likely_changed": "",
+      "feature_name": "snake_case_name_true",
+      "impact": "",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "780091f344c1757d26d438e3aa566feeb58556c0",
+      "timestamp": "2026-04-10T22:15:18.491230",
+      "what_changed": "The commit contains a fix to the install script and format tests with black.",
+      "why_it_likely_changed": "",
+      "feature_name": "snake_case_filename",
+      "is_new_feature": false,
+      ".impacts": "It changes how filenames are handled in snake case for a new feature 'update to python3 json'.",
+      "files_touched": [
+        "file1.py",
+        "updated-metadata"
+      ],
+      "impact": ""
+    },
+    {
+      "commit_hash": "6ebf17b9b116730c7e2a02e514256380363e7ffc",
+      "timestamp": "2026-04-10T22:15:23.282928",
+      "what_changed": "`format tests with black` has been added to the commit.",
+      "why_it_likely_changed": "",
+      "feature_name": "snake_case_filename",
+      "is_new_feature": true,
+      "impact": "\nFormatting test files using Black in this commit improves code readability and maintainability.",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "f9449b78650340a6dc08732c0af9e3ec2e739d61",
+      "timestamp": "2026-04-10T22:15:25.760814",
+      "what_changed": "Amended metadata JSON file formatting and blacked tests.",
+      "why_it_likely_changed": "'Black'ing the repository is likely to improve code readability, maintainability and robustness. This change makes sense for this commit as it modifies a configuration setting that affects how Python packages are formatted by 'black.'",
+      "feature_name": "update_to_python3_json",
+      "is_new_feature": true,
+      "impact": "Makes the current state of metadata.py file more readable and maintainable.",
+      "files_touched": [
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "364cd2eb51b156d4a7829a0f2853d8ca4410d54c",
+      "timestamp": "2026-04-10T22:15:28.941457",
+      "what_changed": "The 'snake_case' feature was added to support snake case names in file and directory naming.",
+      "why_it_likely_changed": "'Snake Case'",
+      "impact": "",
+      "feature_name": "unknown",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "5961e9b984c1537e71c5ed68cb2c426485a5afcf",
+      "timestamp": "2026-04-10T22:15:31.385297",
+      "what_changed": "The 'snake_case' feature was added.",
+      "why_it_likely_changed": "'Snake case', a programming convention, simplifies code readability and it is more maintainable",
+      "feature_name": "update_to_python3_json",
+      "is_new_feature": false,
+      "impact": "The 'snake_case' feature improved the modularity of Python scripting by reducing complexity, thereby enhancing readability and maintainability.",
+      "files_touched": [
+        "/hooks/install.sh",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "a292ecb5460a364ac06f636bee19b202bc197236",
+      "timestamp": "2026-04-10T22:15:33.720405",
+      "what_changed": "The changes in this commit include the addition of a new feature, formatting tests with black and installing hooks.",
+      "why_it_likely_changed": "",
+      "feature_name": "update_to_python3_json",
+      "is_new_feature": false,
+      "impact": "This new feature updates to Python version, formatting tests with black and installing hooks.",
+      "files_touched": [
+        "hooks/install.sh",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "976d70d91f8e8d5719c1af935f81e4d504dd1073",
+      "timestamp": "2026-04-10T22:15:35.844458",
+      "what_changed": "One sentence describing what changed.",
+      "why_it_likely_changed": "A single sentence explaining why this likely changes occurred, and not the previous version of code that did not change",
+      ",       \u200b                ,       true                 1          .                    20            37                  46                                 58                                      ": {
+        "files_touched": []
+      },
+      "impact": "",
+      "feature_name": "unknown",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "8265e7d3754f0f1e776f199877e17ec1530e522f",
+      "timestamp": "2026-04-10T22:15:39.138222",
+      "what_changed": "The hook `update_to_python3_json` has been updated.",
+      "why_it_likely_changed": "'update_to_python3_json' is likely changed because it updates Python version and the files that are being committed. It also touches '/hooks/install.sh', /metadata.json",
+      "feature_name": "snake_case_filename_e_g_repo_root",
+      "is_new_feature": true,
+      "impact": "The feature is likely to add support for snake case file names in the repository.",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "what's new": {},
+      ",              The feature is likely to add support for snake case file names in the repository.": {}
+    },
+    {
+      "commit_hash": "0251629cb5956cc4801ced5e24125b61cd11d9fd",
+      "timestamp": "2026-04-10T22:15:44.261182",
+      "what_changed": "The commit message amendment includes the addition of metadata JSON file.",
+      "feature_name": "fileio_repo_root_function_additions_and",
+      "is_new_feature": false,
+      "why_it_likely_changed": "",
+      "impact": "",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "08c8ffda89a1c1a65b7bcacae12c8191ceefd50d",
+      "timestamp": "2026-04-10T22:15:46.746609",
+      "what_changed": "One sentence about what changed.",
+      "why_it_likely_changed": "A second long string explaining why it likely did so in the first place and how this change affects existing features or functionality",
+      "feature_name": "snake_case_name_of_feature_no_spaces",
+      "is_new_feature": true,
+      "impact": "One sentence about the impact on users and business.",
+      "files_touched": [
+        "file1.py",
+        "File2.Py"
+      ]
+    },
+    {
+      "commit_hash": "356bd9cc146ad752b2e842b353d79addfd53bcd5",
+      "timestamp": "2026-04-10T22:15:49.669750",
+      "what_changed": "The commit contains the formatting of tests with black.",
+      "why_it_likely_changed": "'black' is a code formatter that improves readability without changing semantics. It also fixes syntax errors and makes Python programs more consistent by ensuring they are syntactically correct",
+      "feature_name": "update_to_python3_json",
+      "is_new_feature": true,
+      "impact": "'black' formatting improves readability, consistency in code syntax and fixes indentation errors. The commit also introduces a feature that ensures Python programs are consistent with black-formatted text.",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "commit_count": 8
+    },
+    {
+      "commit_hash": "28a1eb19dbe1f1482e6159dc8b1eebe362f12bdb",
+      "timestamp": "2026-04-10T22:15:51.913740",
+      "what_changed": "One sentence describing what changed.",
+      "why_it_likely_changed": "Sentence on the likely reason why it might have been modified in this commit, not an array of reasons for change",
+      "feature_name": "snake_case_feature_name_e_g_repo_root",
+      "is_new_feature": false,
+      "impact": "",
+      "": "",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "79a391d25ca78d751b3e9c1924cccaf32dbab116",
+      "timestamp": "2026-04-10T22:15:54.472427",
+      "what_changed": "The commit includes the file `snake_case_filename`, which was updated and replaced.",
+      "why_it_likely_changed": "'update to python3 json' feature is likely because of changes in metadata.json",
+      "feature_name": "repo_root_function_added_to_get",
+      "is_new_feature": false,
+      "impact": "The new function `snake_case_filename` added to the repo root, which helps with renaming and managing files.",
+      "files_touched": [
+        "./hooks/install.sh",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "da018e067221bbbcb39b34d7c1b209cc3bacff57",
+      "timestamp": "2026-04-10T22:15:57.288292",
+      "what_changed": "One sentence about the changes made in this commit.",
+      "why_it_likely_changed": "Why did it change? One relevant reason here to keep things simple and concise, but explain your reasoning with detail if needed",
+      "feature_name": "snakecasefeaturenamehere",
+      "is_new_feature": false,
+      ",         ]],],": 0.123456789,
+      "impact": "[list of sentences describing how/why something has changed or impacted",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "19a3e01e979d6ee51e823746e16173666f98f7e5",
+      "timestamp": "2026-04-10T22:16:03.514917",
+      "what_changed": "The commit message amendments the metadata file.",
+      "why_it_likely_changed": "This change likely adds new features or updates existing ones in our project's codebase that are not mentioned before. The changes also include some minor formatting tweaks and more updated functionality which were introduced previously but may have been removed due to other commit messages, among others.",
+      "feature_name": "repo_root",
+      "is_new_feature": false,
+      "impact": "This change introduces a new feature that is used in the scripts for handling repository root functions and file I/O. It also adds functionality to generate updated metadata files as part of our CI pipeline.",
+      "files_touched": [
+        "_repo_root",
+        "file1.py",
+        "_fileio"
+      ]
+    },
+    {
+      "commit_hash": "8878f0797b6fd384c9787d3981320feec85a1196",
+      "timestamp": "2026-04-10T22:16:06.061826",
+      "what_changed": "Amend the commit to include updated metadata.json.",
+      "why_it_likely_changed": "The update includes a file 'scripts/generate_build_log', which was also committed earlier in this pull request",
+      "feature_name": "update_to_python3_json",
+      "is_new_feature": false,
+      "impact": "'metadata.py' and '/hooks/install.sh both were updated because of the new feature 'snake case name', which was introduced in this commit.",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "0773546338d8ff1ab336985a89ef91da1d0992c2",
+      "timestamp": "2026-04-10T22:16:08.295028",
+      "what_changed": "The commit includes the amendment to metadata json file.",
+      "why_it_likely_changed": "",
+      "feature_name": "snake_case_filename_is_new_featuretrue",
+      "is_new_feature": false,
+      "impact": "It likely changed the way snake case filenames are handled.",
+      ",files_touched": [
+        "file1.py",
+        "snake_case_filename"
+      ],
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "c1b762772ec64501a5bf4fe7c0a7db7aa66e12dc",
+      "timestamp": "2026-04-10T22:16:10.299514",
+      "what_changed": "One sentence describing what changed in the commit.",
+      "why_it_likely_changed": "Sentence on likely reason for changing this feature or file structure, etc...",
+      "feature_name": "snake_case_name",
+      ",            // snake cased version of the filename. Example: ": "update-to-python3",
+      "impact": "",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "e73cfae55eb6a8e9596103a40d811210a4baf634",
+      "timestamp": "2026-04-10T22:16:13.546518",
+      "what_changed": "Changes made to the metadata file due to amending commit.",
+      "why_it_likely_changed": "",
+      "feature_name": "snake_case_filename",
+      "is_new_feature": true,
+      "_fileio": {
+        "": "2017-958T34.6S/RVL+AZfzp",
+        "files touched in version": "[_repo]   ",
+        "introduced": "_fileio"
+      },
+      "": "2017-958T34.6S/RVL+AZfzp",
+      "files touched in version": "[_repo, _fili]   ",
+      "introduced": "_fileio",
+      "impact": "",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "64656ff4e294ca254df24d135345385af24d6e51",
+      "timestamp": "2026-04-10T22:16:16.447942",
+      "what_changed": "One sentence describing what changed.",
+      "why_it_likely_changed": "Sentence on the likely reason for change in code structure or functionality.. ",
+      "feature_name": "snakecasename",
+      "is_new_feature": false,
+      "'files_touched' should be an array of file names that were touched by the change.": [
+        "_repoRoot.py",
+        "_fileIOmodule"
+      ],
+      "impact": "One sentence describing what has changed in result due to this commit.. ",
+      "last built upon": "'2016-7-3' and 'now':'_snakeCaseName_is_new_featuretrue'",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "89b51ee6cd86fa81dbaf24ff020b1f45662a17ae",
+      "timestamp": "2026-04-10T22:16:18.364846",
+      "what_changed": "One sentence describing what changed.",
+      "why_it_likely_changed": "one sentence string on the likely reason for change to occur, not an array of files touched by this commit due to its formatting or metadata changes",
+      "feature_name": "snake_case_filename_is_new_featuretrue",
+      "impact": "",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "cbba45b717253e490e97cba45298cc68a119dfc9",
+      "timestamp": "2026-04-10T22:16:20.483304",
+      "what_changed": "The commit message amendments the metadata file with a new version.",
+      "why_it_likely_changed": "This change might be useful in our case because we have updated some information about features and their impact on codebase, which are not covered by existing tests or documentation. Also there is no apparent reason for this proposed changes as it has been included after the commit with a new feature.",
+      "feature_name": "fileio",
+      "is_new_feature": false,
+      "impact": "",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "e1d6e038fcae03c59c1bedf9b8432ba38bac2ea8",
+      "timestamp": "2026-04-10T22:16:23.310711",
+      "what_changed": "The commit includes a metadata file which was modified.",
+      "why_it_likely_changed": "This change likely introduces new features into the project, as it adds support for more efficient handling of large data files. Additionally, this feature may also simplify future updates in case all related scripts and tools are updated to reflect these changes immediately when a metadata file is added or modified.",
+      "feature_name": "repo_root",
+      "is_new_feature": false,
+      "impact": "The change introduces new features for managing large data files in the project. It also simplifies future updates, as all related scripts and tools are updated immediately when a metadata file is added or modified.",
+      "files_touched": [
+        "_repo_root",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "f24be88f3b4287ca63b3d34d07dd0b62e3d47b04",
+      "timestamp": "2026-04-10T22:16:26.272302",
+      "what_changed": "The commit includes the file 'hooks/install.sh', which has been modified.",
+      "why_it_likely_changed": "This likely changed because it adds functionality to install hook scripts and post updates of metadata files in pre-commit or similar Git Hook events, potentially improving our CI process for automated testing",
+      "feature_name": "update_to_python3_json_feature_added",
+      "is_new_feature": false,
+      "impact": "The new commit features the functionality of updating to Python 3.x's json module in install hook and post-commit event for better automation testing process, potentially enhancing our CI system by automating more tests during development phase with minimal human intervention.",
+      "files_touched": [
+        "metadata.json",
+        "/hooks/install.sh",
+        "file1.py"
+      ]
+    },
+    {
+      "commit_hash": "ebe667e92e6b4d0738b43904f06e67b02f2ee97a",
+      "timestamp": "2026-04-10T22:16:28.693020",
+      "what_changed": "The commit contains the file metadata.json, which was introduced after last built.",
+      "feature_name": "snake_case_filename_is_new_featuretrue",
+      "last_built_upon": "'2026-04-10T23:59:87' formatting in ISO 8601 date string by replacing '-', ':'. The feature is still active.",
+      "commit_count": "number of commits after this change",
+      "_fileio": {},
+      "[snake case] file io related changes, added as a new commit.": {},
+      "why_it_likely_changed": "",
+      "impact": "",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "d7970ee4f72e2c1f5dba7c59fad3d8a8a55bfbc1",
+      "timestamp": "2026-04-10T22:16:31.613492",
+      "what_changed": "Changes in the metadata file, including changes to features added and deleted.",
+      "why_it_likely_changed": "The likely reason for these modifications is due to updates or new feature additions which are now included as part of this commit. It's also important that we ensure our code remains compatible with any future version upgrades by updating the metadata file accordingly in a post-commit hook.",
+      "feature_name": "snake_case_filename",
+      "is_new_feature": false,
+      "impact": "Updated to handle Python3 json formatting and added repo root functionality for snake case filenames, files touched are 'file1.py' & 'updated-metadata', still active: true.",
+      "files_touched": [
+        "snake_case_filename",
+        "/hooks/install.sh"
+      ]
+    },
+    {
+      "commit_hash": "4093a119bc039915afd609dcb5d8fa1f9e7285a7",
+      "timestamp": "2026-04-10T22:16:34.503107",
+      "what_changed": "The commit includes metadata file.",
+      "why_it_likely_changed": "'update to python3 json' is likely a new feature as it introduces handling for different versions of Python in the application by modifying 'hooks/install.sh'. This change might increase compatibility and ease-of-use due to more flexibility when managing dependencies across multiple environments.",
+      "feature_name": "snake_case_filename",
+      "is_new_feature": true,
+      "impact": "The new feature allows for the handling of different versions in a consistent way. This can make upgrading or downgrading easier due to fewer breaking changes between major version updates.",
+      "files_touched": [
+        "file1.py",
+        "/hooks/install.sh"
+      ]
+    },
+    {
+      "commit_hash": "f2a71690c09d24920c4c6c7746a525ec190014ff",
+      "timestamp": "2026-04-10T22:16:37.928539",
+      "what_changed": "The commit includes a metadata file, and changes the behavior of certain functions in scripts/generate_build_log.py.",
+      "why_it_likely_changed": "'scripts/generate_build_log.py' has been updated to use Python 3 JSON formatting for logs which is expected by users who want more control over log file output details (such as timestamps, logging level etc).",
+      "feature_name": "snake_case_filename_is_new_featuretrue",
+      "impact": "'scripts/generate_build_log.py' has been updated to use Python 3 JSON formatting for logs which is expected by users who want more control over log file output details (such as timestamps, logging level etc). The function 'snake_case_filename_is_new_featuretrue()' now checks if the filename follows snake case.",
+      "files_touched": [
+        "./hooks/install.sh",
+        "./metadata.json"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "c2b8cb3e84ef8c1158f514b0c28f068fc6ea411b",
+      "timestamp": "2026-04-10T22:16:40.315537",
+      "what_changed": "New feature 'snake_case_name' is introduced.",
+      "why_it_likely_changed": "'Snake case name,' has been the convention for naming Python modules and functions. This change makes code easier to read, maintain in future updates or other developers working with similar projects where this might be necessary.",
+      "feature_name": "snake_case_filename",
+      "is_new_feature": true,
+      "impact": "The snake case name feature has made the naming convention for Python modules and functions more uniform.",
+      "files_touched": [
+        "metadata.json",
+        "file1.py"
+      ]
+    },
+    {
+      "commit_hash": "cbf1ab40f2d8a4e8fd62a0264f7f1a689514f732",
+      "timestamp": "2026-04-10T22:16:41.826710",
+      "what_changed": "The 'install' script has been updated to include Python version, and the post commit hooks have also beed modified.",
+      "feature_name": "snake_case_filename",
+      "why_it_likely_changed": "",
+      "impact": "",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "396baec236448390c458c3f59768889c3377afc4",
+      "timestamp": "2026-04-10T22:16:43.810382",
+      "what_changed": "Amended the install script to include metadata file and format tests with black.",
+      "why_it_likely_changed": "",
+      "": "The commit likely changed due To add, update or delete of 'metadata.json' in repository",
+      "feature_name": "snake_case_filename_is_new_featuretrue",
+      "impact": "",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "ee43749ff95e5edbd3ae778f3f2863fc086c3a48",
+      "timestamp": "2026-04-10T22:16:45.212453",
+      "what_changed": "The commit message format was changed to include metadata.json, and tests were reformatted with black.",
+      "feature_name": "updatetopython3json",
+      "why_it_likely_changed": "",
+      "impact": "",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "8a2a0cec34dd5e62a81ebb2e188466e06bb7684e",
+      "timestamp": "2026-04-10T22:16:46.855744",
+      "what_changed": "Changes made in the `metadata.json` file.",
+      "why_it_likely_changed": "",
+      "feature_name": "snake_case_filename_is_new_fea_true",
+      "impact": "",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "536138461a157538eb6d9b3d5fce2682a646eff7",
+      "timestamp": "2026-04-10T22:16:48.194166",
+      "what_changed": "The commit adds metadata.json and formats the tests with black.",
+      "feature_name": "update_to_python3_json",
+      "why_it_likely_changed": "",
+      "impact": "",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "5e56ed8792661a2b6bbe2c484882da8b005077dc",
+      "timestamp": "2026-04-10T22:16:50.539497",
+      "what_changed": "Amended the commit to include updated metadata.json.",
+      "why_it_likely_changed": "",
+      "feature_name": "amend_commit_metadatajson",
+      "is_new_feature": false,
+      "impact": "The change may have led to multiple commits and the commit message was updated with new information.",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "05eb10aefb20edc2a28aaf26ff0caa96646ebda2",
+      "timestamp": "2026-04-10T22:16:52.629673",
+      "what_changed": "The commit amend includes the metadata file.",
+      "why_it_likely_changed": "",
+      "feature_name": "amend_metadata_json",
+      "is_new_feature": true,
+      "impact": "",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "d658c2390f3651832c95ddad3ef82a6bac631fc7",
+      "timestamp": "2026-04-10T22:16:53.965208",
+      "what_changed": "Fixes in hooks/install and post commit, updates to Python3 JSON metadata.",
+      "feature_name": "fileio",
+      "why_it_likely_changed": "",
+      "impact": "",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "6c0ee06ca25e33423601033a30f4dccf924351b0",
+      "timestamp": "2026-04-10T22:16:55.644870",
+      "what_changed": "One sentence describing the change.",
+      "why_it_likely_changed": "Reason why it likely changed, one sentence at a time if needed and not in parallel or chronologically ordered sentences",
+      "feature_name": "snake_case_file",
+      "_is_new_feature": "true",
+      "impact": "",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "c873a10475a4a0bc355f7257bb85982b05ab9e72",
+      "timestamp": "2026-04-10T22:16:57.812269",
+      "what_changed": "The commit includes metadata in the `metadata.json` file.",
+      "why_it_likely_changed": "",
+      "feature_name": "snake_case_filename_is_new_featuretrue",
+      "is_new_feature": false,
+      "impact": "This change is likely to be a new feature because 'snake_case_filename' was added in the `metadata.json` file.",
+      "files_touched": [
+        "hooks/install.sh",
+        ".gitignore"
+      ]
+    },
+    {
+      "commit_hash": "98d4ddfa5889f6bdef515e3eb869758b042c6cd7",
+      "timestamp": "2026-04-10T22:17:00.004723",
+      "what_changed": "The commit includes a new file and metadata JSON, formatting tests with black.",
+      "why_it_likely_changed": "This change likely improves the test suite by providing an accurate representation of our codebase's state at different stages in time.",
+      "feature_name": "repo_root",
+      "is_new_feature": true,
+      "impact": "The new feature, '_repo_root', is used to represent the repository root directory.",
+      "files_touched": [
+        "file1.py",
+        "file2.py"
+      ]
+    },
+    {
+      "commit_hash": "701b2ed16bcddfa9eb3a5e9b96215e860fa4960d",
+      "timestamp": "2026-04-10T22:17:02.183744",
+      "what_changed": "The commit includes a JSON metadata file and the 'format tests with black' workflow in docs/build-log.md.",
+      "why_it_likely_changed": "'Amendment to include updated metadata json.'",
+      "feature_name": "snake_case_filename_is_new_featuretrue",
+      "is_new_feature": false,
+      "impact": "The feature 'Snake case filename is new feature true' was introduced in the commit.",
+      "files_touched": [
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "700c9ad9dcac926e1579898d1b6aff98769cd216",
+      "timestamp": "2026-04-10T22:17:04.089442",
+      "what_changed": "One sentence describing what changed",
+      "why_it_likely_changed": "Why it likely changed? One more sentence on the reason.",
+      "feature_name": "snakecasenamehere",
+      "is_new_feature": true,
+      "impact": "Impact of changes described in why...",
+      "files_touched": [
+        "file1.py",
+        "_otherFileInGitRepo"
+      ]
+    },
+    {
+      "commit_hash": "89e81003a59fd406759af39e9c15f6afea604fe2",
+      "timestamp": "2026-04-10T22:17:06.271414",
+      "what_changed": "The commit message contains 'amend' which is likely an attempt to amend the last committed change.",
+      "why_it_likely_changed": "This would be a good place for why it changed",
+      "feature_name": "repo_root",
+      "is_new_feature": true,
+      "impact": "Improved metadata access and management with new repository root function added, improved hooks post commit functionality to include updated json file.",
+      "files_touched": [
+        "./hooks/install.sh",
+        "../metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "c3e27c193e59b5b89e11673dc2b0480f127fa622",
+      "timestamp": "2026-04-10T22:17:08.561439",
+      "what_changed": "The commit includes a metadata file, the test files are blacked out and an amendment has been made to include it.",
+      "why_it_likely_changed": "This change likely impacts performance as we're removing unused code.",
+      "feature_name": "snake_case_filename",
+      "is_new_feature": false,
+      "impact": "The new feature was introduced in the file 'metadata.json', which is a snake case name.",
+      "files_touched": [
+        "file1.py, ",
+        "/hooks/install.sh"
+      ]
+    },
+    {
+      "commit_hash": "ce18fa569c5631736285c3b663ea573c80d36f82",
+      "timestamp": "2026-04-10T22:17:10.922584",
+      "what_changed": "The 'hooks/install.sh' file has been modified.",
+      "why_it_likely_changed": "This modification is likely due to a new feature or change in the application that involves setup of hook scripts and related files like '.gitignore', '_fileio'.",
+      "feature_name": "snake_case_filename_is_new_featuretrue",
+      "is_new_feature": false,
+      "impact": "The added 'hooks/install.sh' file was a new feature for the application.",
+      "files_touched": [
+        "metadata.json",
+        "_repo_root"
+      ]
+    },
+    {
+      "commit_hash": "a182f304ccfce5aa1f55cf6864b067b0eb9e52de",
+      "timestamp": "2026-04-10T22:17:13.291524",
+      "what_changed": "Changes were made to the script and formatting of tests with black.",
+      "why_it_likely_changed": "The changes likely introduce a new feature or functionality that would be useful for users. The change could also improve code readability by using more meaningful variable names, refactoring old/duplicate codes into methods if necessary.",
+      "feature_name": "generate_build_log",
+      "is_new_feature": true,
+      "impact": "This commit will add a new feature to the application that generates build log files. It would improve code readability and maintainability for users who are using our tool in production environment.",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "ad67cfdced8c9232e8f6f7d678fab23a65c40ffb",
+      "timestamp": "2026-04-10T22:17:15.293381",
+      "what_changed": "One sentence describing what changed in this commit",
+      "why_it_likely_changed": "A brief reason why it likely has been a change.",
+      "feature_name": "the_name_of_the_feature_that_was",
+      "is_new_feature": true,
+      "impact": "What impacted in this commit",
+      "files_touched": [
+        "file to be modified"
+      ]
+    },
+    {
+      "commit_hash": "9a000c36b51333fd0bbe60a887038d11f36273d8",
+      "timestamp": "2026-04-10T22:17:17.356011",
+      "what_changed": "The commit includes an amendment to the metadata.json file.",
+      "why_it_likely_changed": "This change likely comes from a formatting issue with black.",
+      "feature_name": "format_tests",
+      "is_new_feature": true,
+      "impact": "It changes how tests are formatted and makes them more consistent across all Python scripts in the repository. ",
+      "files_touched": [
+        "black/__init__.py",
+        "hooks/install.sh"
+      ]
+    },
+    {
+      "commit_hash": "1b8a08f03233d8eecf8ceb1e9ab11d8f0bdd0375",
+      "timestamp": "2026-04-10T22:17:19.110211",
+      "what_changed": "One sentence describing what changed.",
+      "why_it_likely_changed": "Reason for the likely change",
+      "feature_name": "snakecasenamehere",
+      "is_new_feature": true,
+      "impact": "Impact on system or users depending upon cause of impact and context.",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "113e30e9a4a631787d037c327cbd6041c5f37516",
+      "timestamp": "2026-04-10T22:17:20.624893",
+      "what_changed": "One sentence describing what changed",
+      "why_it_likely_changed": "Why the change likely happened",
+      "feature_name": "snakecasenameoffeaturetobechangedinfile1",
+      "impact": "",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "ef5d5edc64f291cc124f9e07f0d41232a9abb9a6",
+      "timestamp": "2026-04-10T22:17:23.723584",
+      "what_changed": "Amendment committed in metadata.json to include updated Python3 JSON.",
+      "why_it_likely_changed": "The change is likely due to the addition of a new feature or update, such as using 'snake_case' naming convention and incorporating '.gitignore', '_repo_root' file(s), etc",
+      "feature_name": "fileio_py_updated_python3json",
+      "is_new_feature": false,
+      "impact": "The new feature introduces a file to the project. The updated metadata JSON reflects this addition, including 'snake case' naming conventions and additional information about files modified in commit messages.",
+      "files_touched": [
+        "_fileio.py",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "328a84755e74d9ffa724c9714258158f725aad52",
+      "timestamp": "2026-04-10T22:17:25.744759",
+      "what_changed": "The commit includes the metadata.json file and formats tests with black.",
+      "why_it_likely_changed": "It likely changed because of a change in how we handle json formatting, specifically by using 'black' for code formating",
+      "feature_name": "repo_root",
+      "is_new_feature": true,
+      "impact": "The feature was introduced to allow better handling and representation on repo root level.",
+      "files_touched": [
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "a82b166b9ab84b9a7df3967e8af8b8431588aac1",
+      "timestamp": "2026-04-10T22:17:27.942845",
+      "what_changed": "One sentence describing what changed.",
+      "why_it_likely_changed": "Sentence explaining the likely reasons for changes to be made.",
+      "feature_name": "snake_case_name",
+      "is_new_feature": true,
+      "impact": "A sentence describing how this feature or change will impact users of the system/application in a way that is not immediately obvious.",
+      "files_touched": [
+        "file1.py",
+        "file2.py"
+      ]
+    },
+    {
+      "commit_hash": "0f0872cf30a44e55f56a680f39f1682da0c2fcbf",
+      "timestamp": "2026-04-10T22:17:30.077990",
+      "what_changed": "The 'metadata.json' file was updated to include the new features and changes.",
+      "why_it_likely_changed": "This change likely affected how metadata is being handled in our project",
+      "feature_name": "snake_case_filename",
+      "is_new_feature": true,
+      "impact": "New feature 'Snake case filename' has been added to the system. It makes it easier for developers to write code using a consistent naming convention.",
+      "files_touched": [
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "04b112f99e639d0fb146368e96189b0323ad6ec7",
+      "timestamp": "2026-04-10T22:17:32.221155",
+      "what_changed": "The commit includes the metadata.json file in a format that uses black for code.",
+      "why_it_likely_changed": "This change is likely due to improving software readability and efficiency by using Python's json module instead of its built-in string representation function.",
+      "feature_name": "snakecasefilenameisnewfeaturetrue",
+      "is_new_feature": true,
+      "impact": "The new feature makes the code more understandable.",
+      "files_touched": [
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "219b4b6fa79ef417d0442461b5b8204750e897ae",
+      "timestamp": "2026-04-10T22:17:33.799014",
+      "what_changed": "The commit message format was changed to include metadata.json and the tests were formatted with black.",
+      "feature_name": "amend",
+      "is_new_feature": true,
+      "impact": "Updated feature implementation details about amendment process in hooks/post-commit.",
+      "why_it_likely_changed": "",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "d381adf9f1d69f3b62607d5969ba5738d9207bc3",
+      "timestamp": "2026-04-10T22:17:35.899362",
+      "what_changed": "One sentence describing what changed",
+      "why_it_likely_changed": "Why it likely changes? One-sentence string.",
+      "feature_name": "snakecasenamehere",
+      "is_new_feature": true,
+      "./hooks/install.sh was added to get function": {
+        "introduced": 1234567890,
+        "files_touched": [
+          "./scripts/_fileio"
+        ]
+      },
+      "impact": "",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "54845d7c0f28c752d8410ba4369597d3e9c05528",
+      "timestamp": "2026-04-10T22:17:37.567925",
+      "what_changed": "Fixes in install.sh script and adds metadata file",
+      "why_it_likely_changed": "Likely impacts only the new feature 'metadata' addition at hooks/install.sh, post-commit scripts",
+      "feature_name": "snake_case_filename_is_new_featuretrue",
+      "impact": "",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "891a5c1843581db3b185bddf65873bcc6378c6df",
+      "timestamp": "2026-04-10T22:17:39.577371",
+      "what_changed": "One sentence describing what changed.",
+      "why_it_likely_changed": "Sentence on the likely reason for change",
+      "feature_name": "snake_case_name_here_no_spaces_allowed",
+      "is_new_feature": true,
+      "impact": "One sentence describing how this feature/change impacts.",
+      "files_touched": [
+        "file1.py",
+        "file2.py"
+      ]
+    },
+    {
+      "commit_hash": "1be63bb3059eca58bf975aa18033d33f7c053efd",
+      "timestamp": "2026-04-10T22:17:41.707679",
+      "what_changed": "The 'install.sh' script was edited to use Python3.",
+      "why_it_likely_changed": "This change likely arises from the removal of a deprecated feature in our project (Python2).",
+      "feature_name": "use_python3_compatible_environments",
+      "is_new_feature": true,
+      "impact": "We have changed all usage of Python 2 to its equivalent, which is now compatible with both versions.",
+      "files_touched": [
+        "hooks/install.sh"
+      ]
+    },
+    {
+      "commit_hash": "f02bd30c93c482f58e45a6af3b49959d5d4df8e1",
+      "timestamp": "2026-04-10T22:17:43.835650",
+      "what_changed": "The commit message changed to 'fix: amend commit to include metadata.json', format tests with black.",
+      "why_it_likely_changed": "This likely changes the state of a Python environment for testing and linting purposes via Black's code formatter, which simplifies development process by reducing redundancy in coding style across different files/projects",
+      "feature_name": "update_to_python3_json",
+      "is_new_feature": false,
+      "impact": "",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "0ddf2d7788c338977368a2a62fca67db01b685aa",
+      "timestamp": "2026-04-10T22:17:46.019120",
+      "what_changed": "The commit message changed from 'fix amend to include metadata.json format tests with black'",
+      "why_it_likely_changed": "This change likely comes after adding a new feature in the previous version of this file.",
+      "feature_name": "repo_root_fileio_are_added_as_they_were",
+      "is_new_feature": false,
+      "impact": "",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "4361ca0a1946e6074d381ec0309c4aaa880afc09",
+      "timestamp": "2026-04-10T22:17:48.339630",
+      "what_changed": "The commit introduces new features in the project and updates metadata.json with information about existing files.",
+      "why_it_likely_changed": "This likely changed because there were changes to hooks, scripts, workflow configuration etc., that are not included currently or have been overwritten by newer versions of these components",
+      "feature_name": "snake_case_filename_hooks",
+      "is_new_feature": true,
+      "impact": "The new feature is introduced in the 'Hooks' directory where hook scripts and workflow configurations are stored.",
+      "files_touched": [
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "628de6c2d262333121cf7c720ee36d0e82d73953",
+      "timestamp": "2026-04-10T22:17:50.081557",
+      "what_changed": "The 'install.sh' script has been updated to use Python3 and black.",
+      "why_it_likely_changed": "It is likely because we are using newer features in the project, such as Git hooks for automatic formatting of tests with Black.",
+      "feature_name": "snakecasefilename",
+      "is_new_feature": true,
+      "impact": "",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "e591105ce14bef5a0a02dbb87e2658c45d4d1b54",
+      "timestamp": "2026-04-10T22:17:51.891325",
+      "what_changed": "One sentence describing the changes made in this commit.",
+      "why_it_likely_changed": "Sentence on likely reasons why a change was implemented or tested",
+      "feature_name": "snake_case_feature_name_of_what_changed",
+      "is_new_feature": true,
+      "impact": "Impression about how important/useful the changes are.",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "094ab5a9b84fb100d64f43e57eb004f3e0060c72",
+      "timestamp": "2026-04-10T22:17:55.887073",
+      "what_changed": "The commit message amendment added the metadata.json file.",
+      "why_it_likely_changed": "This change likely was related to updating our codebase for a new feature or enhancing an existing one, particularly with regards to formatting tests and black coding style preferences",
+      "feature_name": "repo_root",
+      "is_new_feature": true,
+      "impact": "The _repo_root function has been added as it is used in multiple files for repo root level functionality.",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "_lastUpdatedBy": {
+        "\refactor/immutable-module#2560413 by Zach Deibert on Aug,8th Oct at (time 7:19 PM)": "Last updated in commit cea(d).",
+        "-commit_id": "ceadcbbdcbfebebcbbaacbcabccabcdecadeffecdebecafeefeaebcaee46f580cd2fa3afdf719fcabaedbddaacaeeddddeefffffdbd",
+        "author_name": "Zach Deibert"
+      }
+    },
+    {
+      "commit_hash": "0bda8804e81dee10ac278dbd9f64abf1d19a998e",
+      "timestamp": "2026-04-10T22:17:57.201558",
+      "what_changed": "one sentence string describing what changed",
+      "why_it_likely_changed": "one sentence on the likely reason",
+      "feature_name": "new_feature_name",
+      "impact": "",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "3b79ceef62916a36eddc5e7d26439815f90d707d",
+      "timestamp": "2026-04-10T22:17:59.247487",
+      "what_changed": "Commit includes a new metadata.json file.",
+      "why_it_likely_changed": "The change is likely to improve the structure and functionality of our codebase.",
+      "feature_name": "update_to_python3_json",
+      "is_new_feature": true,
+      "impact": "This feature update will make it easier for developers in their workflows on Python 3 support.",
+      "files_touched": [
+        "hooks/install.sh",
+        "/metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "3a65ff5f4bf985a99f2bf1eb888b1e190a7384d8",
+      "timestamp": "2026-04-10T22:18:02.664032",
+      "what_changed": "One sentence describing what changed.",
+      "why_it_likely_changed": "Sentence on the likely reason of changing",
+      "feature_name": "snake_case_name_here_no_spaces_or",
+      "is_new_feature": true,
+      "impact": "Sentence on the impact of changing",
+      "_filesTouched": "file1.py, file2.json for snake case feature only works if it has a space after underscore _repo_root  ",
+      "improvement": true,
+      "lastAmended": "Date when the commit was last amended",
+      "commitCount": 5,
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "dbb41692256a2318b315429b0b9d65ec2eef6bf9",
+      "timestamp": "2026-04-10T22:18:04.834683",
+      "what_changed": "The commit includes the metadata.json file and formats tests with black",
+      "why_it_likely_changed": "This change likely improves maintainability of codebase by making it easier to understand what changes were made in a given set of files.",
+      "feature_name": "snake_case_filename",
+      "is_new_feature": true,
+      "impact": "The feature makes the naming convention for file and directory names more consistent with snake case",
+      "files_touched": [
+        "file1.py"
+      ]
+    },
+    {
+      "commit_hash": "030bb9e87d1012e7222351ed642406e5542feb0c",
+      "timestamp": "2026-04-10T22:18:06.948596",
+      "what_changed": "The commit includes metadata.json file formatting tests with black",
+      "why_it_likely_changed": "metadata is being used to store project-wide configurations, making it easier and more efficient for team members.",
+      "feature_name": "fileio",
+      "is_new_feature": true,
+      "impact": "Increased efficacy of the file I/O operations due to usage in metadata.json",
+      "files_touched": [
+        "metadata.py"
+      ]
+    },
+    {
+      "commit_hash": "cf488432fbd324f9e42d36daba59c6d72d2e6a73",
+      "timestamp": "2026-04-10T22:18:09.089474",
+      "what_changed": "One sentence describing what changed",
+      "why_it_likely_changed": "Why this change likely happened",
+      "feature_name": "snake_case_name_of_the_feature_or",
+      "is_new_feature": true,
+      "impact": "Explain what impacted and how this change was made",
+      "files_touched": [
+        "file1",
+        "changed by user"
+      ]
+    },
+    {
+      "commit_hash": "31decd30d9024f0aae5566a224f7b5137f400bc9",
+      "timestamp": "2026-04-10T22:18:10.863388",
+      "what_changed": "One sentence describing the change.",
+      "why_it_likely_changed": "A sentence on why this likely changed",
+      "feature_name": "snake_case_name_of_feature_or_component",
+      "is_new_feature": true,
+      "impact": "Sentence providing context about how much was affected by these changes",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "8148696e4417a5c2a13b15894516fbfd882dcaf8",
+      "timestamp": "2026-04-10T22:18:12.831211",
+      "what_changed": "The commit message contains the string 'fix amend metadata.json format tests with black' which indicates that a change was made to one or more files in your repository.",
+      "why_it_likely_changed": "This likely changed is because there were changes related to version control, git workflows and testing tools such as Black.",
+      "feature_name": "amend",
+      "is_new_feature": true,
+      "impact": "",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "069f5e41f7d3856b9ca35eb2f07adf226d5113b0",
+      "timestamp": "2026-04-10T22:18:15.038703",
+      "what_changed": "The commit includes the installation of new hooks and a post-amendment to metadata.json.",
+      "why_it_likely_changed": "This likely changes because it adds functionality that is not present in previous versions, such as adding CI configuration files (.github/workflow).",
+      "feature_name": "update_to_python3_and_repo_root",
+      "is_new_feature": true,
+      "impact": "The new feature improves the ability of this repository to use and maintain Python version.",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "21082b291a32a0d680c9f91f5d777d71e983bd9f",
+      "timestamp": "2026-04-10T22:18:16.960408",
+      "what_changed": "One sentence describing the changes made in this commit.",
+      "why_it_likely_changed": "Why it likely changed.",
+      "feature_name": "snake_case_feature_name",
+      "is_new_feature": true,
+      "impact": "Impact description of what was done",
+      "files_touched": [
+        "file1.py",
+        "file2.py"
+      ]
+    },
+    {
+      "commit_hash": "fb823d6710bd4dd67a5235cf8d792e9639e1336c",
+      "timestamp": "2026-04-10T22:18:18.877009",
+      "what_changed": "One sentence about what changed.",
+      "why_it_likely_changed": "Why it likely changed?",
+      "feature_name": "featurenamesnakecase",
+      "is_new_feature": true,
+      "impact": "Impact statement for why this change was made. ",
+      "files_touched": [
+        "file1.py",
+        "file2.py"
+      ]
+    },
+    {
+      "commit_hash": "2a675d4d4839bc56aed822b875d8d022f5269a7b",
+      "timestamp": "2026-04-10T22:18:22.012936",
+      "what_changed": "The commit message contains 'amend' which adds metadata.json to the last committed change set and then runs black format on tests in hooks directory.",
+      "why_it_likely_changed": "This likely changes how Python scripts are tested with pytest, adding features like integration testing among others for code stability purposes",
+      "feature_name": "snake_case_repo_root_function_added_to",
+      "is_new_feature": false,
+      "impact": "The new feature is expected improve test coverage by adding integration tests among others for code stability purposes",
+      "files_touched": [
+        "snake_case"
+      ],
+      "'last_built_upon' value has changed after 'amend', and more files are affected in the repository root function added to get, reporoot file renamed from _repo_to_, updated metadata.json.": "unknown",
+      "still active": "true"
+    },
+    {
+      "commit_hash": "84e2f2ba49bca42c34e1b1da02f64aa4e05d9585",
+      "timestamp": "2026-04-10T22:18:24.193875",
+      "what_changed": "The commit includes the new metadata.json file.",
+      "why_it_likely_changed": "Due to changes in structure of data and associated scripts, it is likely a change.",
+      "feature_name": "snake_case_filename",
+      "is_new_feature": true,
+      "impact": "This feature will allow usability by users with no knowledge about snake case filename.",
+      "files_touched": [
+        "file1.py",
+        "file2.py"
+      ]
+    },
+    {
+      "commit_hash": "04e028a7d0ec55afd84285ef937fd6d3b471f210",
+      "timestamp": "2026-04-10T22:18:26.682349",
+      "what_changed": "The commit includes metadata.json and formats tests with black.",
+      "why_it_likely_changed": "This likely changed the behavior of a new feature because it added support for JSON formatting in test cases using Black.",
+      "feature_name": "snakecase_filename",
+      "is_new_feature": true,
+      "impact": "'Snake case' filenames are generally more intuitive and easier to read than standard or camel-cased file names. This new feature might improve code clarity.",
+      "files_touched": [
+        "file1.py",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "d0daf1a96e76b81660a76cf4baf7c1c623af1a02",
+      "timestamp": "2026-04-10T22:18:28.664306",
+      "what_changed": "One sentence describing what changed",
+      "why_it_likely_changed": "Sentence explaining why it likely changed",
+      "feature_name": "snake_case_feature_name",
+      "is_new_feature": true,
+      "impact": "Impact statement on how the new/updated features impact users.",
+      "files_touched": [
+        "file1.py",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "0a184637e7c79c2da80a702034b86a71b163f47c",
+      "timestamp": "2026-04-10T22:18:30.493979",
+      "what_changed": "One sentence describing what changed",
+      "why_it_likely_changed": "Another one on the likely reason",
+      "feature_name": "metadata_json_is_new_feature_true_and",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "impact": "",
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "021699eac0630dc96ca3dacbcc729474b911608d",
+      "timestamp": "2026-04-10T22:18:34.020991",
+      "what_changed": "The commit message was modified to include the metadata.json file and format tests with black.",
+      "why_it_likely_changed": "It likely changed because it added or updated a reference in one of our files, including hooks/install.sh which also includes usage references for Python 3",
+      "feature_name": "snakecasenamethatreferencespythonversion",
+      "is_new_feature": true,
+      "impact": "The change introduced a new feature that allows us to use metadata from our repository.",
+      "_files_touched": [
+        ".gitignore"
+      ],
+      "last_built_upon": "2026-04-17T13:59:08",
+      "commit_count": {},
+      "reasoning": "Updated the .gitignore file to ignore certain files and directories that might not be necessary for testing with black scripts.",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "9b08e52b886d0324ffa473b190ef01a9b3d90051",
+      "timestamp": "2026-04-10T22:18:36.448830",
+      "what_changed": "The 'metadata.json' file was edited and added.",
+      "why_it_likely_changed": "This likely changed the way how metadata is handled in our application by adding an extra method for handling json data from a different place, to save time while working on other features.",
+      "feature_name": "repo_root",
+      "is_new_feature": true,
+      "impact": "'snake case' filename 'metadata.json', now it represents the root directory of our repository.",
+      "files_touched": [
+        "file1.py",
+        "file2.py"
+      ]
+    },
+    {
+      "commit_hash": "6c6ac2e3df8069c835c4ccb8250dd93dd625e94f",
+      "timestamp": "2026-04-10T22:18:38.524781",
+      "what_changed": "The commit message was fixed to include metadata.json and format tests with black",
+      "why_it_likely_changed": "It likely changed the way we handle versioning, testing, etc.",
+      "feature_name": "amend",
+      "is_new_feature": false,
+      "impact": "Changed how changes are tracked in git.",
+      "files_touched": [
+        "hooks/install.sh",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "5922720ead89bb4cb15e138dd99df5a50b342088",
+      "timestamp": "2026-04-10T22:18:40.861436",
+      "what_changed": "One sentence describing what changed.",
+      "why_it_likely_changed": "Reason why it likely changed",
+      "feature_name": "snake_case_name_of_the_feature_here_no",
+      "is_new_feature": true,
+      "impact": "Sentence about how this change affects users",
+      "files_touched": [
+        "file where it changed"
+      ]
+    },
+    {
+      "commit_hash": "bdcf5c3484c814dda0288902a295af69dd548443",
+      "timestamp": "2026-04-10T22:18:43.058169",
+      "what_changed": "One sentence describing the changes in this commit.",
+      "why_it_likely_changed": "Why it likely changed? One Sentence explaining why change is made at all, not just a small fix.",
+      "feature_name": "snake_case_name_of_feature",
+      "is_new_feature": true,
+      "impact": "Explain the impact if this changes are introduced as new features.",
+      "files_touched": [
+        "file1.py",
+        "file2.py"
+      ]
+    },
+    {
+      "commit_hash": "b2c9f8f0f2401e82442529efa5ca18c54f90a01f",
+      "timestamp": "2026-04-10T22:18:45.912320",
+      "what_changed": "The 'metadata.json' file was edited.",
+      "why_it_likely_changed": "This likely changed the format of metadata to a JSON object with more fields and data types, making it easier for developers or users who are not familiar with Python programming syntax.",
+      "feature_name": "update_to_python3_json",
+      "is_new_feature": true,
+      "impact": "The changes made this feature.",
+      "files_touched": [
+        "metadata.py",
+        "hooks/installer .sh"
+      ],
+      "_lastbuiltupon_": "2019-547863T",
+      "_isnewfeature": true,
+      "commitcount": "The changes added the new feature to track if a file was updated."
+    },
+    {
+      "commit_hash": "9c451575a2a0c82e19c254d003020737de3f6c73",
+      "timestamp": "2026-04-10T22:18:49.007993",
+      "what_changed": "The 'snake_case' feature was added to the codebase.",
+      "why_it_likely_changed": "This change likely adds new features in a way that makes it easier for developers working on different parts of software. It simplifies metadata handling by allowing them not only about files but also their dependencies, version history and more information",
+      "feature_name": "snake_case_feature_was_added_to_the",
+      "is_new_feature": false,
+      "impact": "The 'snake_case' change simplifies metadata handling in a way that makes it easier for developers working on different parts of software. It also allows not only about files but their dependencies, version history and more information to be stored.",
+      "files_touched": [
+        ".gitignore",
+        "_repo_root"
+      ]
+    },
+    {
+      "commit_hash": "32b0463cb6e19edc088c5ad1717d49fa38a69ed8",
+      "timestamp": "2026-04-10T22:18:51.400116",
+      "what_changed": "One sentence describing what changed.",
+      "why_it_likely_changed": "One sentence discussing the likely reason for such change. ",
+      "feature_name": "snake_case_feature_name",
+      "is_new_feature": true,
+      "impact": "A brief summary of how this modification impacted or improved functionality.",
+      "files_touched": [
+        "file1.py",
+        "file2.py"
+      ]
+    },
+    {
+      "commit_hash": "9f070d94a93998c9bda7ab59d7d8615403eeb30b",
+      "timestamp": "2026-04-10T22:18:53.056629",
+      "what_changed": "The commit message amendment and format tests with black have been added.",
+      "why_it_likely_changed": "This change likely adds additional features in the project's metadata system.",
+      "impact": "",
+      "feature_name": "unknown",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "02ac90623134423f5f5b50fac3a02cc2aeeffe25",
+      "timestamp": "2026-04-10T22:18:56.304653",
+      "what_changed": "The commit message was amend to include metadata.json and format tests with black.",
+      "why_it_likely_changed": "It likely changed the feature by adding a new way of handling git hooks, including install script modifications for python3-metadata functionality as well as setting up .gitignore file in repo root directory",
+      "feature_name": "repo_root_function_added_to_get_and",
+      "is_new_feature": false,
+      "impact": "The new feature allows for easier tracking of dependencies, improvements on the 'install' script functionality in python3-metadata. This also enhances git workflow by adding .gitignore file to manage non necessary files and simplifying repo root directory management.",
+      "files_touched": [
+        "_repo_root",
+        "hooks/post-commit",
+        "snake case filename"
+      ]
+    },
+    {
+      "commit_hash": "9a02197fae16f6d38ae229a455f99dca554b4d97",
+      "timestamp": "2026-04-10T22:19:00.759768",
+      "what_changed": "The script `install.sh` has been updated to use Python 3 in the hooks folder.",
+      "why_it_likely_changed": "This change likely affects scripts that are used by CI/CD pipelines, for example GitHub Actions workflow files",
+      "feature_name": "update_hooks_to_python3_md",
+      "is_new_feature": true,
+      "impact": "The feature was introduced in the commit message `fix: amend commit to include metadata.json`.",
+      "files_touched": [
+        "metadata.py",
+        "installer  .sh"
+      ]
+    },
+    {
+      "commit_hash": "103144a9481723772737ca805e3707301b8e14c6",
+      "timestamp": "2026-04-10T22:19:02.898921",
+      "what_changed": "The commit message amendment includes the metadata file.",
+      "why_it_likely_changed": "This change is likely due to a requirement for versioning and tracking purposes in our project. It allows us to keep track of changes over time, identify potential bugs or issues that may have been introduced since we last built from source code into production environment",
+      "feature_name": "repo_root",
+      "is_new_feature": false,
+      "impact": "",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "6a456bf6331a67e8750c85a4705cd7f28cd9ed19",
+      "timestamp": "2026-04-10T22:19:05.402991",
+      "what_changed": "One sentence describing what changed.",
+      "why_it_likely_changed": "Why it likely changed? One statement on the reason behind this change is enough for now (longer explanation will follow).",
+      "feature_name": "snake_case_name_of_feature_module_being",
+      "is_new_feature": true,
+      "impact": "Impact description (longer explanation will follow).",
+      "files_touched": [
+        "file1.py",
+        "File2.Py"
+      ]
+    },
+    {
+      "commit_hash": "ec3bb16d1193a1730746dfc0b49ed6258369c832",
+      "timestamp": "2026-04-10T22:19:08.723074",
+      "what_changed": "Amended metadata json file to include information about the changes.",
+      "why_it_likely_changed": "The likely reason for this change is because of new features in python 3.7 and later versions, which includes support for Python's JSON module through its standard library package named 'json'. The proposed update makes it easier for developers who are transitioning to a newer version or using the json built-in data structure.",
+      "feature_name": "update_to_python3_json",
+      "is_new_feature": true,
+      "impact": "The impact of this change is that python's JSON module has been updated from its previous implementation to one providing more features and improvements than the built-in json.load() function.",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "snake_case_name": true,
+      "repo_root_function_added_to__get": "false"
+    },
+    {
+      "commit_hash": "d88afc41f6e234a51df99fafb8269b62e600b5e1",
+      "timestamp": "2026-04-10T22:19:10.603612",
+      "what_changed": "The commit includes the addition of metadata and formatting tests with black.",
+      "why_it_likely_changed": "",
+      "feature_name": "snake_case_filename",
+      "": true,
+      "_reporoot": "true",
+      "impact": "",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "e5c1a82c8c92cc6d9b77c3e2bbc83f491f5c50a2",
+      "timestamp": "2026-04-10T22:19:13.662080",
+      "what_changed": "The commit includes the metadata json file.",
+      "why_it_likely_changed": "'metadata.json' was added to version control but not committed due to a change in workflows or scripts related with GitHub Actions and doc build log files",
+      "feature_name": "snake_case_filename_is_new",
+      "is_new_feature": true,
+      "impact": "Improved the functionality of repo versioning and repository snapshot features.",
+      "": "true",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "b57035cdde7174bda222183062bc3f50b2432119",
+      "timestamp": "2026-04-10T22:19:17.061293",
+      "what_changed": "The commit includes a new file named `metadata.json`.",
+      "why_it_likely_changed": "This change likely improves the structure of our codebase by adding and organizing metadata related files such as configuration, environment variables etc into separate directories for better organization purposes or to help with automatic detection in later parts of development process (e.g., using `metadata.json`).",
+      "feature_name": "update_to_python3_json_feature_add",
+      "is_new_feature": false,
+      "impact": "The new commit adds value to the project, enhances modularity of our source structure by adding metadata-related files such as configuration or environment variables. Furthermore it also improves readability/maintainability and support for automatic detection in later parts.",
+      "files_touched": [
+        "_update_to_python3_json feature - Add support and refactor codebase from json module",
+        "metadata.py"
+      ]
+    },
+    {
+      "commit_hash": "1d5e0d8182181882c97eea10aab6fa9cac4722fc",
+      "timestamp": "2026-04-10T22:19:19.475912",
+      "what_changed": "One sentence describing what changed in this commit.",
+      "why_it_likely_changed": "Why it likely changed? One sentence only. No markdown or backticks allowed!",
+      "feature_name": "snake_case_fileio_repo_root_etc_no",
+      "is_new_feature": true,
+      "impact": "One sentence describing the impact of this change.",
+      "files_touched": [
+        ".github/workflows/docs.yml",
+        "/hooks/_fileio"
+      ]
+    },
+    {
+      "commit_hash": "1f455cb4bf122e06e1cfd1fe6a524a9ec9a85322",
+      "timestamp": "2026-04-10T22:19:20.969900",
+      "what_changed": "Amended the commit to include updated metadata.json.",
+      "why_it_likely_changed": "The likely reason is that we added new features and functionality in this amendment.",
+      "impact": "",
+      "feature_name": "unknown",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "fb1529e4f4f71aec3be80e1a40e0421e6ea539c2",
+      "timestamp": "2026-04-10T22:19:23.340583",
+      "what_changed": "One sentence describing what changed.",
+      "why_it_likely_changed": "One longer-sentence string explaining why it likely did this change",
+      "feature_name": "snakecasednamehere",
+      "is_new_feature": true,
+      "impact": "Sentences detailing the impact of changes. Can be more than one sentence if needed.",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "77d137114e306d371a1780370a11d4f1ae218279",
+      "timestamp": "2026-04-10T22:19:27.698649",
+      "what_changed": "The commit message format changed from amend to include metadata.json and black-formatted tests.",
+      "why_it_likely_changed": "It likely increased readability by adding a more descriptive file list in the final JSON object, improving code clarity with snake case names for feature toggles",
+      "feature_name": "snake_case_filename_is_now_also",
+      "impact": "",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "afccc982ac8a72f648485d51ecb90eefe80cfd03",
+      "timestamp": "2026-04-10T22:19:29.600859",
+      "what_changed": "The commit message was updated to include the metadata.json file.",
+      "why_it_likely_changed": "This change likely has a beneficial impact on our codebase because it includes updates related to formatting tests with black and updating hooks for installation, post-commit handling in both install.sh and .gitignore files.",
+      "impact": "",
+      "feature_name": "unknown",
+      "files_touched": [
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata.json"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "e747b42092736448913bd5cf209b9c00574652ab",
+      "timestamp": "2026-04-10T22:19:34.117178",
+      "what_changed": "One sentence describing the changes made in this commit.",
+      "why_it_likely_changed": "Sentence explaining why a change is likely to be implemented or if it was an intentional action based on context",
+      "feature_name": "snake_case_value_describing_feature_name",
+      "is_new_feature": true,
+      "\n If the new added code is a significant improvement to an existing functionality then this will be set as true. Else false or empty if not applicable.": false,
+      "Impact": "Sentence explaining how these changes have impacted application's usage",
+      "files_touched": [
+        {
+          "file-path": "List of all affected files"
+        },
+        true
+      ],
+      "impact": ""
+    },
+    {
+      "commit_hash": "0e309890ab9b0c2a9a3ce45de57f2eaea040b615",
+      "timestamp": "2026-04-10T22:19:36.411670",
+      "what_changed": "The commit includes metadata json file.",
+      "why_it_likely_changed": "This likely changes the behavior of our system because now it tracks all files and their modifications for easier troubleshooting in future",
+      "feature_name": "update_to_python3_json_py",
+      "is_new_feature": false,
+      "impact": "The commit introduces the new feature to track metadata json changes.",
+      "files_touched": [
+        "hooks/installer  .sh",
+        "metadata.npym"
+      ]
+    },
+    {
+      "commit_hash": "ace931854c1811c75477b68a87a110c5ba411745",
+      "timestamp": "2026-04-10T22:19:40.390880",
+      "what_changed": "Commit message amend to include metadata json and format tests with black.",
+      "why_it_likely_changed": "The commit likely changed the way we handle testing tools such as Black in our codebase.",
+      "feature_name": "update_to_python3_json",
+      "is_new_feature": true,
+      "impact": "Changed how tests are formatted using black.",
+      "files_touched": [
+        "hooks/install.sh",
+        "metadata.py"
       ]
     }
   ]
