@@ -3,7 +3,7 @@ import json
 import re
 
 OLLAMA_URL = "http://localhost:11434/api/generate"
-MODEL = "deepseek-coder"
+MODEL = "qwen2.5-coder:7b"
 LARGE_DIFF_THRESHOLD = 3000
 
 PROMPT_TEMPLATE = """You are a code analysis tool. Analyze the git commit below and respond with ONLY a JSON object.

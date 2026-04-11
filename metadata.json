@@ -1,11 +1,11 @@
 {
   "features": {
-    "gitmind_was_renamed_as": {
+    "gitmind_engine": {
       "introduced": "2026-04-10T20:04:44-04:00",
       "files_touched": [],
       "still_active": true,
       "last_built_upon": "2026-04-10T20:04:44-04:00",
-      "is_new_feature": false,
+      "is_new_feature": true,
       "commit_count": 1
     },
     "unknown": {
@@ -702,22 +702,25 @@
         ".gitmind/venv/lib/python3.9/site-packages/urllib3/util/util.py",
         ".gitmind/venv/lib/python3.9/site-packages/urllib3/util/wait.py",
         ".gitmind/venv/pyvenv.cfg",
-        "core/diff_reader.py",
-        ".gitmind/core/llm.py",
-        "core/llm.py",
-        "README.md",
-        "docs/build-log.md",
-        "metadata.json",
-        "scripts/clean_metadata.py",
-        "scripts/generate_build_log.py",
-        "scripts/record_demo.sh"
+        "core/diff_reader.py"
       ],
       "still_active": true,
-      "last_built_upon": "2026-04-10T23:02:47-04:00",
+      "last_built_upon": "2026-04-10T20:05:24-04:00",
       "is_new_feature": false,
-      "commit_count": 3
+      "commit_count": 1
     },
-    "auth_middleware_py_file": {
+    "json_parsing_refactor": {
+      "introduced": "2026-04-10T20:08:16-04:00",
+      "files_touched": [
+        ".gitmind/core/llm.py",
+        "core/llm.py"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T20:08:16-04:00",
+      "is_new_feature": false,
+      "commit_count": 1
+    },
+    "ollama_json_format": {
       "introduced": "2026-04-10T20:08:40-04:00",
       "files_touched": [
         ".gitmind/core/llm.py",
@@ -728,7 +731,7 @@
       "is_new_feature": false,
       "commit_count": 1
     },
-    "user_onboarding": {
+    "feature_name_truncation": {
       "introduced": "2026-04-10T20:10:04-04:00",
       "files_touched": [
         ".gitmind/core/llm.py",
@@ -737,20 +740,57 @@
       ],
       "still_active": true,
       "last_built_upon": "2026-04-10T20:10:04-04:00",
+      "is_new_feature": false,
+      "commit_count": 1
+    },
+    "repo_setup": {
+      "introduced": "2026-04-10T20:21:00-04:00",
+      "files_touched": [
+        ".github/ISSUE_TEMPLATE/bug_report.md",
+        ".github/ISSUE_TEMPLATE/feature_request.md",
+        ".github/PULL_REQUEST_TEMPLATE.md",
+        ".github/workflows/ci.yml",
+        ".github/workflows/docs.yml",
+        ".github/workflows/release.yml",
+        ".gitmind/core/diff_reader.py",
+        ".gitmind/core/engine.py",
+        ".gitmind/core/llm.py",
+        ".gitmind/core/metadata.py",
+        ".gitmind/metadata.json",
+        "CHANGELOG.md",
+        "CONTRIBUTING.md",
+        "LICENSE",
+        "README.md",
+        "cli/query.py",
+        "core/diff_reader.py",
+        "core/engine.py",
+        "core/llm.py",
+        "core/metadata.py",
+        "docs/cli-reference.md",
+        "docs/how-it-works.md",
+        "docs/index.md",
+        "docs/quickstart.md",
+        "docs/roadmap.md",
+        "mkdocs.yml",
+        "requirements.txt",
+        "tests/test_core.py"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T20:21:00-04:00",
       "is_new_feature": true,
       "commit_count": 1
     },
-    "docs_deployments": {
+    "github_docs_deploy": {
       "introduced": "2026-04-10T20:22:48-04:00",
       "files_touched": [
         ".github/workflows/docs.yml"
       ],
       "still_active": true,
       "last_built_upon": "2026-04-10T20:22:48-04:00",
-      "is_new_feature": false,
+      "is_new_feature": true,
       "commit_count": 1
     },
-    "initial_gitmind_engine": {
+    "build_log_documentation": {
       "introduced": "2026-04-10T21:43:01-04:00",
       "files_touched": [
         "docs/build-log.md",
@@ -761,7 +801,7 @@
       "is_new_feature": true,
       "commit_count": 1
     },
-    "auth_middleware_rate_limiting": {
+    "ollama_error_handling": {
       "introduced": "2026-04-10T21:45:11-04:00",
       "files_touched": [
         ".gitmind/core/engine.py",
@@ -771,10 +811,10 @@
       ],
       "still_active": true,
       "last_built_upon": "2026-04-10T21:45:11-04:00",
-      "is_new_feature": true,
+      "is_new_feature": false,
       "commit_count": 1
     },
-    "remove_auth": {
+    "git_cleanup": {
       "introduced": "2026-04-10T21:48:05-04:00",
       "files_touched": [
         ".gitignore",
@@ -792,7 +832,7 @@
       "is_new_feature": false,
       "commit_count": 1
     },
-    "buildloggenerationfrommetadatajson": {
+    "auto_build_log": {
       "introduced": "2026-04-10T21:53:24-04:00",
       "files_touched": [
         ".github/workflows/docs.yml",
@@ -806,17 +846,17 @@
       "is_new_feature": true,
       "commit_count": 1
     },
-    "repo_root_function_added": {
+    "code_formatting": {
       "introduced": "2026-04-10T21:59:06-04:00",
       "files_touched": [
         "core/metadata.py"
       ],
       "still_active": true,
       "last_built_upon": "2026-04-10T21:59:06-04:00",
-      "is_new_feature": true,
+      "is_new_feature": false,
       "commit_count": 1
     },
-    "blackcicheck": {
+    "black_ci_update": {
       "introduced": "2026-04-10T22:04:30-04:00",
       "files_touched": [
         ".github/workflows/ci.yml"
@@ -826,7 +866,7 @@
       "is_new_feature": false,
       "commit_count": 1
     },
-    "implementation_of_auth_rate": {
+    "metadata_commit_amendment": {
       "introduced": "2026-04-10T22:14:38-04:00",
       "files_touched": [
         "hooks/install.sh",
@@ -835,10 +875,10 @@
       ],
       "still_active": true,
       "last_built_upon": "2026-04-10T22:14:38-04:00",
-      "is_new_feature": true,
+      "is_new_feature": false,
       "commit_count": 1
     },
-    "post_commit_hooks": {
+    "post_commit_guard": {
       "introduced": "2026-04-10T22:25:58-04:00",
       "files_touched": [
         "hooks/install.sh",
@@ -847,7 +887,7 @@
       ],
       "still_active": true,
       "last_built_upon": "2026-04-10T22:25:58-04:00",
-      "is_new_feature": true,
+      "is_new_feature": false,
       "commit_count": 1
     },
     "pin_to_py39": {
@@ -870,10 +910,25 @@
       ],
       "still_active": true,
       "last_built_upon": "2026-04-10T22:46:49-04:00",
-      "is_new_feature": false,
+      "is_new_feature": true,
       "commit_count": 1
     },
-    "build_log": {
+    "documentation_and_demo_recording": {
+      "introduced": "2026-04-10T23:02:47-04:00",
+      "files_touched": [
+        "README.md",
+        "docs/build-log.md",
+        "metadata.json",
+        "scripts/clean_metadata.py",
+        "scripts/generate_build_log.py",
+        "scripts/record_demo.sh"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T23:02:47-04:00",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "demo_gif": {
       "introduced": "2026-04-10T23:17:03-04:00",
       "files_touched": [
         "README.md",
@@ -887,17 +942,41 @@
       "last_built_upon": "2026-04-10T23:17:03-04:00",
       "is_new_feature": false,
       "commit_count": 1
+    },
+    "reindex_commits_llm": {
+      "introduced": "2026-04-10T23:22:41-04:00",
+      "files_touched": [
+        "docs/build-log.md",
+        "metadata.json",
+        "scripts/reindex.py"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T23:22:41-04:00",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "model_switching": {
+      "introduced": "2026-04-10T23:38:08.886863",
+      "files_touched": [
+        "core/llm.py",
+        "docs/build-log.md",
+        "metadata.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T23:38:08.886863",
+      "is_new_feature": false,
+      "commit_count": 1
     }
   },
   "history": [
     {
       "commit_hash": "6e78acd",
       "timestamp": "2026-04-10T20:04:44-04:00",
-      "what_changed": "'initial gitmind engine' was a feature that included 'llm analyzer', 'metadata writer', and other tools such as CLI query tool. The install hook also added.",
-      "why_it_likely_changed": "The likely reason for this change is to add new features related with LLM (Latent Language Model) analysis, metadata writing capabilities in the gitmind engine",
-      "feature_name": "gitmind_was_renamed_as",
-      "is_new_feature": false,
-      "impact": "The new feature has improved user experience by providing more precise and personalized meeting reminders based on users\u2019 input from the LLM analyzer. Additionally, it provides an easy way to handle metadata in .gitmind files for further use.",
+      "what_changed": "Added initial gitmind engine with diff reader functionality",
+      "why_it_likely_changed": "To enable version control and metadata analysis capabilities within the project",
+      "feature_name": "gitmind_engine",
+      "is_new_feature": true,
+      "impact": "This feature will enhance the project's ability to track changes, understand differences, and manage metadata more effectively",
       "files_touched": []
     },
     {
@@ -1606,11 +1685,11 @@
     {
       "commit_hash": "2f91e1d",
       "timestamp": "2026-04-10T20:08:16-04:00",
-      "what_changed": "'Extract', 'coerce' and sanitize the field types in llm.py'",
-      "why_it_likely_changed": "",
-      "feature_name": "unknown",
+      "what_changed": "Refactored JSON parsing in llm.py",
+      "why_it_likely_changed": "To improve robustness and handle various data types more effectively",
+      "feature_name": "json_parsing_refactor",
       "is_new_feature": false,
-      "impact": "",
+      "impact": "Enhances the reliability of the JSON output from the code analysis tool",
       "files_touched": [
         ".gitmind/core/llm.py",
         "core/llm.py"
@@ -1619,11 +1698,11 @@
     {
       "commit_hash": "08fe52f",
       "timestamp": "2026-04-10T20:08:40-04:00",
-      "what_changed": "The model is using the Ollama format for JSON output.",
-      "why_it_likely_changed": "This likely changes a lot of existing models because it allows returning json data in different formats, improving code readability and usability",
-      "feature_name": "auth_middleware_py_file",
+      "what_changed": "Added 'format': 'json' to the JSON payload",
+      "why_it_likely_changed": "To enforce valid JSON output from the model",
+      "feature_name": "ollama_json_format",
       "is_new_feature": false,
-      "impact": "The feature is likely used in many existing files, so it's a good change that improves overall code quality and usability.",
+      "impact": "Ensures consistent and valid JSON output from the model",
       "files_touched": [
         ".gitmind/core/llm.py",
         "core/llm.py"
@@ -1632,11 +1711,11 @@
     {
       "commit_hash": "0de4d70",
       "timestamp": "2026-04-10T20:10:04-04:00",
-      "what_changed": "This commit introduces a new feature in llm.py which is related to user onboarding and rate limiting.",
-      "why_it_likely_changed": "",
-      "feature_name": "user_onboarding",
-      "is_new_feature": true,
-      "impact": "- A significant change as the existing code base does not contain features for handling new users or updating user profiles in a timely manner.",
+      "what_changed": "Truncated feature_name to 40 characters",
+      "why_it_likely_changed": "To ensure consistent naming and avoid potential issues with long strings",
+      "feature_name": "feature_name_truncation",
+      "is_new_feature": false,
+      "impact": "May affect systems relying on consistent feature names",
       "files_touched": [
         ".gitmind/core/llm.py",
         "README.md",
@@ -1644,13 +1723,52 @@
       ]
     },
     {
+      "commit_hash": "d84525a",
+      "timestamp": "2026-04-10T20:21:00-04:00",
+      "what_changed": "Added issue and pull request templates along with CI/CD workflows, MkDocs docs, pytest suite, black formatting, CONTRIBUTING, CHANGELOG, LICENSE",
+      "why_it_likely_changed": "To improve repository organization, automation, documentation, and collaboration",
+      "feature_name": "repo_setup",
+      "is_new_feature": true,
+      "impact": "Enhances repository maintainability, ensures consistent development practices, and improves communication",
+      "files_touched": [
+        ".github/ISSUE_TEMPLATE/bug_report.md",
+        ".github/ISSUE_TEMPLATE/feature_request.md",
+        ".github/PULL_REQUEST_TEMPLATE.md",
+        ".github/workflows/ci.yml",
+        ".github/workflows/docs.yml",
+        ".github/workflows/release.yml",
+        ".gitmind/core/diff_reader.py",
+        ".gitmind/core/engine.py",
+        ".gitmind/core/llm.py",
+        ".gitmind/core/metadata.py",
+        ".gitmind/metadata.json",
+        "CHANGELOG.md",
+        "CONTRIBUTING.md",
+        "LICENSE",
+        "README.md",
+        "cli/query.py",
+        "core/diff_reader.py",
+        "core/engine.py",
+        "core/llm.py",
+        "core/metadata.py",
+        "docs/cli-reference.md",
+        "docs/how-it-works.md",
+        "docs/index.md",
+        "docs/quickstart.md",
+        "docs/roadmap.md",
+        "mkdocs.yml",
+        "requirements.txt",
+        "tests/test_core.py"
+      ]
+    },
+    {
       "commit_hash": "5906386",
       "timestamp": "2026-04-10T20:22:48-04:00",
-      "what_changed": "Fixed the Git Commit by performing a few actions, including writing to permissions and configuring git for deploying documents.",
-      "why_it_likely_changed": "The change likely arose from an issue with docs deployment bot setup in github repository. Also changes were made around document write permission configuration during CI/CD pipeline execution",
-      "feature_name": "docs_deployments",
-      "is_new_feature": false,
-      "impact": "'Fixed the Git Commit by performing a few actions, including writing to permissions and configuring git for deploying documents.' might have been beneficial in terms of documentation setup on version control systems.",
+      "what_changed": "added contents:write permission and configured git for deploy bot in the GitHub Actions workflow",
+      "why_it_likely_changed": "to allow automated deployment of documentation changes to a repository",
+      "feature_name": "github_docs_deploy",
+      "is_new_feature": true,
+      "impact": "enables automatic updates to the documentation site without manual intervention",
       "files_touched": [
         ".github/workflows/docs.yml"
       ]
@@ -1658,11 +1776,11 @@
     {
       "commit_hash": "3644106",
       "timestamp": "2026-04-10T21:43:01-04:00",
-      "what_changed": "Added the initial scaffold of Gitmind's engine with its own modules for LLM analysis and metadata writing.",
-      "why_it_likely_changed": "",
-      "feature_name": "initial_gitmind_engine",
+      "what_changed": "added a new document detailing build log and history",
+      "why_it_likely_changed": "to provide transparent development history for troubleshooting and documentation purposes",
+      "feature_name": "build_log_documentation",
       "is_new_feature": true,
-      "impact": "The initial version adds the functionality of Gitmind's core components in a modular way. This is useful for future development and maintenance.",
+      "impact": "will help developers understand the build process and issues encountered during gitmind's development",
       "files_touched": [
         "docs/build-log.md",
         "mkdocs.yml"
@@ -1671,11 +1789,11 @@
     {
       "commit_hash": "ac5957f",
       "timestamp": "2026-04-10T21:45:11-04:00",
-      "what_changed": "'graceful error handling for Ollama timeout and connection errors'",
-      "why_it_likely_changed": "The commit likely changed the core engine.py file by implementing exception handlers.",
-      "feature_name": "auth_middleware_rate_limiting",
-      "is_new_feature": true,
-      "impact": "One of their most requested features was to include graceful error handling for Ollama timeout and connection errors. This will prevent the application from crashing when it encounters issues such as timeouts or network connectivity problems.",
+      "what_changed": "Added graceful error handling for Ollama timeout and connection errors",
+      "why_it_likely_changed": "To improve user experience by avoiding crashes when Ollama is not running or timing out",
+      "feature_name": "ollama_error_handling",
+      "is_new_feature": false,
+      "impact": "Enhances the robustness of the system in handling external service failures",
       "files_touched": [
         ".gitmind/core/engine.py",
         ".gitmind/core/llm.py",
@@ -1686,11 +1804,11 @@
     {
       "commit_hash": "201839b",
       "timestamp": "2026-04-10T21:48:05-04:00",
-      "what_changed": "The `auth_middleware` and other modules have been removed from the project.",
-      "why_it_likely_changed": "This change likely occurred due to changes in authentication mechanisms used throughout different parts of our application. The removal of these middlewares might simplify certain tasks, decrease complexity for some features or provide a more secure environment altogether as they could no longer be necessary without this context being altered.",
-      "feature_name": "remove_auth",
+      "what_changed": "Removed .gitmind tracking and tightened feature names",
+      "why_it_likely_changed": "To clean up gitignore and improve code organization",
+      "feature_name": "git_cleanup",
       "is_new_feature": false,
-      "impact": "This change not only reduces the size of our codebase but also improves performance and security. Some users might face issues due to these changes in their authentication mechanisms as they no longer need them.",
+      "impact": "Simplified the repository by removing unnecessary files",
       "files_touched": [
         ".gitignore",
         ".gitmind/core/diff_reader.py",
@@ -1706,11 +1824,11 @@
     {
       "commit_hash": "1c52311",
       "timestamp": "2026-04-10T21:53:24-04:00",
-      "what_changed": "Auto Generate Build Log From Metadata JSON",
-      "why_it_likely_changed": "The change likely comes with the addition of a new feature - build log generation from metadata json.",
-      "feature_name": "buildloggenerationfrommetadatajson",
+      "what_changed": "added script to auto-generate build log from metadata.json",
+      "why_it_likely_changed": "to improve documentation build process and provide better visibility into build information",
+      "feature_name": "auto_build_log",
       "is_new_feature": true,
-      "impact": "",
+      "impact": "enhances the automation of documentation build processes, making it easier to track build logs and identify issues",
       "files_touched": [
         ".github/workflows/docs.yml",
         "core/metadata.py",
@@ -1722,11 +1840,11 @@
     {
       "commit_hash": "81e9625",
       "timestamp": "2026-04-10T21:59:06-04:00",
-      "what_changed": "The metadata module has been refactored to use a more modular approach with better separation of concerns.",
-      "why_it_likely_changed": "'metadata.py' was changed due to the new modules for improved maintainability and reusability",
-      "feature_name": "repo_root_function_added",
-      "is_new_feature": true,
-      "impact": "'metadata.py' is impacted by the new 'repository/git operations functions'. This will make it easier to manage dependencies and isolate components when large projects are involved",
+      "what_changed": "Formatted the code using black in metadata.py",
+      "why_it_likely_changed": "To maintain consistent code style across the project",
+      "feature_name": "code_formatting",
+      "is_new_feature": false,
+      "impact": "No functional change, improves readability and maintainability",
       "files_touched": [
         "core/metadata.py"
       ]
@@ -1734,11 +1852,11 @@
     {
       "commit_hash": "2b335c7",
       "timestamp": "2026-04-10T22:04:30-04:00",
-      "what_changed": "'The commit checks all source dirs in Black CI check'",
-      "why_it_likely_changed": " 'It likely changed the testing and linting processes for our code base.' ",
-      "feature_name": "blackcicheck",
+      "what_changed": "updated the directories checked by the Black CI check",
+      "why_it_likely_changed": "to ensure all source files are linted for code style",
+      "feature_name": "black_ci_update",
       "is_new_feature": false,
-      "impact": "The use of Black CI check feature may speed up development by catching style errors before submission.",
+      "impact": "improves code quality and consistency across the project",
       "files_touched": [
         ".github/workflows/ci.yml"
       ]
@@ -1746,11 +1864,11 @@
     {
       "commit_hash": "198021e",
       "timestamp": "2026-04-10T22:14:38-04:00",
-      "what_changed": "'auth middleware', 'rate limiting' and 'user onboarding' have been implemented into our system",
-      "why_it_likely_changed": "",
-      "feature_name": "implementation_of_auth_rate",
-      "is_new_feature": true,
-      "impact": "'auth middleware' implementation will allow for more secure authentication and 'rate limiting' can help prevent overloading servers with too many requests.",
+      "what_changed": "Amended the commit to include metadata.json and formatted tests with black",
+      "why_it_likely_changed": "To ensure that important metadata is committed along with code changes and to maintain code quality",
+      "feature_name": "metadata_commit_amendment",
+      "is_new_feature": false,
+      "impact": "Ensures that necessary metadata is included in commits and improves code formatting consistency",
       "files_touched": [
         "hooks/install.sh",
         "hooks/post-commit",
@@ -1760,11 +1878,11 @@
     {
       "commit_hash": "6814f6e",
       "timestamp": "2026-04-10T22:25:58-04:00",
-      "what_changed": "The commit message 'fix' guard post-commit hook against infinite amend loop using GITMIND_RUNNING env var.",
-      "why_it_likely_changed": "'Fixing the JSON parsing issue in LL(1) Python by updating diff reader getlatestdifference method.'",
-      "feature_name": "post_commit_hooks",
-      "is_new_feature": true,
-      "impact": "The use of GITMIND_RUNNING env var is likely to prevent infinite amend loops.",
+      "what_changed": "guard post-commit hook against infinite amend loop using GITMIND_RUNNING env var",
+      "why_it_likely_changed": "to prevent an infinite loop caused by the commit hook running itself repeatedly on each commit amendment",
+      "feature_name": "post_commit_guard",
+      "is_new_feature": false,
+      "impact": "prevents potential system hang due to infinite loop and ensures continuous operation of the commit process",
       "files_touched": [
         "hooks/install.sh",
         "hooks/post-commit",
@@ -1774,11 +1892,11 @@
     {
       "commit_hash": "0e890c6",
       "timestamp": "2026-04-10T22:31:12-04:00",
-      "what_changed": "The 'pin black to --target-version py39' commit changes the version pinning in configuration files (black.ini) based on local and CI output.",
-      "why_it_likely_changed": "'Pin Black to \u2014 target-version Py39' likely changed as it matches Python versions that tend not handle imports correctly, possibly due to older versions of black being less capable at parsing JSON data or dealing with modules imported during the execution. This could affect code compatibility.",
+      "what_changed": "pin black to --target-version py39",
+      "why_it_likely_changed": "to match local and CI output",
       "feature_name": "pin_to_py39",
       "is_new_feature": false,
-      "impact": "The 'Pin Black version in configuration files (black.ini)' feature likely changed as it changes how black parses JSON data and manages modules imported during the execution due to its change matching Python versions that tend not handle imports correctly.",
+      "impact": "may improve code style consistency across different Python versions",
       "files_touched": [
         ".github/workflows/ci.yml",
         "metadata.json"
@@ -1787,11 +1905,11 @@
     {
       "commit_hash": "a9921c1",
       "timestamp": "2026-04-10T22:46:49-04:00",
-      "what_changed": "The black version pinning was fixed in the CI workflow and a pyproject.toml file for consistent formatting is added.",
-      "why_it_likely_changed": "",
+      "what_changed": "Pin black version in CI and add pyproject.toml for consistent formatting",
+      "why_it_likely_changed": "To ensure consistent code style across the project and fix potential issues with different versions of black",
       "feature_name": "pin_black",
-      "is_new_feature": false,
-      "impact": "The change likely impacts the code style and makes CI more robust against different versions of black. This could be beneficial for all developers.",
+      "is_new_feature": true,
+      "impact": "Improves code quality and consistency, making the CI more reliable",
       "files_touched": [
         ".github/workflows/ci.yml",
         "metadata.json",
@@ -1801,11 +1919,11 @@
     {
       "commit_hash": "4e0a25c",
       "timestamp": "2026-04-10T23:02:47-04:00",
-      "what_changed": "The build log was updated to include more information.",
-      "why_it_likely_changed": "",
-      "feature_name": "unknown",
-      "is_new_feature": false,
-      "impact": "",
+      "what_changed": "cleaned metadata.json, improved build log intro, added demo recording script",
+      "why_it_likely_changed": "to improve documentation and automation processes",
+      "feature_name": "documentation_and_demo_recording",
+      "is_new_feature": true,
+      "impact": "enhances user experience by providing a demo recording and improving build log visibility",
       "files_touched": [
         "README.md",
         "docs/build-log.md",
@@ -1818,11 +1936,11 @@
     {
       "commit_hash": "750b57c",
       "timestamp": "2026-04-10T23:17:03-04:00",
-      "what_changed": "'docs/demo.gif' was added to the project, and 'No human wrote these summaries.' The feature names, file lists, and change description were all restructured in order for it to be easier readable.",
-      "why_it_likely_changed": "",
-      "feature_name": "build_log",
+      "what_changed": "Added demo GIF to README.md and cleaned up build log documentation.",
+      "why_it_likely_changed": "To improve the user experience by providing a visual demonstration and to organize build logs better.",
+      "feature_name": "demo_gif",
       "is_new_feature": false,
-      "impact": "'docs/demo.gif' is a GIF which can help in visualizing the process of project.",
+      "impact": "Enhances the clarity and usefulness of the README and build log pages for users.",
       "files_touched": [
         "README.md",
         "docs/build-log.md",
@@ -1830,6 +1948,34 @@
         "docs/demo.gif",
         "metadata.json",
         "scripts/generate_demo_cast.py"
+      ]
+    },
+    {
+      "commit_hash": "fb7f355",
+      "timestamp": "2026-04-10T23:22:41-04:00",
+      "what_changed": "Reindexed all commits through LLM to provide real diffs, analysis, and metadata",
+      "why_it_likely_changed": "To enhance the accuracy and comprehensiveness of commit summaries and analyses",
+      "feature_name": "reindex_commits_llm",
+      "is_new_feature": true,
+      "impact": "Significantly improves the quality and usefulness of commit data for developers",
+      "files_touched": [
+        "docs/build-log.md",
+        "metadata.json",
+        "scripts/reindex.py"
+      ]
+    },
+    {
+      "commit_hash": "312d4f2e07a7752e790785251617c3818dfcf3e4",
+      "timestamp": "2026-04-10T23:38:08.886863",
+      "what_changed": "switched to qwen2.5-coder:7b model and reindexed all commits",
+      "why_it_likely_changed": "to improve performance or compatibility with a newer language model",
+      "feature_name": "model_switching",
+      "is_new_feature": false,
+      "impact": "potentially improves code analysis accuracy and speed",
+      "files_touched": [
+        "core/llm.py",
+        "docs/build-log.md",
+        "metadata.json"
       ]
     }
   ]
