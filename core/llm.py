@@ -69,9 +69,13 @@ def _coerce(parsed: dict, changed_files: list) -> dict:
     if not isinstance(parsed.get("is_new_feature"), bool):
         parsed["is_new_feature"] = False
 
-    # Sanitize feature_name
+    # Sanitize and truncate feature_name
     name = parsed.get("feature_name", "unknown")
-    parsed["feature_name"] = re.sub(r"[^a-z0-9_]", "_", name.lower().strip()) or "unknown"
+    name = re.sub(r"[^a-z0-9_]", "_", name.lower().strip())
+    name = re.sub(r"_+", "_", name).strip("_")  # collapse multiple underscores
+    if len(name) > 40:
+        name = name[:40].rsplit("_", 1)[0]  # truncate at word boundary
+    parsed["feature_name"] = name or "unknown"
 
     return parsed
 
