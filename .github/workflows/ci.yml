@@ -22,10 +22,10 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-          pip install pytest black
+          pip install pytest "black==25.1.0"
 
       - name: Check code style
-        run: black --check --target-version py39 core/ cli/ tests/ scripts/
+        run: black --check core/ cli/ tests/ scripts/
 
       - name: Run tests
         run: pytest tests/ -v

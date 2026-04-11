@@ -882,6 +882,16 @@
       "last_built_upon": "2026-04-10T22:31:15.120679",
       "is_new_feature": false,
       "commit_count": 1
+    },
+    "pin_black": {
+      "introduced": "2026-04-10T22:46:51.739484",
+      "files_touched": [
+        "pyproject.toml"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:46:51.739484",
+      "is_new_feature": false,
+      "commit_count": 1
     }
   },
   "history": [
@@ -2791,6 +2801,18 @@
       "impact": "'Pin Black version in the configuration file (black.ini) may match Python 2 or older versions, as they tend not to handle imports correctly.' ",
       "files_touched": [
         ".github/workflows/ci.yml"
+      ]
+    },
+    {
+      "commit_hash": "f4efff23ec7e4c2da725c7ed701f9daf20d0f696",
+      "timestamp": "2026-04-10T22:46:51.739484",
+      "what_changed": "The black version pinning was fixed in the CI workflow and a pyproject.toml file for consistent formatting is added.",
+      "why_it_likely_changed": "",
+      "feature_name": "pin_black",
+      "is_new_feature": false,
+      "impact": "The change likely impacts the code style and makes CI more robust against different versions of black. This could be beneficial for all developers.",
+      "files_touched": [
+        "pyproject.toml"
       ]
     }
   ]
