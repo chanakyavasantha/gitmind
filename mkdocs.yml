@@ -33,6 +33,7 @@ nav:
   - Quick Start: quickstart.md
   - How It Works: how-it-works.md
   - CLI Reference: cli-reference.md
+  - Build Log: build-log.md
   - Roadmap: roadmap.md
 
 markdown_extensions:
