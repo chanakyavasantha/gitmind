@@ -56,4 +56,4 @@ chmod +x "$HOOK_PATH"
 
 echo "Done. gitmind is now active in $TARGET_REPO"
 echo "Make sure Ollama is running: ollama serve"
-echo "Make sure the model is pulled: ollama pull deepseek-coder"
+echo "Make sure the model is pulled: ollama pull qwen2.5-coder:7b"

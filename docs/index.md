@@ -28,7 +28,7 @@ gitmind answers all of that.
 On every `git commit`, gitmind automatically:
 
 1. Reads the diff
-2. Sends it to a local LLM (Ollama + deepseek-coder)
+2. Sends it to a local LLM (Ollama + qwen2.5-coder:7b)
 3. Extracts: feature name, what changed, why, impact, files touched
 4. Writes it to `metadata.json` in your repo
 

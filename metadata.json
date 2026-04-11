@@ -966,6 +966,19 @@
       "last_built_upon": "2026-04-10T23:38:08.886863",
       "is_new_feature": false,
       "commit_count": 1
+    },
+    "model_update": {
+      "introduced": "2026-04-10T23:38:54.864327",
+      "files_touched": [
+        "README.md",
+        "docs/index.md",
+        "docs/quickstart.md",
+        "hooks/install.sh"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T23:38:54.864327",
+      "is_new_feature": false,
+      "commit_count": 1
     }
   },
   "history": [
@@ -1976,6 +1989,21 @@
         "core/llm.py",
         "docs/build-log.md",
         "metadata.json"
+      ]
+    },
+    {
+      "commit_hash": "9495c37983084b949336b20e20592a7f3983989e",
+      "timestamp": "2026-04-10T23:38:54.864327",
+      "what_changed": "updated all references from deepseek-coder to qwen2.5-coder:7b",
+      "why_it_likely_changed": "to update the project's dependencies and use the latest version of the language model",
+      "feature_name": "model_update",
+      "is_new_feature": false,
+      "impact": "this change will affect how commits are analyzed by the local LLM, potentially improving or changing the analysis results",
+      "files_touched": [
+        "README.md",
+        "docs/index.md",
+        "docs/quickstart.md",
+        "hooks/install.sh"
       ]
     }
   ]

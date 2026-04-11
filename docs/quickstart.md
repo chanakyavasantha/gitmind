@@ -28,7 +28,7 @@ Get gitmind running on a real project in under 5 minutes.
 
 ```bash
 ollama serve          # start the Ollama server
-ollama pull deepseek-coder
+ollama pull qwen2.5-coder:7b
 ```
 
 ### 3. Python 3.9+

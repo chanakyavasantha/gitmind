@@ -10,7 +10,7 @@
 
 **Semantic version control.** Git tells you what changed — gitmind tells you why, and what's safe to remove.
 
-Every commit is automatically analyzed by a local LLM (Ollama + deepseek-coder) and stored as structured metadata alongside your code. No API costs. No external services. Works with any editor.
+Every commit is automatically analyzed by a local LLM (Ollama + qwen2.5-coder:7b) and stored as structured metadata alongside your code. No API costs. No external services. Works with any editor.
 
 ---
 
@@ -44,7 +44,7 @@ post-commit hook (bash)
     ↓
 diff_reader.py  →  reads diff + commit message
     ↓
-llm.py          →  Ollama (deepseek-coder) analyzes the diff
+llm.py          →  Ollama (qwen2.5-coder:7b) analyzes the diff
     ↓
 metadata.json   →  semantic summary stored in repo
     ↓
@@ -59,7 +59,7 @@ query.py        →  CLI to query features, files, staleness
 # 1. Install Ollama and pull the model
 curl -fsSL https://ollama.ai/install.sh | sh
 ollama serve
-ollama pull deepseek-coder
+ollama pull qwen2.5-coder:7b
 
 # 2. Clone gitmind and install into your repo
 git clone https://github.com/chanakyavasantha/gitmind
@@ -136,9 +136,9 @@ Tested on the gitmind repo itself during initial development:
 | First-commit fix | JSON parse error | `deepseek-coder` outputs `//` comments — fixed with `format: "json"` |
 | Format enforcement | Parse error still | Field type mismatches — fixed with `_extract_json()` + `_coerce()` |
 | Robust parser | **Feature tracked: gitmind** | First clean end-to-end run |
-| README + truncation | **Feature tracked: gitmind** | Feature names clean, files correct |
+| Model upgrade | Clean names on all commits | Switched to `qwen2.5-coder:7b` — no hallucinations, clean JSON |
 
-**Key finding:** `deepseek-coder` requires `format: "json"` in the Ollama request to produce parseable output.
+**Current model:** `qwen2.5-coder:7b` — significantly better feature naming and JSON reliability than `deepseek-coder`.
 
 ---
 
