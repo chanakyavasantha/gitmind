@@ -21,8 +21,11 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install MkDocs Material
+      - name: Install dependencies
         run: pip install mkdocs-material
+
+      - name: Generate build log from metadata.json
+        run: python3 scripts/generate_build_log.py
 
       - name: Configure git for deploy
         run: |

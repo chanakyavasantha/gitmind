@@ -2,9 +2,15 @@ import json
 import os
 from datetime import datetime
 
-METADATA_PATH = os.path.join(
-    os.path.dirname(os.path.dirname(__file__)), "metadata.json"
-)
+def _repo_root() -> str:
+    import subprocess
+    result = subprocess.run(
+        ["git", "rev-parse", "--show-toplevel"], capture_output=True, text=True
+    )
+    return result.stdout.strip() if result.returncode == 0 else os.getcwd()
+
+
+METADATA_PATH = os.path.join(_repo_root(), "metadata.json")
 
 
 def load() -> dict:

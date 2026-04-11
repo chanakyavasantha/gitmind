@@ -1,0 +1,202 @@
+{
+  "features": {
+    "_use_json__is_used_as_it_might_be_beneficial_for_handling_json_data_manipulation_tasks_or_similar_actions_more_efficiently_": {
+      "introduced": "2026-04-10T20:08:41.616411",
+      "files_touched": [
+        "core/llm.py"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T20:08:41.616411",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "gitmind": {
+      "introduced": "2026-04-10T20:10:06.995053",
+      "files_touched": [
+        ".gitmind/core/llm.py",
+        "README.md",
+        "core/llm.py"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T20:10:06.995053",
+      "is_new_feature": false,
+      "commit_count": 1
+    },
+    "diff_reader_getlatestdifference_method": {
+      "introduced": "2026-04-10T20:21:04.034990",
+      "files_touched": [
+        ".github/ISSUE_TEMPLATE/bug_report.md",
+        ".github/ISSUE_TEMPLATE/feature_request.md",
+        ".github/PULL_REQUEST_TEMPLATE.md",
+        ".github/workflows/ci.yml",
+        ".github/workflows/docs.yml",
+        ".github/workflows/release.yml",
+        ".gitmind/core/diff_reader.py",
+        ".gitmind/core/engine.py",
+        ".gitmind/core/llm.py",
+        ".gitmind/core/metadata.py",
+        ".gitmind/metadata.json",
+        "CHANGELOG.md",
+        "CONTRIBUTING.md",
+        "LICENSE",
+        "README.md",
+        "cli/query.py",
+        "core/diff_reader.py",
+        "core/engine.py",
+        "core/llm.py",
+        "core/metadata.py",
+        "docs/cli-reference.md",
+        "docs/how-it-works.md",
+        "docs/index.md",
+        "docs/quickstart.md",
+        "docs/roadmap.md",
+        "mkdocs.yml",
+        "requirements.txt",
+        "tests/test_core.py"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T20:21:04.034990",
+      "is_new_feature": false,
+      "commit_count": 1
+    },
+    "docs_deployment": {
+      "introduced": "2026-04-10T20:22:49.874960",
+      "files_touched": [
+        "README.md",
+        "actions/checkout@v4"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T20:22:49.874960",
+      "is_new_feature": false,
+      "commit_count": 1
+    },
+    "handle_errors": {
+      "introduced": "2026-04-10T21:45:13.321033",
+      "files_touched": [
+        "core/engine.py",
+        "llm"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T21:45:13.321033",
+      "is_new_feature": true,
+      "commit_count": 1
+    },
+    "remove_gitmind": {
+      "introduced": "2026-04-10T21:48:08.205152",
+      "files_touched": [
+        "./.gitignore",
+        "/core/diff_reader.py"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T21:48:08.205152",
+      "is_new_feature": true,
+      "commit_count": 1
+    }
+  },
+  "history": [
+    {
+      "commit_hash": "08fe52fdea50c1203748881e1359abab12f8d115",
+      "timestamp": "2026-04-10T20:08:41.616411",
+      "what_changed": "The git diff has been analyzed and returned in JSON format.",
+      "why_it_likely_changed": "This change likely leads to the addition of a new feature based on user input",
+      "feature_name": "_use_json__is_used_as_it_might_be_beneficial_for_handling_json_data_manipulation_tasks_or_similar_actions_more_efficiently_",
+      "is_new_feature": true,
+      "impact": "New features are being introduced to handle JSON related operations better and consistently.",
+      "files_touched": [
+        "core/llm.py"
+      ]
+    },
+    {
+      "commit_hash": "0de4d70e42598fcaee9d018f3e72eb7a77eeb5b0",
+      "timestamp": "2026-04-10T20:10:06.995053",
+      "what_changed": "'feat' add README with test findings, 'fix' feature name truncation to 40 chars",
+      "why_it_likely_changed": "no changes according to codebase - seems like a new release or versioning issue in the project documentation.",
+      "feature_name": "gitmind",
+      "impact": "",
+      "files_touched": [
+        ".gitmind/core/llm.py",
+        "README.md",
+        "core/llm.py"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "d84525a0f22c418701318162c44296dce3541a48",
+      "timestamp": "2026-04-10T20:21:04.034990",
+      "what_changed": "[feat]: professional repo setup - CI/CD workflows, MkDocs docs, pytest suite (12 tests), black formatting. CONTRIBUTING, CHANGELOG, LICENSE",
+      "why_it_likely_changed": "[enhancement] Suggest an idea for gitmind",
+      "feature_name": "diff_reader_getlatestdifference_method",
+      "impact": "",
+      "files_touched": [
+        ".github/ISSUE_TEMPLATE/bug_report.md",
+        ".github/ISSUE_TEMPLATE/feature_request.md",
+        ".github/PULL_REQUEST_TEMPLATE.md",
+        ".github/workflows/ci.yml",
+        ".github/workflows/docs.yml",
+        ".github/workflows/release.yml",
+        ".gitmind/core/diff_reader.py",
+        ".gitmind/core/engine.py",
+        ".gitmind/core/llm.py",
+        ".gitmind/core/metadata.py",
+        ".gitmind/metadata.json",
+        "CHANGELOG.md",
+        "CONTRIBUTING.md",
+        "LICENSE",
+        "README.md",
+        "cli/query.py",
+        "core/diff_reader.py",
+        "core/engine.py",
+        "core/llm.py",
+        "core/metadata.py",
+        "docs/cli-reference.md",
+        "docs/how-it-works.md",
+        "docs/index.md",
+        "docs/quickstart.md",
+        "docs/roadmap.md",
+        "mkdocs.yml",
+        "requirements.txt",
+        "tests/test_core.py"
+      ],
+      "is_new_feature": false
+    },
+    {
+      "commit_hash": "5906386bd3fea46a73bdeb9dc8b7f6482e2c4fc8",
+      "timestamp": "2026-04-10T20:22:49.874960",
+      "what_changed": "The commit message changed the workflow from 'fix' to 'add contents:write permission and git config for docs deploy bot'. It also added a new section about permissions.",
+      "why_it_likely_changed": "",
+      "feature_name": "docs_deployment",
+      "is_new_feature": false,
+      "impact": "The feature of git config for docs deployment has been implemented to prevent permission issues when deploying documentation.",
+      "files_touched": [
+        "README.md",
+        "actions/checkout@v4"
+      ]
+    },
+    {
+      "commit_hash": "ac5957f75cad33612cb9c1fb2b1582b02864d7a1",
+      "timestamp": "2026-04-10T21:45:13.321033",
+      "what_changed": "Fixed graceful error handling for Ollama timeout and connection errors",
+      "why_it_likely_changed": "Ollama now correctly handles different types of exceptions in a more efficient way.",
+      "feature_name": "handle_errors",
+      "is_new_feature": true,
+      "impact": "The change significantly improves the reliability of our application by handling edge cases and errors gracefully. This also makes it easier for users to understand what went wrong when an error occurs in a request.",
+      "files_touched": [
+        "core/engine.py",
+        "llm"
+      ]
+    },
+    {
+      "commit_hash": "201839b746a73dfffa1e840c2e54f6e1eac782cb",
+      "timestamp": "2026-04-10T21:48:08.205152",
+      "what_changed": "The .gitignore file is deleted.",
+      "why_it_likely_changed": ".gitmind was initially set up. The delete action of this feature suggests a need to cleanup after the initial setup for new features or changes in existing codebase, especially when dealing with larger projects and environments like git mind's current implementation where all files are tracked.",
+      "feature_name": "remove_gitmind",
+      "is_new_feature": true,
+      "impact": ".gitmind is an internal tool used by GitMind. It tracks changes in the codebase and helps to analyze them with a user defined set of rules as described above.",
+      "files_touched": [
+        "./.gitignore",
+        "/core/diff_reader.py"
+      ]
+    }
+  ]
+}
