@@ -34,6 +34,8 @@ echo "Installing dependencies..."
 HOOK_PATH="$TARGET_REPO/.git/hooks/post-commit"
 cat > "$HOOK_PATH" << 'EOF'
 #!/bin/bash
+if [ -n "$GITMIND_RUNNING" ]; then exit 0; fi
+export GITMIND_RUNNING=1
 GITMIND_DIR="$(git rev-parse --show-toplevel)/.gitmind"
 if [ ! -d "$GITMIND_DIR" ]; then exit 0; fi
 VENV="$GITMIND_DIR/venv"

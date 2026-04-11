@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Guard against re-entry: the amend below would trigger this hook again
+# without this check, causing an infinite loop.
+if [ -n "$GITMIND_RUNNING" ]; then
+    exit 0
+fi
+export GITMIND_RUNNING=1
+
 GITMIND_DIR="$(git rev-parse --show-toplevel)/.gitmind"
 
 if [ ! -d "$GITMIND_DIR" ]; then
@@ -15,8 +22,7 @@ else
     python3 "$ENGINE"
 fi
 
-# Amend the commit to include updated metadata.json.
-# --no-verify prevents this hook from firing again on the amend.
+# Amend the commit to include the updated metadata.json.
 REPO_ROOT="$(git rev-parse --show-toplevel)"
 if [ -f "$REPO_ROOT/metadata.json" ]; then
     git add "$REPO_ROOT/metadata.json"
