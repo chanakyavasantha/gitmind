@@ -1,4 +1,4 @@
-.gitmind/venv/
+.gitmind/
 __pycache__/
 *.pyc
 .env

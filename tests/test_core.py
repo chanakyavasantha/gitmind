@@ -158,3 +158,52 @@ def test_coerce_fills_files_touched_from_fallback():
     }
     result = _coerce(parsed, ["fallback.py"])
     assert "fallback.py" in result["files_touched"]
+
+
+def test_coerce_filters_hallucinated_action_paths():
+    parsed = {
+        "what_changed": "x",
+        "why_it_likely_changed": "y",
+        "feature_name": "feat",
+        "is_new_feature": False,
+        "impact": "z",
+        "files_touched": [
+            "core/llm.py",
+            "actions/checkout@v4",
+            "uses: actions/setup-python@v5",
+        ],
+    }
+    result = _coerce(parsed, ["core/llm.py"])
+    assert "actions/checkout@v4" not in result["files_touched"]
+    assert "core/llm.py" in result["files_touched"]
+
+
+def test_coerce_enforces_max_four_word_feature_name():
+    parsed = {
+        "what_changed": "x",
+        "why_it_likely_changed": "y",
+        "feature_name": "one_two_three_four_five_six",
+        "is_new_feature": False,
+        "impact": "z",
+        "files_touched": [],
+    }
+    result = _coerce(parsed, [])
+    parts = result["feature_name"].split("_")
+    assert len(parts) <= 4
+
+
+def test_build_diff_section_uses_file_list_for_large_diffs():
+    from llm import _build_diff_section
+
+    large_diff = "x" * 4000
+    section = _build_diff_section(large_diff, ["a.py", "b.py"])
+    assert "a.py" in section
+    assert "large" in section.lower()
+
+
+def test_build_diff_section_uses_full_diff_for_small_diffs():
+    from llm import _build_diff_section
+
+    small_diff = "small diff content"
+    section = _build_diff_section(small_diff, ["a.py"])
+    assert "small diff content" in section

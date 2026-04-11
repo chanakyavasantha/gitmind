@@ -34,7 +34,7 @@ def get_changed_files() -> list[str]:
     raw = result.stdout.strip()
     if not raw:
         return []
-    return raw.split("\n")
+    return [f for f in raw.split("\n") if f.strip()]
 
 
 def get_commit_message() -> str:
