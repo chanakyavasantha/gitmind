@@ -1,0 +1,16 @@
+#!/bin/bash
+
+GITMIND_DIR="$(git rev-parse --show-toplevel)/.gitmind"
+
+if [ ! -d "$GITMIND_DIR" ]; then
+    exit 0
+fi
+
+VENV="$GITMIND_DIR/venv"
+ENGINE="$GITMIND_DIR/core/engine.py"
+
+if [ -f "$VENV/bin/python" ]; then
+    "$VENV/bin/python" "$ENGINE"
+else
+    python3 "$ENGINE"
+fi
