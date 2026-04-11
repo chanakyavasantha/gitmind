@@ -2,7 +2,9 @@ import json
 import os
 from datetime import datetime
 
-METADATA_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "metadata.json")
+METADATA_PATH = os.path.join(
+    os.path.dirname(os.path.dirname(__file__)), "metadata.json"
+)
 
 
 def load() -> dict:
@@ -29,7 +31,7 @@ def update(summary: dict, commit_hash: str = "") -> dict:
             "still_active": True,
             "last_built_upon": now,
             "is_new_feature": summary.get("is_new_feature", False),
-            "commit_count": 0
+            "commit_count": 0,
         }
 
     entry = data["features"][feature]
@@ -42,11 +44,7 @@ def update(summary: dict, commit_hash: str = "") -> dict:
     entry["still_active"] = True
     entry["commit_count"] = entry.get("commit_count", 0) + 1
 
-    data["history"].append({
-        "commit_hash": commit_hash,
-        "timestamp": now,
-        **summary
-    })
+    data["history"].append({"commit_hash": commit_hash, "timestamp": now, **summary})
 
     save(data)
     return data

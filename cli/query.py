@@ -25,7 +25,9 @@ def cmd_features():
         return
     for name, info in features.items():
         status = "active" if info.get("still_active") else "stale"
-        print(f"  {name} [{status}] — {info.get('commit_count', 0)} commits, last touched {info.get('last_built_upon', 'unknown')[:10]}")
+        print(
+            f"  {name} [{status}] — {info.get('commit_count', 0)} commits, last touched {info.get('last_built_upon', 'unknown')[:10]}"
+        )
 
 
 def cmd_files(feature_name):
@@ -61,7 +63,9 @@ def cmd_stale(days=90):
         last_dt = datetime.fromisoformat(last)
         if last_dt < cutoff:
             found = True
-            print(f"  {name} — last touched {last[:10]}, files: {info.get('files_touched', [])}")
+            print(
+                f"  {name} — last touched {last[:10]}, files: {info.get('files_touched', [])}"
+            )
     if not found:
         print("  None found.")
 

@@ -48,7 +48,7 @@ def _extract_json(text: str) -> str:
         elif ch == "}":
             depth -= 1
             if depth == 0:
-                return text[start:i + 1]
+                return text[start : i + 1]
     return text[start:]
 
 
@@ -80,22 +80,18 @@ def _coerce(parsed: dict, changed_files: list) -> dict:
     return parsed
 
 
-def analyze_diff(diff: str, commit_message: str = "", changed_files: list = None) -> dict:
+def analyze_diff(
+    diff: str, commit_message: str = "", changed_files: list = None
+) -> dict:
     prompt = PROMPT_TEMPLATE.format(
-        commit_message=commit_message or "not provided",
-        diff=diff[:4000]
+        commit_message=commit_message or "not provided", diff=diff[:4000]
     )
 
     try:
         response = requests.post(
             OLLAMA_URL,
-            json={
-                "model": MODEL,
-                "prompt": prompt,
-                "stream": False,
-                "format": "json"
-            },
-            timeout=90
+            json={"model": MODEL, "prompt": prompt, "stream": False, "format": "json"},
+            timeout=90,
         )
         response.raise_for_status()
         raw = response.json()["response"]

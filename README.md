@@ -1,5 +1,13 @@
 # gitmind
 
+> Git remembers what changed. This remembers why.
+
+![CI](https://github.com/chanakyavasantha/gitmind/actions/workflows/ci.yml/badge.svg)
+![License](https://img.shields.io/github/license/chanakyavasantha/gitmind)
+![Python](https://img.shields.io/badge/python-3.9+-blue.svg)
+![Ollama](https://img.shields.io/badge/LLM-Ollama-black)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
+
 **Semantic version control.** Git tells you what changed — gitmind tells you why, and what's safe to remove.
 
 Every commit is automatically analyzed by a local LLM (Ollama + deepseek-coder) and stored as structured metadata alongside your code. No API costs. No external services. Works with any editor.
@@ -8,11 +16,14 @@ Every commit is automatically analyzed by a local LLM (Ollama + deepseek-coder) 
 
 ## The Problem
 
-Git log tells you files and diffs. It doesn't tell you:
-- Which feature does this file belong to?
-- Is this code still active or dead?
-- What changed in auth over the last 3 months?
-- Is it safe to delete this module?
+```bash
+git log --oneline
+a3f92b1 fix auth
+9c21d44 update middleware
+3b891ef refactor
+```
+
+This tells you nothing useful. Which feature does `middleware.py` belong to? Is it still active? What's safe to delete after 6 months?
 
 gitmind answers all of that.
 
@@ -34,84 +45,31 @@ metadata.json   →  semantic summary stored in repo
 query.py        →  CLI to query features, files, staleness
 ```
 
-On every commit, gitmind:
-1. Reads the git diff
-2. Sends it to a local LLM with a structured prompt
-3. Gets back: feature name, what changed, why, impact, files touched
-4. Appends to `metadata.json` in the repo
-
----
-
-## Test Results
-
-Tested on the gitmind repo itself during initial development. Here's what the system captured across 4 real commits:
-
-**Commit 1** — Initial scaffold (root commit, no parent diff — handled gracefully via `git show HEAD` fallback)
-
-**Commit 2** — First commit diff detection issue
-```json
-{
-  "what_changed": "No diff found — skipping metadata update.",
-  "feature_name": "first_commit_handling"
-}
-```
-Revealed: `git diff HEAD~1 HEAD` fails on root commits. Fixed with `_is_first_commit()` guard.
-
-**Commit 3** — JSON parsing failure
-The model (`deepseek-coder`) returned JSON with `//` comments and trailing garbage text when given an open-ended prompt. Fixed by:
-- Adding `format: "json"` to the Ollama API request (forces valid JSON mode)
-- Adding `_extract_json()` to strip markdown fences
-- Adding `_coerce()` to fix wrong field types (e.g., list where string expected)
-
-**Commit 4** — First successful end-to-end run
-```json
-{
-  "features": {
-    "json_format_enforcement": {
-      "introduced": "2026-04-10T20:08:41",
-      "files_touched": ["core/llm.py"],
-      "still_active": true,
-      "last_built_upon": "2026-04-10T20:08:41",
-      "commit_count": 1
-    }
-  }
-}
-```
-Hook ran, LLM analyzed the diff, metadata written — full pipeline confirmed working.
-
-**Key finding:** `deepseek-coder` needs `format: "json"` enforced, otherwise it outputs commentary inside JSON. With it enforced, output is clean and parseable.
-
 ---
 
 ## Quick Start
 
-### Prerequisites
-
 ```bash
-# Install Ollama (Mac)
+# 1. Install Ollama and pull the model
 curl -fsSL https://ollama.ai/install.sh | sh
 ollama serve
 ollama pull deepseek-coder
+
+# 2. Clone gitmind and install into your repo
+git clone https://github.com/chanakyavasantha/gitmind
+bash gitmind/hooks/install.sh /path/to/your/repo
+
+# 3. Make a commit — gitmind runs automatically
+cd /path/to/your/repo
+git commit -m "add rate limiting to login"
 ```
 
-### Install into any git repo
-
-```bash
-# Clone gitmind
-git clone https://github.com/yourusername/gitmind
-cd gitmind
-
-# Install the hook into a target repo
-bash hooks/install.sh /path/to/your/repo
+Output:
 ```
-
-### Install into the current repo
-
-```bash
-bash hooks/install.sh .
+[gitmind] Analyzing commit...
+[gitmind] Feature tracked: auth_rate_limiting
+[gitmind] Added rate limiting to the login endpoint
 ```
-
-That's it. The next `git commit` in that repo will trigger gitmind automatically.
 
 ---
 
@@ -121,15 +79,60 @@ That's it. The next `git commit` in that repo will trigger gitmind automatically
 # List all tracked features
 python3 cli/query.py features
 
-# Files touched by a specific feature
+# Files touched by a feature
 python3 cli/query.py files auth_middleware
 
 # Full semantic commit history
 python3 cli/query.py history
 
-# Features with no activity in 90 days (stale/dead code)
+# Dead code candidates — no activity in 90 days
 python3 cli/query.py stale --days 90
 ```
+
+---
+
+## Metadata Schema
+
+```json
+{
+  "features": {
+    "auth_middleware": {
+      "introduced": "2026-04-10T20:00:00",
+      "files_touched": ["src/auth.py", "src/middleware.py"],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T20:00:00",
+      "commit_count": 7
+    }
+  },
+  "history": [
+    {
+      "commit_hash": "4f2a91c",
+      "timestamp": "2026-04-10T20:00:00",
+      "what_changed": "Added JWT expiry validation",
+      "why_it_likely_changed": "Security requirement to reject expired tokens",
+      "feature_name": "auth_middleware",
+      "impact": "All protected routes now reject expired tokens",
+      "files_touched": ["src/auth.py"]
+    }
+  ]
+}
+```
+
+---
+
+## Test Results
+
+Tested on the gitmind repo itself during initial development:
+
+| Commit | Hook result | Finding |
+|--------|-------------|---------|
+| Initial scaffold | `No diff found` — skipped | Root commit has no `HEAD~1` — fixed with `git show HEAD` fallback |
+| First-commit fix | JSON parse error | `deepseek-coder` outputs `//` comments — fixed with `format: "json"` |
+| Format enforcement | Parse error still | Field type mismatches — fixed with `_extract_json()` + `_coerce()` |
+| Robust parser | **Feature tracked: gitmind** | First clean end-to-end run |
+| README + truncation | **Feature tracked: gitmind** | Feature names clean, files correct |
+
+**Key finding:** `deepseek-coder` requires `format: "json"` in the Ollama request to produce parseable output.
 
 ---
 
@@ -147,39 +150,10 @@ gitmind/
 │   └── install.sh        # copies gitmind into any repo, installs hook
 ├── cli/
 │   └── query.py          # CLI query tool
-├── metadata.json         # auto-generated — do not edit manually
+├── tests/
+│   └── test_core.py      # pytest suite
+├── docs/                 # MkDocs documentation
 └── requirements.txt
-```
-
----
-
-## Metadata Schema
-
-```json
-{
-  "features": {
-    "feature_name": {
-      "introduced": "2026-04-10T20:00:00",
-      "files_touched": ["src/auth.py", "src/middleware.py"],
-      "still_active": true,
-      "last_built_upon": "2026-04-10T20:00:00",
-      "is_new_feature": false,
-      "commit_count": 7
-    }
-  },
-  "history": [
-    {
-      "commit_hash": "abc1234",
-      "timestamp": "2026-04-10T20:00:00",
-      "what_changed": "Added JWT expiry validation",
-      "why_it_likely_changed": "Security requirement to reject expired tokens",
-      "feature_name": "auth_middleware",
-      "is_new_feature": false,
-      "impact": "All protected routes now reject expired tokens",
-      "files_touched": ["src/auth.py"]
-    }
-  ]
-}
 ```
 
 ---
@@ -191,10 +165,12 @@ gitmind/
 | 1 | Core hook — diff → LLM → metadata.json | ✅ Done |
 | 2 | Feature grouping across commits | Planned |
 | 3 | Staleness detection + removal planner | Planned |
-| 4 | Team support — Husky, dotenv, large diff chunking | Planned |
-| 5 | SQLite + ChromaDB for semantic search | Planned |
+| 4 | Team support — Husky, large diff chunking | Planned |
+| 5 | SQLite + ChromaDB semantic search | Planned |
 | 6 | VS Code extension + Claude Code integration | Planned |
 | 7 | Open source launch | Planned |
+
+Full roadmap: [docs/roadmap.md](docs/roadmap.md)
 
 ---
 
@@ -202,12 +178,19 @@ gitmind/
 
 - **Free** — no API costs per commit
 - **Private** — your code never leaves your machine
-- **Fast** — no network latency after model load
-- **Offline** — works without internet
-
-Cloud LLM support (Anthropic, OpenAI) is on the roadmap for teams that prefer it.
+- **Offline** — works without internet after model pull
 
 ---
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+```bash
+pip install pytest black
+pytest tests/ -v
+black core/ cli/
+```
 
 ## License
 
