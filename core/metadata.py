@@ -2,8 +2,10 @@ import json
 import os
 from datetime import datetime
 
+
 def _repo_root() -> str:
     import subprocess
+
     result = subprocess.run(
         ["git", "rev-parse", "--show-toplevel"], capture_output=True, text=True
     )
