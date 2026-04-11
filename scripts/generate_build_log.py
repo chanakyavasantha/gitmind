@@ -38,8 +38,10 @@ def render(metadata: dict) -> str:
     lines = [
         "# Build Log",
         "",
-        "This page is **auto-generated** from `metadata.json` on every push.",
-        "It shows everything gitmind has tracked about its own development.",
+        "This page is generated automatically from `metadata.json` on every push — the tool is documenting itself.",
+        "",
+        "Every entry below was written by gitmind analyzing its own commits via a local LLM (Ollama + deepseek-coder).",
+        "No human wrote these summaries. The feature names, file lists, and change descriptions are all LLM output.",
         "",
         "---",
         "",

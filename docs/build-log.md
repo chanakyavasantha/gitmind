@@ -1,7 +1,9 @@
 # Build Log
 
-This page is **auto-generated** from `metadata.json` on every push.
-It shows everything gitmind has tracked about its own development.
+This page is generated automatically from `metadata.json` on every push — the tool is documenting itself.
+
+Every entry below was written by gitmind analyzing its own commits via a local LLM (Ollama + deepseek-coder).
+No human wrote these summaries. The feature names, file lists, and change descriptions are all LLM output.
 
 ---
 
@@ -9,72 +11,100 @@ It shows everything gitmind has tracked about its own development.
 
 | Feature | Status | Commits | Introduced | Last Active |
 |---------|--------|---------|------------|-------------|
-| `remove_gitmind` | ✅ active | 1 | 2026-04-10 21:48 | 2026-04-10 21:48 |
-| `handle_errors` | ✅ active | 1 | 2026-04-10 21:45 | 2026-04-10 21:45 |
+| `pin_black` | ✅ active | 1 | 2026-04-10 22:40 | 2026-04-10 22:40 |
+| `amend_loop_guard` | ✅ active | 1 | 2026-04-10 22:25 | 2026-04-10 22:25 |
+| `auto_build_log_generation` | ✅ active | 1 | 2026-04-10 22:00 | 2026-04-10 22:00 |
+| `metadata_quality_fixes` | ✅ active | 1 | 2026-04-10 21:48 | 2026-04-10 21:48 |
+| `graceful_error_handling` | ✅ active | 1 | 2026-04-10 21:45 | 2026-04-10 21:45 |
+| `build_log_doc` | ✅ active | 1 | 2026-04-10 20:30 | 2026-04-10 20:30 |
 | `docs_deployment` | ✅ active | 1 | 2026-04-10 20:22 | 2026-04-10 20:22 |
-| `diff_reader_getlatestdifference_method` | ✅ active | 1 | 2026-04-10 20:21 | 2026-04-10 20:21 |
-| `gitmind` | ✅ active | 1 | 2026-04-10 20:10 | 2026-04-10 20:10 |
-| `_use_json__is_used_as_it_might_be_beneficial_for_handling_json_data_manipulation_tasks_or_similar_actions_more_efficiently_` | ✅ active | 1 | 2026-04-10 20:08 | 2026-04-10 20:08 |
+| `repo_professionalisation` | ✅ active | 1 | 2026-04-10 20:21 | 2026-04-10 20:21 |
+| `feature_name_sanitization` | ✅ active | 1 | 2026-04-10 20:15 | 2026-04-10 20:15 |
+| `json_format_enforcement` | ✅ active | 1 | 2026-04-10 20:10 | 2026-04-10 20:10 |
+| `json_parsing_robustness` | ✅ active | 1 | 2026-04-10 20:08 | 2026-04-10 20:08 |
+| `first_commit_handling` | ✅ active | 1 | 2026-04-10 20:05 | 2026-04-10 20:05 |
+| `core_engine` | ✅ active | 1 | 2026-04-10 20:00 | 2026-04-10 20:00 |
 
 ---
 
 ## Files Per Feature
 
-**`_use_json__is_used_as_it_might_be_beneficial_for_handling_json_data_manipulation_tasks_or_similar_actions_more_efficiently_`**
+**`amend_loop_guard`**
 
-- `core/llm.py`
+- `hooks/post-commit`
+- `hooks/install.sh`
 
-**`diff_reader_getlatestdifference_method`**
+**`auto_build_log_generation`**
 
-- `.github/ISSUE_TEMPLATE/bug_report.md`
-- `.github/ISSUE_TEMPLATE/feature_request.md`
-- `.github/PULL_REQUEST_TEMPLATE.md`
-- `.github/workflows/ci.yml`
+- `scripts/generate_build_log.py`
 - `.github/workflows/docs.yml`
-- `.github/workflows/release.yml`
-- `.gitmind/core/diff_reader.py`
-- `.gitmind/core/engine.py`
-- `.gitmind/core/llm.py`
-- `.gitmind/core/metadata.py`
-- `.gitmind/metadata.json`
-- `CHANGELOG.md`
-- `CONTRIBUTING.md`
-- `LICENSE`
-- `README.md`
-- `cli/query.py`
+- `core/metadata.py`
+- `metadata.json`
+
+**`build_log_doc`**
+
+- `docs/build-log.md`
+- `mkdocs.yml`
+
+**`core_engine`**
+
 - `core/diff_reader.py`
-- `core/engine.py`
 - `core/llm.py`
 - `core/metadata.py`
-- `docs/cli-reference.md`
-- `docs/how-it-works.md`
-- `docs/index.md`
-- `docs/quickstart.md`
-- `docs/roadmap.md`
-- `mkdocs.yml`
-- `requirements.txt`
-- `tests/test_core.py`
+- `core/engine.py`
+- `hooks/post-commit`
+- `hooks/install.sh`
+- `cli/query.py`
 
 **`docs_deployment`**
 
-- `README.md`
-- `actions/checkout@v4`
+- `.github/workflows/docs.yml`
 
-**`gitmind`**
+**`feature_name_sanitization`**
 
-- `.gitmind/core/llm.py`
-- `README.md`
 - `core/llm.py`
+- `README.md`
 
-**`handle_errors`**
+**`first_commit_handling`**
+
+- `core/diff_reader.py`
+- `.gitignore`
+
+**`graceful_error_handling`**
 
 - `core/engine.py`
-- `llm`
+- `core/llm.py`
 
-**`remove_gitmind`**
+**`json_format_enforcement`**
 
-- `./.gitignore`
-- `/core/diff_reader.py`
+- `core/llm.py`
+
+**`json_parsing_robustness`**
+
+- `core/llm.py`
+
+**`metadata_quality_fixes`**
+
+- `core/llm.py`
+- `core/diff_reader.py`
+- `tests/test_core.py`
+- `.gitignore`
+
+**`pin_black`**
+
+- `.github/workflows/ci.yml`
+- `pyproject.toml`
+
+**`repo_professionalisation`**
+
+- `.github/workflows/ci.yml`
+- `.github/workflows/docs.yml`
+- `.github/workflows/release.yml`
+- `docs/`
+- `tests/test_core.py`
+- `CONTRIBUTING.md`
+- `CHANGELOG.md`
+- `LICENSE`
 
 ---
 
@@ -82,31 +112,87 @@ It shows everything gitmind has tracked about its own development.
 
 Most recent first.
 
+### `a9921c1` — 2026-04-10 22:40
+
+**Feature:** `pin_black`
+
+**What changed:** Pinned black==25.1.0 in CI and added pyproject.toml with target-version=py39 to get consistent formatting across Python versions.
+
+**Why:** CI was installing the latest black which produced different output than local Python 3.9, causing repeated check failures.
+
+**Impact:** CI black check is now deterministic — same output on Python 3.9 locally and Python 3.11 in CI.
+
+**Files:** `.github/workflows/ci.yml`, `pyproject.toml`
+
+---
+
+### `6814f6e` — 2026-04-10 22:25
+
+**Feature:** `amend_loop_guard`
+
+**What changed:** Added GITMIND_RUNNING env var guard to post-commit hook to prevent the metadata amend from triggering the hook again infinitely.
+
+**Why:** --no-verify skips pre-commit and commit-msg hooks but not post-commit, causing an infinite amend loop.
+
+**Impact:** Hook now runs exactly once per commit. metadata.json is included in the same commit automatically.
+
+**Files:** `hooks/post-commit`, `hooks/install.sh`
+
+---
+
+### `1c52311` — 2026-04-10 22:00
+
+**Feature:** `auto_build_log_generation` *(new)*
+
+**What changed:** Added scripts/generate_build_log.py which reads metadata.json and generates docs/build-log.md automatically on every push via docs.yml.
+
+**Why:** The hand-written build log would go stale — needed it to update from real metadata on every deploy.
+
+**Impact:** The Build Log page on the docs site now reflects live metadata on every push.
+
+**Files:** `scripts/generate_build_log.py`, `.github/workflows/docs.yml`, `core/metadata.py`, `metadata.json`
+
+---
+
 ### `201839b` — 2026-04-10 21:48
 
-**Feature:** `remove_gitmind` *(new)*
+**Feature:** `metadata_quality_fixes`
 
-**What changed:** The .gitignore file is deleted.
+**What changed:** Removed .gitmind/ from git tracking, added large-diff chunking, enforced 4-word feature name limit, and filtered hallucinated file paths from LLM output.
 
-**Why:** .gitmind was initially set up. The delete action of this feature suggests a need to cleanup after the initial setup for new features or changes in existing codebase, especially when dealing with larger projects and environments like git mind's current implementation where all files are tracked.
+**Why:** Four distinct quality issues identified: .gitmind committed, bad feature names, LLM overwhelmed by large diffs, fake paths like actions/checkout@v4 in files_touched.
 
-**Impact:** .gitmind is an internal tool used by GitMind. It tracks changes in the codebase and helps to analyze them with a user defined set of rules as described above.
+**Impact:** Metadata is now cleaner, .gitmind/ is local-only, and large commits get summarised by file list instead of raw diff.
 
-**Files:** `./.gitignore`, `/core/diff_reader.py`
+**Files:** `core/llm.py`, `core/diff_reader.py`, `tests/test_core.py`, `.gitignore`
 
 ---
 
 ### `ac5957f` — 2026-04-10 21:45
 
-**Feature:** `handle_errors` *(new)*
+**Feature:** `graceful_error_handling`
 
-**What changed:** Fixed graceful error handling for Ollama timeout and connection errors
+**What changed:** Wrapped LLM call in try/except so Ollama timeouts and connection errors print a one-liner instead of a 30-line traceback.
 
-**Why:** Ollama now correctly handles different types of exceptions in a more efficient way.
+**Why:** Ollama went idle between commits and the hook printed a full stack trace into the terminal.
 
-**Impact:** The change significantly improves the reliability of our application by handling edge cases and errors gracefully. This also makes it easier for users to understand what went wrong when an error occurs in a request.
+**Impact:** Hook failures are now silent and non-blocking — the commit still succeeds.
 
-**Files:** `core/engine.py`, `llm`
+**Files:** `core/engine.py`, `core/llm.py`
+
+---
+
+### `3644106` — 2026-04-10 20:30
+
+**Feature:** `build_log_doc` *(new)*
+
+**What changed:** Added a hand-written build log doc capturing the full development story: every commit, what broke, and what gitmind said about itself.
+
+**Why:** New users landing on the repo needed to understand how the project evolved and that the tool was tested on itself.
+
+**Impact:** The Build Log page shows gitmind's own self-documented history.
+
+**Files:** `docs/build-log.md`, `mkdocs.yml`
 
 ---
 
@@ -114,50 +200,98 @@ Most recent first.
 
 **Feature:** `docs_deployment`
 
-**What changed:** The commit message changed the workflow from 'fix' to 'add contents:write permission and git config for docs deploy bot'. It also added a new section about permissions.
+**What changed:** Added contents:write permission and git config to allow the GitHub Actions bot to push to the gh-pages branch.
 
-**Impact:** The feature of git config for docs deployment has been implemented to prevent permission issues when deploying documentation.
+**Why:** The docs workflow failed with a 403 — the bot lacked push permission.
 
-**Files:** `README.md`, `actions/checkout@v4`
+**Impact:** Docs now deploy successfully to GitHub Pages on every push to main.
+
+**Files:** `.github/workflows/docs.yml`
 
 ---
 
 ### `d84525a` — 2026-04-10 20:21
 
-**Feature:** `diff_reader_getlatestdifference_method`
+**Feature:** `repo_professionalisation` *(new)*
 
-**What changed:** [feat]: professional repo setup - CI/CD workflows, MkDocs docs, pytest suite (12 tests), black formatting. CONTRIBUTING, CHANGELOG, LICENSE
+**What changed:** Added CI/CD workflows, MkDocs Material docs site, 12-test pytest suite, black formatting, CONTRIBUTING, CHANGELOG, LICENSE, and GitHub issue templates.
 
-**Why:** [enhancement] Suggest an idea for gitmind
+**Why:** Needed the repo to look credible for open source release.
 
-**Files:** `.github/ISSUE_TEMPLATE/bug_report.md`, `.github/ISSUE_TEMPLATE/feature_request.md`, `.github/PULL_REQUEST_TEMPLATE.md`, `.github/workflows/ci.yml`, `.github/workflows/docs.yml`, `.github/workflows/release.yml`, `.gitmind/core/diff_reader.py`, `.gitmind/core/engine.py`, `.gitmind/core/llm.py`, `.gitmind/core/metadata.py`, `.gitmind/metadata.json`, `CHANGELOG.md`, `CONTRIBUTING.md`, `LICENSE`, `README.md`, `cli/query.py`, `core/diff_reader.py`, `core/engine.py`, `core/llm.py`, `core/metadata.py`, `docs/cli-reference.md`, `docs/how-it-works.md`, `docs/index.md`, `docs/quickstart.md`, `docs/roadmap.md`, `mkdocs.yml`, `requirements.txt`, `tests/test_core.py`
+**Impact:** Every PR now gets a CI check; docs auto-deploy to GitHub Pages on every push to main.
 
----
-
-### `0de4d70` — 2026-04-10 20:10
-
-**Feature:** `gitmind`
-
-**What changed:** 'feat' add README with test findings, 'fix' feature name truncation to 40 chars
-
-**Why:** no changes according to codebase - seems like a new release or versioning issue in the project documentation.
-
-**Files:** `.gitmind/core/llm.py`, `README.md`, `core/llm.py`
+**Files:** `.github/workflows/ci.yml`, `.github/workflows/docs.yml`, `.github/workflows/release.yml`, `docs/`, `tests/test_core.py`, `CONTRIBUTING.md`, `CHANGELOG.md`, `LICENSE`
 
 ---
 
-### `08fe52f` — 2026-04-10 20:08
+### `0de4d70` — 2026-04-10 20:15
 
-**Feature:** `_use_json__is_used_as_it_might_be_beneficial_for_handling_json_data_manipulation_tasks_or_similar_actions_more_efficiently_` *(new)*
+**Feature:** `feature_name_sanitization`
 
-**What changed:** The git diff has been analyzed and returned in JSON format.
+**What changed:** Capped feature names at 4 words / 40 chars with underscore collapsing, and added the README with real test findings.
 
-**Why:** This change likely leads to the addition of a new feature based on user input
+**Why:** The model was generating 90-character feature names that were unreadable.
 
-**Impact:** New features are being introduced to handle JSON related operations better and consistently.
+**Impact:** Feature names are now short, readable snake_case identifiers.
+
+**Files:** `core/llm.py`, `README.md`
+
+---
+
+### `08fe52f` — 2026-04-10 20:10
+
+**Feature:** `json_format_enforcement`
+
+**What changed:** Added format:json to the Ollama API request to constrain the model's output tokenizer to valid JSON only.
+
+**Why:** Without it, deepseek-coder appended // comments and trailing prose — both invalid JSON.
+
+**Impact:** First successful end-to-end run: hook fired, LLM analyzed diff, metadata written cleanly.
 
 **Files:** `core/llm.py`
 
 ---
 
-*Generated at 2026-04-11 01:52 UTC from `metadata.json`*
+### `2f91e1d` — 2026-04-10 20:08
+
+**Feature:** `json_parsing_robustness`
+
+**What changed:** Added _extract_json() to strip markdown fences and _coerce() to fix wrong field types returned by the LLM.
+
+**Why:** deepseek-coder returned arrays where strings were expected and wrapped output in markdown code blocks.
+
+**Impact:** Parser now survives malformed LLM responses without crashing.
+
+**Files:** `core/llm.py`
+
+---
+
+### `ffaff32` — 2026-04-10 20:05
+
+**Feature:** `first_commit_handling`
+
+**What changed:** Fixed the root commit edge case where git diff HEAD~1 HEAD fails with no parent, and added .gitignore to exclude the venv.
+
+**Why:** The initial commit had no HEAD~1 to diff against — the hook silently skipped it.
+
+**Impact:** gitmind now handles the very first commit in any repo using git show HEAD as a fallback.
+
+**Files:** `core/diff_reader.py`, `.gitignore`
+
+---
+
+### `6e78acd` — 2026-04-10 20:00
+
+**Feature:** `core_engine` *(new)*
+
+**What changed:** Built the initial gitmind pipeline: diff reader, Ollama LLM analyzer, metadata writer, CLI query tool, and install hook.
+
+**Why:** Project inception — needed a working end-to-end proof of concept.
+
+**Impact:** Every git commit in an instrumented repo now triggers semantic analysis automatically.
+
+**Files:** `core/diff_reader.py`, `core/llm.py`, `core/metadata.py`, `core/engine.py`, `hooks/post-commit`, `hooks/install.sh`, `cli/query.py`
+
+---
+
+*Generated at 2026-04-11 03:02 UTC from `metadata.json`*
