@@ -26,9 +26,14 @@ def run():
 
     print("[gitmind] Analyzing commit...")
 
-    summary = analyze_diff(
-        diff, commit_message=commit_message, changed_files=changed_files
-    )
+    try:
+        summary = analyze_diff(
+            diff, commit_message=commit_message, changed_files=changed_files
+        )
+    except RuntimeError as e:
+        print(f"[gitmind] Skipped — {e}")
+        return
+
     update(summary, commit_hash=commit_hash)
 
     print(f"[gitmind] Feature tracked: {summary.get('feature_name', 'unknown')}")

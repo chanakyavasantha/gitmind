@@ -102,5 +102,7 @@ def analyze_diff(
 
     except requests.exceptions.ConnectionError:
         raise RuntimeError("Ollama is not running. Start it with: ollama serve")
+    except requests.exceptions.ReadTimeout:
+        raise RuntimeError("Ollama timed out — model may be loading, try again")
     except json.JSONDecodeError as e:
         raise RuntimeError(f"LLM returned invalid JSON: {e}\nRaw output: {raw}")
