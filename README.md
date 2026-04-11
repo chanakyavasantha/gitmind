@@ -16,9 +16,7 @@ Every commit is automatically analyzed by a local LLM (Ollama + deepseek-coder) 
 
 ## Demo
 
-<!-- demo GIF goes here — run scripts/record_demo.sh to generate it -->
-> Record your own demo: `bash scripts/record_demo.sh`
-> Requires asciinema (`brew install asciinema`) and agg for GIF conversion.
+![gitmind demo](docs/demo.gif)
 
 ---
 
