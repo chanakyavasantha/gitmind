@@ -11,25 +11,27 @@ No human wrote these summaries. The feature names, file lists, and change descri
 
 | Feature | Status | Commits | Introduced | Last Active |
 |---------|--------|---------|------------|-------------|
+| `qwen2_5_coder_update` | ✅ active | 1 | 2026-04-10 23:38 | 2026-04-10 23:38 |
+| `model_update` | ✅ active | 1 | 2026-04-10 23:38 | 2026-04-10 23:38 |
 | `reindex_commits_llm` | ✅ active | 1 | 2026-04-10 23:22 | 2026-04-10 23:22 |
-| `demo_gif` | ✅ active | 1 | 2026-04-10 23:17 | 2026-04-10 23:17 |
-| `documentation_and_demo_recording` | ✅ active | 1 | 2026-04-10 23:02 | 2026-04-10 23:02 |
+| `demo_content` | ✅ active | 1 | 2026-04-10 23:17 | 2026-04-10 23:17 |
+| `demo_generation` | ✅ active | 1 | 2026-04-10 23:02 | 2026-04-10 23:02 |
 | `pin_black` | ✅ active | 1 | 2026-04-10 22:46 | 2026-04-10 22:46 |
 | `pin_to_py39` | ✅ active | 1 | 2026-04-10 22:31 | 2026-04-10 22:31 |
 | `post_commit_guard` | ✅ active | 1 | 2026-04-10 22:25 | 2026-04-10 22:25 |
-| `metadata_commit_amendment` | ✅ active | 1 | 2026-04-10 22:14 | 2026-04-10 22:14 |
-| `black_ci_update` | ✅ active | 1 | 2026-04-10 22:04 | 2026-04-10 22:04 |
+| `commit_amendment` | ✅ active | 1 | 2026-04-10 22:14 | 2026-04-10 22:14 |
+| `black_code_style_check` | ✅ active | 1 | 2026-04-10 22:04 | 2026-04-10 22:04 |
 | `code_formatting` | ✅ active | 1 | 2026-04-10 21:59 | 2026-04-10 21:59 |
 | `auto_build_log` | ✅ active | 1 | 2026-04-10 21:53 | 2026-04-10 21:53 |
-| `git_cleanup` | ✅ active | 1 | 2026-04-10 21:48 | 2026-04-10 21:48 |
-| `ollama_error_handling` | ✅ active | 1 | 2026-04-10 21:45 | 2026-04-10 21:45 |
-| `build_log_documentation` | ✅ active | 1 | 2026-04-10 21:43 | 2026-04-10 21:43 |
-| `github_docs_deploy` | ✅ active | 1 | 2026-04-10 20:22 | 2026-04-10 20:22 |
+| `repo_cleanup` | ✅ active | 1 | 2026-04-10 21:48 | 2026-04-10 21:48 |
+| `error_handling_ollama` | ✅ active | 1 | 2026-04-10 21:45 | 2026-04-10 21:45 |
+| `build_log` | ✅ active | 1 | 2026-04-10 21:43 | 2026-04-10 21:43 |
+| `docs_deploy_bot_config` | ✅ active | 1 | 2026-04-10 20:22 | 2026-04-10 20:22 |
 | `repo_setup` | ✅ active | 1 | 2026-04-10 20:21 | 2026-04-10 20:21 |
 | `feature_name_truncation` | ✅ active | 1 | 2026-04-10 20:10 | 2026-04-10 20:10 |
 | `ollama_json_format` | ✅ active | 1 | 2026-04-10 20:08 | 2026-04-10 20:08 |
 | `json_parsing_refactor` | ✅ active | 1 | 2026-04-10 20:08 | 2026-04-10 20:08 |
-| `unknown` | ✅ active | 1 | 2026-04-10 20:05 | 2026-04-10 20:05 |
+| `first_commit_diff_handling` | ✅ active | 1 | 2026-04-10 20:05 | 2026-04-10 20:05 |
 | `gitmind_engine` | ✅ active | 1 | 2026-04-10 20:04 | 2026-04-10 20:04 |
 
 ---
@@ -44,11 +46,11 @@ No human wrote these summaries. The feature names, file lists, and change descri
 - `metadata.json`
 - `scripts/generate_build_log.py`
 
-**`black_ci_update`**
+**`black_code_style_check`**
 
 - `.github/workflows/ci.yml`
 
-**`build_log_documentation`**
+**`build_log`**
 
 - `docs/build-log.md`
 - `mkdocs.yml`
@@ -57,7 +59,13 @@ No human wrote these summaries. The feature names, file lists, and change descri
 
 - `core/metadata.py`
 
-**`demo_gif`**
+**`commit_amendment`**
+
+- `hooks/install.sh`
+- `hooks/post-commit`
+- `metadata.json`
+
+**`demo_content`**
 
 - `README.md`
 - `docs/build-log.md`
@@ -66,7 +74,7 @@ No human wrote these summaries. The feature names, file lists, and change descri
 - `metadata.json`
 - `scripts/generate_demo_cast.py`
 
-**`documentation_and_demo_recording`**
+**`demo_generation`**
 
 - `README.md`
 - `docs/build-log.md`
@@ -75,45 +83,39 @@ No human wrote these summaries. The feature names, file lists, and change descri
 - `scripts/generate_build_log.py`
 - `scripts/record_demo.sh`
 
+**`docs_deploy_bot_config`**
+
+- `.github/workflows/docs.yml`
+
+**`error_handling_ollama`**
+
+- `.gitmind/core/engine.py`
+- `.gitmind/core/llm.py`
+- `core/engine.py`
+- `core/llm.py`
+
 **`feature_name_truncation`**
 
 - `.gitmind/core/llm.py`
 - `README.md`
 - `core/llm.py`
 
-**`git_cleanup`**
+**`first_commit_diff_handling`**
 
 - `.gitignore`
 - `.gitmind/core/diff_reader.py`
-- `.gitmind/core/engine.py`
-- `.gitmind/core/llm.py`
-- `.gitmind/core/metadata.py`
-- `.gitmind/metadata.json`
 - `core/diff_reader.py`
-- `core/llm.py`
-- `tests/test_core.py`
-
-**`github_docs_deploy`**
-
-- `.github/workflows/docs.yml`
 
 **`json_parsing_refactor`**
 
 - `.gitmind/core/llm.py`
 - `core/llm.py`
 
-**`metadata_commit_amendment`**
+**`model_update`**
 
-- `hooks/install.sh`
-- `hooks/post-commit`
-- `metadata.json`
-
-**`ollama_error_handling`**
-
-- `.gitmind/core/engine.py`
-- `.gitmind/core/llm.py`
-- `core/engine.py`
 - `core/llm.py`
+- `docs/build-log.md`
+- `metadata.json`
 
 **`ollama_json_format`**
 
@@ -137,11 +139,31 @@ No human wrote these summaries. The feature names, file lists, and change descri
 - `hooks/post-commit`
 - `metadata.json`
 
+**`qwen2_5_coder_update`**
+
+- `README.md`
+- `docs/index.md`
+- `docs/quickstart.md`
+- `hooks/install.sh`
+- `metadata.json`
+
 **`reindex_commits_llm`**
 
 - `docs/build-log.md`
 - `metadata.json`
 - `scripts/reindex.py`
+
+**`repo_cleanup`**
+
+- `.gitignore`
+- `.gitmind/core/diff_reader.py`
+- `.gitmind/core/engine.py`
+- `.gitmind/core/llm.py`
+- `.gitmind/core/metadata.py`
+- `.gitmind/metadata.json`
+- `core/diff_reader.py`
+- `core/llm.py`
+- `tests/test_core.py`
 
 **`repo_setup`**
 
@@ -174,716 +196,49 @@ No human wrote these summaries. The feature names, file lists, and change descri
 - `requirements.txt`
 - `tests/test_core.py`
 
-**`unknown`**
-
-- `.gitignore`
-- `.gitmind/core/diff_reader.py`
-- `.gitmind/venv/bin/Activate.ps1`
-- `.gitmind/venv/bin/activate`
-- `.gitmind/venv/bin/activate.csh`
-- `.gitmind/venv/bin/activate.fish`
-- `.gitmind/venv/bin/normalizer`
-- `.gitmind/venv/bin/pip`
-- `.gitmind/venv/bin/pip3`
-- `.gitmind/venv/bin/pip3.9`
-- `.gitmind/venv/bin/python`
-- `.gitmind/venv/bin/python3`
-- `.gitmind/venv/bin/python3.9`
-- `.gitmind/venv/lib/python3.9/site-packages/81d243bd2c585b0f4821__mypyc.cpython-39-darwin.so`
-- `.gitmind/venv/lib/python3.9/site-packages/_distutils_hack/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/_distutils_hack/override.py`
-- `.gitmind/venv/lib/python3.9/site-packages/certifi-2026.2.25.dist-info/INSTALLER`
-- `.gitmind/venv/lib/python3.9/site-packages/certifi-2026.2.25.dist-info/METADATA`
-- `.gitmind/venv/lib/python3.9/site-packages/certifi-2026.2.25.dist-info/RECORD`
-- `.gitmind/venv/lib/python3.9/site-packages/certifi-2026.2.25.dist-info/WHEEL`
-- `.gitmind/venv/lib/python3.9/site-packages/certifi-2026.2.25.dist-info/licenses/LICENSE`
-- `.gitmind/venv/lib/python3.9/site-packages/certifi-2026.2.25.dist-info/top_level.txt`
-- `.gitmind/venv/lib/python3.9/site-packages/certifi/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/certifi/__main__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/certifi/cacert.pem`
-- `.gitmind/venv/lib/python3.9/site-packages/certifi/core.py`
-- `.gitmind/venv/lib/python3.9/site-packages/certifi/py.typed`
-- `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer-3.4.7.dist-info/INSTALLER`
-- `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer-3.4.7.dist-info/METADATA`
-- `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer-3.4.7.dist-info/RECORD`
-- `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer-3.4.7.dist-info/WHEEL`
-- `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer-3.4.7.dist-info/entry_points.txt`
-- `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer-3.4.7.dist-info/licenses/LICENSE`
-- `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer-3.4.7.dist-info/top_level.txt`
-- `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer/__main__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer/api.py`
-- `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer/cd.cpython-39-darwin.so`
-- `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer/cd.py`
-- `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer/cli/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer/cli/__main__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer/constant.py`
-- `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer/legacy.py`
-- `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer/md.cpython-39-darwin.so`
-- `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer/md.py`
-- `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer/models.py`
-- `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer/py.typed`
-- `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer/utils.py`
-- `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer/version.py`
-- `.gitmind/venv/lib/python3.9/site-packages/distutils-precedence.pth`
-- `.gitmind/venv/lib/python3.9/site-packages/idna-3.11.dist-info/INSTALLER`
-- `.gitmind/venv/lib/python3.9/site-packages/idna-3.11.dist-info/METADATA`
-- `.gitmind/venv/lib/python3.9/site-packages/idna-3.11.dist-info/RECORD`
-- `.gitmind/venv/lib/python3.9/site-packages/idna-3.11.dist-info/WHEEL`
-- `.gitmind/venv/lib/python3.9/site-packages/idna-3.11.dist-info/licenses/LICENSE.md`
-- `.gitmind/venv/lib/python3.9/site-packages/idna/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/idna/codec.py`
-- `.gitmind/venv/lib/python3.9/site-packages/idna/compat.py`
-- `.gitmind/venv/lib/python3.9/site-packages/idna/core.py`
-- `.gitmind/venv/lib/python3.9/site-packages/idna/idnadata.py`
-- `.gitmind/venv/lib/python3.9/site-packages/idna/intranges.py`
-- `.gitmind/venv/lib/python3.9/site-packages/idna/package_data.py`
-- `.gitmind/venv/lib/python3.9/site-packages/idna/py.typed`
-- `.gitmind/venv/lib/python3.9/site-packages/idna/uts46data.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip-21.2.4.dist-info/INSTALLER`
-- `.gitmind/venv/lib/python3.9/site-packages/pip-21.2.4.dist-info/LICENSE.txt`
-- `.gitmind/venv/lib/python3.9/site-packages/pip-21.2.4.dist-info/METADATA`
-- `.gitmind/venv/lib/python3.9/site-packages/pip-21.2.4.dist-info/RECORD`
-- `.gitmind/venv/lib/python3.9/site-packages/pip-21.2.4.dist-info/REQUESTED`
-- `.gitmind/venv/lib/python3.9/site-packages/pip-21.2.4.dist-info/WHEEL`
-- `.gitmind/venv/lib/python3.9/site-packages/pip-21.2.4.dist-info/entry_points.txt`
-- `.gitmind/venv/lib/python3.9/site-packages/pip-21.2.4.dist-info/top_level.txt`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/__main__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/build_env.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/cache.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/cli/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/cli/autocompletion.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/cli/base_command.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/cli/cmdoptions.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/cli/command_context.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/cli/main.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/cli/main_parser.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/cli/parser.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/cli/progress_bars.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/cli/req_command.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/cli/spinners.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/cli/status_codes.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/cache.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/check.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/completion.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/configuration.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/debug.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/download.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/freeze.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/hash.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/help.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/index.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/install.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/list.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/search.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/show.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/uninstall.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/wheel.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/configuration.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/distributions/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/distributions/base.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/distributions/installed.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/distributions/sdist.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/distributions/wheel.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/exceptions.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/index/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/index/collector.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/index/package_finder.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/index/sources.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/locations/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/locations/_distutils.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/locations/_sysconfig.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/locations/base.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/main.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/metadata/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/metadata/base.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/metadata/pkg_resources.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/models/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/models/candidate.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/models/direct_url.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/models/format_control.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/models/index.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/models/link.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/models/scheme.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/models/search_scope.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/models/selection_prefs.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/models/target_python.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/models/wheel.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/network/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/network/auth.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/network/cache.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/network/download.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/network/lazy_wheel.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/network/session.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/network/utils.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/network/xmlrpc.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/operations/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/operations/build/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/operations/build/metadata.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/operations/build/metadata_legacy.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/operations/build/wheel.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/operations/build/wheel_legacy.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/operations/check.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/operations/freeze.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/operations/install/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/operations/install/editable_legacy.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/operations/install/legacy.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/operations/install/wheel.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/operations/prepare.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/pyproject.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/req/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/req/constructors.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/req/req_file.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/req/req_install.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/req/req_set.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/req/req_tracker.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/req/req_uninstall.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/resolution/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/resolution/base.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/resolution/legacy/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/resolution/legacy/resolver.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/resolution/resolvelib/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/resolution/resolvelib/base.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/resolution/resolvelib/candidates.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/resolution/resolvelib/factory.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/resolution/resolvelib/found_candidates.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/resolution/resolvelib/provider.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/resolution/resolvelib/reporter.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/resolution/resolvelib/requirements.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/resolution/resolvelib/resolver.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/self_outdated_check.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/_log.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/appdirs.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/compat.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/compatibility_tags.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/datetime.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/deprecation.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/direct_url_helpers.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/distutils_args.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/encoding.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/entrypoints.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/filesystem.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/filetypes.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/glibc.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/hashes.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/inject_securetransport.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/logging.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/misc.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/models.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/packaging.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/parallel.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/pkg_resources.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/setuptools_build.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/subprocess.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/temp_dir.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/unpacking.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/urls.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/virtualenv.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/wheel.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/vcs/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/vcs/bazaar.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/vcs/git.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/vcs/mercurial.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/vcs/subversion.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/vcs/versioncontrol.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/wheel_builder.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/appdirs.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/cachecontrol/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/cachecontrol/_cmd.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/cachecontrol/adapter.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/cachecontrol/cache.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/cachecontrol/caches/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/cachecontrol/caches/file_cache.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/cachecontrol/caches/redis_cache.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/cachecontrol/compat.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/cachecontrol/controller.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/cachecontrol/filewrapper.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/cachecontrol/heuristics.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/cachecontrol/serialize.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/cachecontrol/wrapper.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/certifi/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/certifi/__main__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/certifi/cacert.pem`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/certifi/core.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/big5freq.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/big5prober.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/chardistribution.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/charsetgroupprober.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/charsetprober.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/cli/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/cli/chardetect.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/codingstatemachine.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/compat.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/cp949prober.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/enums.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/escprober.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/escsm.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/eucjpprober.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/euckrfreq.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/euckrprober.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/euctwfreq.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/euctwprober.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/gb2312freq.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/gb2312prober.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/hebrewprober.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/jisfreq.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/jpcntx.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/langbulgarianmodel.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/langgreekmodel.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/langhebrewmodel.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/langhungarianmodel.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/langrussianmodel.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/langthaimodel.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/langturkishmodel.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/latin1prober.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/mbcharsetprober.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/mbcsgroupprober.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/mbcssm.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/metadata/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/metadata/languages.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/sbcharsetprober.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/sbcsgroupprober.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/sjisprober.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/universaldetector.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/utf8prober.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/version.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/colorama/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/colorama/ansi.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/colorama/ansitowin32.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/colorama/initialise.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/colorama/win32.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/colorama/winterm.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/_backport/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/_backport/misc.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/_backport/shutil.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/_backport/sysconfig.cfg`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/_backport/sysconfig.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/_backport/tarfile.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/compat.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/database.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/index.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/locators.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/manifest.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/markers.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/metadata.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/resources.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/scripts.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/t32.exe`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/t64.exe`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/util.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/version.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/w32.exe`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/w64.exe`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/wheel.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distro.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/_ihatexml.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/_inputstream.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/_tokenizer.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/_trie/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/_trie/_base.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/_trie/py.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/_utils.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/constants.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/filters/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/filters/alphabeticalattributes.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/filters/base.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/filters/inject_meta_charset.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/filters/lint.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/filters/optionaltags.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/filters/sanitizer.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/filters/whitespace.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/html5parser.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/serializer.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/treeadapters/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/treeadapters/genshi.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/treeadapters/sax.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/treebuilders/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/treebuilders/base.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/treebuilders/dom.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/treebuilders/etree.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/treebuilders/etree_lxml.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/treewalkers/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/treewalkers/base.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/treewalkers/dom.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/treewalkers/etree.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/treewalkers/etree_lxml.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/treewalkers/genshi.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/idna/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/idna/codec.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/idna/compat.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/idna/core.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/idna/idnadata.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/idna/intranges.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/idna/package_data.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/idna/uts46data.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/msgpack/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/msgpack/_version.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/msgpack/exceptions.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/msgpack/ext.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/msgpack/fallback.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/packaging/__about__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/packaging/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/packaging/_manylinux.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/packaging/_musllinux.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/packaging/_structures.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/packaging/markers.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/packaging/requirements.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/packaging/specifiers.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/packaging/tags.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/packaging/utils.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/packaging/version.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/pep517/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/pep517/build.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/pep517/check.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/pep517/colorlog.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/pep517/compat.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/pep517/dirtools.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/pep517/envbuild.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/pep517/in_process/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/pep517/in_process/_in_process.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/pep517/meta.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/pep517/wrappers.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/pkg_resources/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/pkg_resources/py31compat.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/progress/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/progress/bar.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/progress/counter.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/progress/spinner.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/pyparsing.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/__version__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/_internal_utils.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/adapters.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/api.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/auth.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/certs.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/compat.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/cookies.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/exceptions.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/help.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/hooks.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/models.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/packages.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/sessions.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/status_codes.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/structures.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/utils.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/resolvelib/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/resolvelib/compat/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/resolvelib/compat/collections_abc.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/resolvelib/providers.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/resolvelib/reporters.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/resolvelib/resolvers.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/resolvelib/structs.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/six.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/tenacity/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/tenacity/_asyncio.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/tenacity/_utils.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/tenacity/after.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/tenacity/before.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/tenacity/before_sleep.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/tenacity/nap.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/tenacity/retry.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/tenacity/stop.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/tenacity/tornadoweb.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/tenacity/wait.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/tomli/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/tomli/_parser.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/tomli/_re.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/_collections.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/_version.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/connection.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/connectionpool.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/contrib/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/contrib/_appengine_environ.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/contrib/_securetransport/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/contrib/_securetransport/bindings.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/contrib/_securetransport/low_level.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/contrib/appengine.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/contrib/ntlmpool.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/contrib/pyopenssl.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/contrib/securetransport.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/contrib/socks.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/exceptions.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/fields.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/filepost.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/packages/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/packages/backports/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/packages/backports/makefile.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/packages/six.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/packages/ssl_match_hostname/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/packages/ssl_match_hostname/_implementation.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/poolmanager.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/request.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/response.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/util/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/util/connection.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/util/proxy.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/util/queue.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/util/request.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/util/response.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/util/retry.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/util/ssl_.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/util/ssltransport.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/util/timeout.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/util/url.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/util/wait.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/vendor.txt`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/webencodings/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/webencodings/labels.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/webencodings/mklabels.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/webencodings/tests.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/webencodings/x_user_defined.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pip/py.typed`
-- `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/_vendor/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/_vendor/appdirs.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/_vendor/packaging/__about__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/_vendor/packaging/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/_vendor/packaging/_compat.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/_vendor/packaging/_structures.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/_vendor/packaging/_typing.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/_vendor/packaging/markers.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/_vendor/packaging/requirements.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/_vendor/packaging/specifiers.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/_vendor/packaging/tags.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/_vendor/packaging/utils.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/_vendor/packaging/version.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/_vendor/pyparsing.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/extern/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/tests/data/my-test-package-source/setup.py`
-- `.gitmind/venv/lib/python3.9/site-packages/requests-2.32.5.dist-info/INSTALLER`
-- `.gitmind/venv/lib/python3.9/site-packages/requests-2.32.5.dist-info/METADATA`
-- `.gitmind/venv/lib/python3.9/site-packages/requests-2.32.5.dist-info/RECORD`
-- `.gitmind/venv/lib/python3.9/site-packages/requests-2.32.5.dist-info/REQUESTED`
-- `.gitmind/venv/lib/python3.9/site-packages/requests-2.32.5.dist-info/WHEEL`
-- `.gitmind/venv/lib/python3.9/site-packages/requests-2.32.5.dist-info/licenses/LICENSE`
-- `.gitmind/venv/lib/python3.9/site-packages/requests-2.32.5.dist-info/top_level.txt`
-- `.gitmind/venv/lib/python3.9/site-packages/requests/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/requests/__version__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/requests/_internal_utils.py`
-- `.gitmind/venv/lib/python3.9/site-packages/requests/adapters.py`
-- `.gitmind/venv/lib/python3.9/site-packages/requests/api.py`
-- `.gitmind/venv/lib/python3.9/site-packages/requests/auth.py`
-- `.gitmind/venv/lib/python3.9/site-packages/requests/certs.py`
-- `.gitmind/venv/lib/python3.9/site-packages/requests/compat.py`
-- `.gitmind/venv/lib/python3.9/site-packages/requests/cookies.py`
-- `.gitmind/venv/lib/python3.9/site-packages/requests/exceptions.py`
-- `.gitmind/venv/lib/python3.9/site-packages/requests/help.py`
-- `.gitmind/venv/lib/python3.9/site-packages/requests/hooks.py`
-- `.gitmind/venv/lib/python3.9/site-packages/requests/models.py`
-- `.gitmind/venv/lib/python3.9/site-packages/requests/packages.py`
-- `.gitmind/venv/lib/python3.9/site-packages/requests/sessions.py`
-- `.gitmind/venv/lib/python3.9/site-packages/requests/status_codes.py`
-- `.gitmind/venv/lib/python3.9/site-packages/requests/structures.py`
-- `.gitmind/venv/lib/python3.9/site-packages/requests/utils.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools-58.0.4.dist-info/INSTALLER`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools-58.0.4.dist-info/LICENSE`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools-58.0.4.dist-info/METADATA`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools-58.0.4.dist-info/RECORD`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools-58.0.4.dist-info/REQUESTED`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools-58.0.4.dist-info/WHEEL`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools-58.0.4.dist-info/entry_points.txt`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools-58.0.4.dist-info/top_level.txt`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_deprecation_warning.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/_msvccompiler.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/archive_util.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/bcppcompiler.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/ccompiler.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/cmd.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/bdist.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/bdist_dumb.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/bdist_msi.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/bdist_rpm.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/bdist_wininst.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/build.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/build_clib.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/build_ext.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/build_py.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/build_scripts.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/check.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/clean.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/config.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/install.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/install_data.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/install_egg_info.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/install_headers.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/install_lib.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/install_scripts.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/py37compat.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/register.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/sdist.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/upload.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/config.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/core.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/cygwinccompiler.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/debug.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/dep_util.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/dir_util.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/dist.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/errors.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/extension.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/fancy_getopt.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/file_util.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/filelist.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/log.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/msvc9compiler.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/msvccompiler.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/py35compat.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/py38compat.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/spawn.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/sysconfig.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/text_file.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/unixccompiler.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/util.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/version.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/versionpredicate.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_imp.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/more_itertools/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/more_itertools/more.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/more_itertools/recipes.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/ordered_set.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/packaging/__about__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/packaging/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/packaging/_compat.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/packaging/_structures.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/packaging/_typing.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/packaging/markers.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/packaging/requirements.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/packaging/specifiers.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/packaging/tags.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/packaging/utils.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/packaging/version.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/pyparsing.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/archive_util.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/build_meta.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/cli-32.exe`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/cli-64.exe`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/cli.exe`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/alias.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/bdist_egg.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/bdist_rpm.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/build_clib.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/build_ext.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/build_py.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/develop.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/dist_info.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/easy_install.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/egg_info.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/install.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/install_egg_info.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/install_lib.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/install_scripts.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/launcher manifest.xml`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/py36compat.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/register.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/rotate.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/saveopts.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/sdist.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/setopt.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/test.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/upload.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/upload_docs.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/config.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/dep_util.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/depends.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/dist.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/errors.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/extension.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/extern/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/glob.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/gui-32.exe`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/gui-64.exe`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/gui.exe`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/installer.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/launch.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/monkey.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/msvc.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/namespaces.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/package_index.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/py34compat.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/sandbox.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/script (dev).tmpl`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/script.tmpl`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/unicode_utils.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/version.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/wheel.py`
-- `.gitmind/venv/lib/python3.9/site-packages/setuptools/windows_support.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3-2.6.3.dist-info/INSTALLER`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3-2.6.3.dist-info/METADATA`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3-2.6.3.dist-info/RECORD`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3-2.6.3.dist-info/WHEEL`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3-2.6.3.dist-info/licenses/LICENSE.txt`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/_base_connection.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/_collections.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/_request_methods.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/_version.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/connection.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/connectionpool.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/contrib/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/contrib/emscripten/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/contrib/emscripten/connection.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/contrib/emscripten/emscripten_fetch_worker.js`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/contrib/emscripten/fetch.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/contrib/emscripten/request.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/contrib/emscripten/response.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/contrib/pyopenssl.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/contrib/socks.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/exceptions.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/fields.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/filepost.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/http2/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/http2/connection.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/http2/probe.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/poolmanager.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/py.typed`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/response.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/util/__init__.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/util/connection.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/util/proxy.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/util/request.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/util/response.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/util/retry.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/util/ssl_.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/util/ssl_match_hostname.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/util/ssltransport.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/util/timeout.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/util/url.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/util/util.py`
-- `.gitmind/venv/lib/python3.9/site-packages/urllib3/util/wait.py`
-- `.gitmind/venv/pyvenv.cfg`
-- `core/diff_reader.py`
-
 ---
 
 ## Commit History
 
 Most recent first.
 
+### `f1f2e97` — 2026-04-10 23:38
+
+**Feature:** `qwen2_5_coder_update`
+
+**What changed:** updated references from deepseek-coder to qwen2.5-coder:7b
+
+**Why:** to update the documentation and codebase to reflect the new version of the language model being used
+
+**Impact:** potentially impacts how commits are analyzed by changing the model used for analysis
+
+**Files:** `README.md`, `docs/index.md`, `docs/quickstart.md`, `hooks/install.sh`, `metadata.json`
+
+---
+
+### `b47d104` — 2026-04-10 23:38
+
+**Feature:** `model_update`
+
+**What changed:** Switched to Qwen2.5-coder model and reindexed all commits
+
+**Why:** To improve code analysis accuracy with a more advanced model
+
+**Impact:** Enhances the quality of code analysis and understanding of commit history
+
+**Files:** `core/llm.py`, `docs/build-log.md`, `metadata.json`
+
+---
+
 ### `fb7f355` — 2026-04-10 23:22
 
 **Feature:** `reindex_commits_llm` *(new)*
 
-**What changed:** Reindexed all commits through LLM to provide real diffs, analysis, and metadata
+**What changed:** Reindexed all commits through LLM, generating real diffs and metadata
 
-**Why:** To enhance the accuracy and comprehensiveness of commit summaries and analyses
+**Why:** To improve the accuracy and usefulness of commit summaries and metadata
 
-**Impact:** Significantly improves the quality and usefulness of commit data for developers
+**Impact:** Enhances the reliability and comprehensiveness of commit logs and metadata across the project
 
 **Files:** `docs/build-log.md`, `metadata.json`, `scripts/reindex.py`
 
@@ -891,13 +246,13 @@ Most recent first.
 
 ### `750b57c` — 2026-04-10 23:17
 
-**Feature:** `demo_gif`
+**Feature:** `demo_content` *(new)*
 
-**What changed:** Added demo GIF to README.md and cleaned up build log documentation.
+**What changed:** Added a demo GIF to README.md and cleaned up build log documentation
 
-**Why:** To improve the user experience by providing a visual demonstration and to organize build logs better.
+**Why:** To enhance the visibility and usability of the project by providing visual demonstrations
 
-**Impact:** Enhances the clarity and usefulness of the README and build log pages for users.
+**Impact:** Improves user understanding and engagement with the project through visual content
 
 **Files:** `README.md`, `docs/build-log.md`, `docs/demo.cast`, `docs/demo.gif`, `metadata.json`, `scripts/generate_demo_cast.py`
 
@@ -905,13 +260,13 @@ Most recent first.
 
 ### `4e0a25c` — 2026-04-10 23:02
 
-**Feature:** `documentation_and_demo_recording` *(new)*
+**Feature:** `demo_generation` *(new)*
 
-**What changed:** cleaned metadata.json, improved build log intro, added demo recording script
+**What changed:** Cleaned metadata.json and improved build log intro, added demo recording script
 
-**Why:** to improve documentation and automation processes
+**Why:** To maintain project documentation and improve user experience by adding practical steps for generating a demo.
 
-**Impact:** enhances user experience by providing a demo recording and improving build log visibility
+**Impact:** Enhances user engagement and documentation clarity
 
 **Files:** `README.md`, `docs/build-log.md`, `metadata.json`, `scripts/clean_metadata.py`, `scripts/generate_build_log.py`, `scripts/record_demo.sh`
 
@@ -919,13 +274,13 @@ Most recent first.
 
 ### `a9921c1` — 2026-04-10 22:46
 
-**Feature:** `pin_black` *(new)*
+**Feature:** `pin_black`
 
-**What changed:** Pin black version in CI and add pyproject.toml for consistent formatting
+**What changed:** Pinned black version to 25.1.0 in CI and added pyproject.toml for consistent formatting
 
-**Why:** To ensure consistent code style across the project and fix potential issues with different versions of black
+**Why:** To ensure consistent code style across the project and make CI more robust against different versions of black
 
-**Impact:** Improves code quality and consistency, making the CI more reliable
+**Impact:** This change ensures that all developers use the same version of black, which can help avoid formatting-related issues during code reviews and deployments.
 
 **Files:** `.github/workflows/ci.yml`, `metadata.json`, `pyproject.toml`
 
@@ -935,11 +290,11 @@ Most recent first.
 
 **Feature:** `pin_to_py39`
 
-**What changed:** pin black to --target-version py39
+**What changed:** Pin Black to --target-version py39 in the CI workflow
 
-**Why:** to match local and CI output
+**Why:** To ensure consistent code style checks across local development and CI environments, matching Python 2 or older versions handling imports correctly.
 
-**Impact:** may improve code style consistency across different Python versions
+**Impact:** Ensures consistent code style checking across local and CI environments, potentially affecting developers working with Python 2 or older versions who may have issues with import handling.
 
 **Files:** `.github/workflows/ci.yml`, `metadata.json`
 
@@ -949,11 +304,11 @@ Most recent first.
 
 **Feature:** `post_commit_guard`
 
-**What changed:** guard post-commit hook against infinite amend loop using GITMIND_RUNNING env var
+**What changed:** Added a guard against an infinite amend loop in the post-commit hook using the GITMIND_RUNNING environment variable.
 
-**Why:** to prevent an infinite loop caused by the commit hook running itself repeatedly on each commit amendment
+**Why:** To prevent the commit hook from firing again during the amend process, causing an infinite loop.
 
-**Impact:** prevents potential system hang due to infinite loop and ensures continuous operation of the commit process
+**Impact:** Ensures that commits are updated safely without triggering the post-commit hook in a loop.
 
 **Files:** `hooks/install.sh`, `hooks/post-commit`, `metadata.json`
 
@@ -961,13 +316,13 @@ Most recent first.
 
 ### `198021e` — 2026-04-10 22:14
 
-**Feature:** `metadata_commit_amendment`
+**Feature:** `commit_amendment`
 
-**What changed:** Amended the commit to include metadata.json and formatted tests with black
+**What changed:** Amended git commits to include metadata.json and formatted tests with Black.
 
-**Why:** To ensure that important metadata is committed along with code changes and to maintain code quality
+**Why:** To ensure all relevant files are included in commits and maintain code consistency.
 
-**Impact:** Ensures that necessary metadata is included in commits and improves code formatting consistency
+**Impact:** May affect commit history and require additional verification steps during merges.
 
 **Files:** `hooks/install.sh`, `hooks/post-commit`, `metadata.json`
 
@@ -975,13 +330,13 @@ Most recent first.
 
 ### `2b335c7` — 2026-04-10 22:04
 
-**Feature:** `black_ci_update`
+**Feature:** `black_code_style_check`
 
 **What changed:** updated the directories checked by the Black CI check
 
-**Why:** to ensure all source files are linted for code style
+**Why:** to ensure code style consistency across more directories
 
-**Impact:** improves code quality and consistency across the project
+**Impact:** may improve code quality and maintainability by covering more source files in the style check
 
 **Files:** `.github/workflows/ci.yml`
 
@@ -991,11 +346,11 @@ Most recent first.
 
 **Feature:** `code_formatting`
 
-**What changed:** Formatted the code using black in metadata.py
+**What changed:** formatted code with black
 
-**Why:** To maintain consistent code style across the project
+**Why:** to improve code readability and consistency
 
-**Impact:** No functional change, improves readability and maintainability
+**Impact:** minor formatting changes, no functional impact
 
 **Files:** `core/metadata.py`
 
@@ -1005,11 +360,11 @@ Most recent first.
 
 **Feature:** `auto_build_log` *(new)*
 
-**What changed:** added script to auto-generate build log from metadata.json
+**What changed:** Added script to generate build log from metadata.json and modified docs.yml workflow
 
-**Why:** to improve documentation build process and provide better visibility into build information
+**Why:** To automate the generation of build logs for documentation purposes, improving efficiency and consistency
 
-**Impact:** enhances the automation of documentation build processes, making it easier to track build logs and identify issues
+**Impact:** Will reduce manual work in generating build logs and ensure they are consistent across builds
 
 **Files:** `.github/workflows/docs.yml`, `core/metadata.py`, `docs/build-log.md`, `metadata.json`, `scripts/generate_build_log.py`
 
@@ -1017,13 +372,13 @@ Most recent first.
 
 ### `201839b` — 2026-04-10 21:48
 
-**Feature:** `git_cleanup`
+**Feature:** `repo_cleanup`
 
-**What changed:** Removed .gitmind tracking and tightened feature names
+**What changed:** Removed .gitmind tracking and updated feature names
 
-**Why:** To clean up gitignore and improve code organization
+**Why:** To clean up unnecessary files and standardize naming conventions
 
-**Impact:** Simplified the repository by removing unnecessary files
+**Impact:** Simplified repository management by removing redundant directories
 
 **Files:** `.gitignore`, `.gitmind/core/diff_reader.py`, `.gitmind/core/engine.py`, `.gitmind/core/llm.py`, `.gitmind/core/metadata.py`, `.gitmind/metadata.json`, `core/diff_reader.py`, `core/llm.py`, `tests/test_core.py`
 
@@ -1031,13 +386,13 @@ Most recent first.
 
 ### `ac5957f` — 2026-04-10 21:45
 
-**Feature:** `ollama_error_handling`
+**Feature:** `error_handling_ollama`
 
 **What changed:** Added graceful error handling for Ollama timeout and connection errors
 
-**Why:** To improve user experience by avoiding crashes when Ollama is not running or timing out
+**Why:** To improve robustness and user experience by catching specific exceptions related to the Ollama service
 
-**Impact:** Enhances the robustness of the system in handling external service failures
+**Impact:** Enhances the stability of the system when interacting with the Ollama service, making it more resilient to common issues like timeouts and connection errors
 
 **Files:** `.gitmind/core/engine.py`, `.gitmind/core/llm.py`, `core/engine.py`, `core/llm.py`
 
@@ -1045,13 +400,13 @@ Most recent first.
 
 ### `3644106` — 2026-04-10 21:43
 
-**Feature:** `build_log_documentation` *(new)*
+**Feature:** `build_log` *(new)*
 
-**What changed:** added a new document detailing build log and history
+**What changed:** Added a new document detailing the build log of gitmind including commit history and issues encountered.
 
-**Why:** to provide transparent development history for troubleshooting and documentation purposes
+**Why:** To provide transparency and context about the development process and issues faced during the build of gitmind.
 
-**Impact:** will help developers understand the build process and issues encountered during gitmind's development
+**Impact:** Enhances the documentation and helps in understanding the build history and potential issues of gitmind.
 
 **Files:** `docs/build-log.md`, `mkdocs.yml`
 
@@ -1059,13 +414,13 @@ Most recent first.
 
 ### `5906386` — 2026-04-10 20:22
 
-**Feature:** `github_docs_deploy` *(new)*
+**Feature:** `docs_deploy_bot_config`
 
-**What changed:** added contents:write permission and configured git for deploy bot in the GitHub Actions workflow
+**What changed:** Added write permission for contents and configured git for docs deploy bot in the GitHub Actions workflow
 
-**Why:** to allow automated deployment of documentation changes to a repository
+**Why:** To ensure the bot has the necessary permissions to write to the repository's content and correctly identify itself when committing changes
 
-**Impact:** enables automatic updates to the documentation site without manual intervention
+**Impact:** Improves the automation of deploying documentation by ensuring proper access and identity
 
 **Files:** `.github/workflows/docs.yml`
 
@@ -1075,11 +430,11 @@ Most recent first.
 
 **Feature:** `repo_setup` *(new)*
 
-**What changed:** Added issue and pull request templates along with CI/CD workflows, MkDocs docs, pytest suite, black formatting, CONTRIBUTING, CHANGELOG, LICENSE
+**What changed:** Added issue templates and CI/CD workflows
 
-**Why:** To improve repository organization, automation, documentation, and collaboration
+**Why:** To improve repository setup with better documentation and automation
 
-**Impact:** Enhances repository maintainability, ensures consistent development practices, and improves communication
+**Impact:** Enhanced repository organization, improved collaboration, and streamlined development processes
 
 **Files:** `.github/ISSUE_TEMPLATE/bug_report.md`, `.github/ISSUE_TEMPLATE/feature_request.md`, `.github/PULL_REQUEST_TEMPLATE.md`, `.github/workflows/ci.yml`, `.github/workflows/docs.yml`, `.github/workflows/release.yml`, `.gitmind/core/diff_reader.py`, `.gitmind/core/engine.py`, `.gitmind/core/llm.py`, `.gitmind/core/metadata.py`, `.gitmind/metadata.json`, `CHANGELOG.md`, `CONTRIBUTING.md`, `LICENSE`, `README.md`, `cli/query.py`, `core/diff_reader.py`, `core/engine.py`, `core/llm.py`, `core/metadata.py`, `docs/cli-reference.md`, `docs/how-it-works.md`, `docs/index.md`, `docs/quickstart.md`, `docs/roadmap.md`, `mkdocs.yml`, `requirements.txt`, `tests/test_core.py`
 
@@ -1089,11 +444,11 @@ Most recent first.
 
 **Feature:** `feature_name_truncation`
 
-**What changed:** Truncated feature_name to 40 characters
+**What changed:** sanitized and truncated feature_name to 40 characters
 
-**Why:** To ensure consistent naming and avoid potential issues with long strings
+**Why:** to ensure feature_name compliance with system requirements
 
-**Impact:** May affect systems relying on consistent feature names
+**Impact:** modifies feature_name handling in core/llm.py
 
 **Files:** `.gitmind/core/llm.py`, `README.md`, `core/llm.py`
 
@@ -1103,11 +458,11 @@ Most recent first.
 
 **Feature:** `ollama_json_format`
 
-**What changed:** Added 'format': 'json' to the JSON payload
+**What changed:** added 'format': 'json' to the JSON payload sent to the model
 
-**Why:** To enforce valid JSON output from the model
+**Why:** to enforce valid JSON output from the model
 
-**Impact:** Ensures consistent and valid JSON output from the model
+**Impact:** ensures the model's output is in a consistent, parseable JSON format
 
 **Files:** `.gitmind/core/llm.py`, `core/llm.py`
 
@@ -1117,11 +472,11 @@ Most recent first.
 
 **Feature:** `json_parsing_refactor`
 
-**What changed:** Refactored JSON parsing in llm.py
+**What changed:** Refactored JSON parsing logic in llm.py to extract, coerce field types, and sanitize feature names
 
-**Why:** To improve robustness and handle various data types more effectively
+**Why:** To improve robustness and reliability of JSON data processing
 
-**Impact:** Enhances the reliability of the JSON output from the code analysis tool
+**Impact:** Enhances the accuracy and safety of data handling in the code analysis tool
 
 **Files:** `.gitmind/core/llm.py`, `core/llm.py`
 
@@ -1129,9 +484,15 @@ Most recent first.
 
 ### `ffaff32` — 2026-04-10 20:05
 
-**Feature:** `unknown`
+**Feature:** `first_commit_diff_handling` *(new)*
 
-**Files:** `.gitignore`, `.gitmind/core/diff_reader.py`, `.gitmind/venv/bin/Activate.ps1`, `.gitmind/venv/bin/activate`, `.gitmind/venv/bin/activate.csh`, `.gitmind/venv/bin/activate.fish`, `.gitmind/venv/bin/normalizer`, `.gitmind/venv/bin/pip`, `.gitmind/venv/bin/pip3`, `.gitmind/venv/bin/pip3.9`, `.gitmind/venv/bin/python`, `.gitmind/venv/bin/python3`, `.gitmind/venv/bin/python3.9`, `.gitmind/venv/lib/python3.9/site-packages/81d243bd2c585b0f4821__mypyc.cpython-39-darwin.so`, `.gitmind/venv/lib/python3.9/site-packages/_distutils_hack/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/_distutils_hack/override.py`, `.gitmind/venv/lib/python3.9/site-packages/certifi-2026.2.25.dist-info/INSTALLER`, `.gitmind/venv/lib/python3.9/site-packages/certifi-2026.2.25.dist-info/METADATA`, `.gitmind/venv/lib/python3.9/site-packages/certifi-2026.2.25.dist-info/RECORD`, `.gitmind/venv/lib/python3.9/site-packages/certifi-2026.2.25.dist-info/WHEEL`, `.gitmind/venv/lib/python3.9/site-packages/certifi-2026.2.25.dist-info/licenses/LICENSE`, `.gitmind/venv/lib/python3.9/site-packages/certifi-2026.2.25.dist-info/top_level.txt`, `.gitmind/venv/lib/python3.9/site-packages/certifi/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/certifi/__main__.py`, `.gitmind/venv/lib/python3.9/site-packages/certifi/cacert.pem`, `.gitmind/venv/lib/python3.9/site-packages/certifi/core.py`, `.gitmind/venv/lib/python3.9/site-packages/certifi/py.typed`, `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer-3.4.7.dist-info/INSTALLER`, `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer-3.4.7.dist-info/METADATA`, `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer-3.4.7.dist-info/RECORD`, `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer-3.4.7.dist-info/WHEEL`, `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer-3.4.7.dist-info/entry_points.txt`, `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer-3.4.7.dist-info/licenses/LICENSE`, `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer-3.4.7.dist-info/top_level.txt`, `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer/__main__.py`, `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer/api.py`, `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer/cd.cpython-39-darwin.so`, `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer/cd.py`, `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer/cli/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer/cli/__main__.py`, `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer/constant.py`, `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer/legacy.py`, `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer/md.cpython-39-darwin.so`, `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer/md.py`, `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer/models.py`, `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer/py.typed`, `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer/utils.py`, `.gitmind/venv/lib/python3.9/site-packages/charset_normalizer/version.py`, `.gitmind/venv/lib/python3.9/site-packages/distutils-precedence.pth`, `.gitmind/venv/lib/python3.9/site-packages/idna-3.11.dist-info/INSTALLER`, `.gitmind/venv/lib/python3.9/site-packages/idna-3.11.dist-info/METADATA`, `.gitmind/venv/lib/python3.9/site-packages/idna-3.11.dist-info/RECORD`, `.gitmind/venv/lib/python3.9/site-packages/idna-3.11.dist-info/WHEEL`, `.gitmind/venv/lib/python3.9/site-packages/idna-3.11.dist-info/licenses/LICENSE.md`, `.gitmind/venv/lib/python3.9/site-packages/idna/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/idna/codec.py`, `.gitmind/venv/lib/python3.9/site-packages/idna/compat.py`, `.gitmind/venv/lib/python3.9/site-packages/idna/core.py`, `.gitmind/venv/lib/python3.9/site-packages/idna/idnadata.py`, `.gitmind/venv/lib/python3.9/site-packages/idna/intranges.py`, `.gitmind/venv/lib/python3.9/site-packages/idna/package_data.py`, `.gitmind/venv/lib/python3.9/site-packages/idna/py.typed`, `.gitmind/venv/lib/python3.9/site-packages/idna/uts46data.py`, `.gitmind/venv/lib/python3.9/site-packages/pip-21.2.4.dist-info/INSTALLER`, `.gitmind/venv/lib/python3.9/site-packages/pip-21.2.4.dist-info/LICENSE.txt`, `.gitmind/venv/lib/python3.9/site-packages/pip-21.2.4.dist-info/METADATA`, `.gitmind/venv/lib/python3.9/site-packages/pip-21.2.4.dist-info/RECORD`, `.gitmind/venv/lib/python3.9/site-packages/pip-21.2.4.dist-info/REQUESTED`, `.gitmind/venv/lib/python3.9/site-packages/pip-21.2.4.dist-info/WHEEL`, `.gitmind/venv/lib/python3.9/site-packages/pip-21.2.4.dist-info/entry_points.txt`, `.gitmind/venv/lib/python3.9/site-packages/pip-21.2.4.dist-info/top_level.txt`, `.gitmind/venv/lib/python3.9/site-packages/pip/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/__main__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/build_env.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/cache.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/cli/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/cli/autocompletion.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/cli/base_command.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/cli/cmdoptions.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/cli/command_context.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/cli/main.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/cli/main_parser.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/cli/parser.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/cli/progress_bars.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/cli/req_command.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/cli/spinners.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/cli/status_codes.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/cache.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/check.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/completion.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/configuration.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/debug.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/download.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/freeze.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/hash.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/help.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/index.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/install.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/list.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/search.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/show.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/uninstall.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/commands/wheel.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/configuration.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/distributions/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/distributions/base.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/distributions/installed.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/distributions/sdist.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/distributions/wheel.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/exceptions.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/index/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/index/collector.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/index/package_finder.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/index/sources.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/locations/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/locations/_distutils.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/locations/_sysconfig.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/locations/base.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/main.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/metadata/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/metadata/base.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/metadata/pkg_resources.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/models/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/models/candidate.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/models/direct_url.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/models/format_control.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/models/index.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/models/link.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/models/scheme.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/models/search_scope.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/models/selection_prefs.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/models/target_python.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/models/wheel.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/network/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/network/auth.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/network/cache.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/network/download.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/network/lazy_wheel.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/network/session.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/network/utils.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/network/xmlrpc.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/operations/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/operations/build/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/operations/build/metadata.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/operations/build/metadata_legacy.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/operations/build/wheel.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/operations/build/wheel_legacy.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/operations/check.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/operations/freeze.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/operations/install/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/operations/install/editable_legacy.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/operations/install/legacy.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/operations/install/wheel.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/operations/prepare.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/pyproject.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/req/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/req/constructors.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/req/req_file.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/req/req_install.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/req/req_set.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/req/req_tracker.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/req/req_uninstall.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/resolution/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/resolution/base.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/resolution/legacy/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/resolution/legacy/resolver.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/resolution/resolvelib/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/resolution/resolvelib/base.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/resolution/resolvelib/candidates.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/resolution/resolvelib/factory.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/resolution/resolvelib/found_candidates.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/resolution/resolvelib/provider.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/resolution/resolvelib/reporter.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/resolution/resolvelib/requirements.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/resolution/resolvelib/resolver.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/self_outdated_check.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/_log.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/appdirs.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/compat.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/compatibility_tags.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/datetime.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/deprecation.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/direct_url_helpers.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/distutils_args.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/encoding.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/entrypoints.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/filesystem.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/filetypes.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/glibc.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/hashes.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/inject_securetransport.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/logging.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/misc.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/models.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/packaging.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/parallel.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/pkg_resources.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/setuptools_build.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/subprocess.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/temp_dir.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/unpacking.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/urls.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/virtualenv.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/utils/wheel.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/vcs/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/vcs/bazaar.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/vcs/git.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/vcs/mercurial.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/vcs/subversion.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/vcs/versioncontrol.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_internal/wheel_builder.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/appdirs.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/cachecontrol/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/cachecontrol/_cmd.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/cachecontrol/adapter.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/cachecontrol/cache.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/cachecontrol/caches/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/cachecontrol/caches/file_cache.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/cachecontrol/caches/redis_cache.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/cachecontrol/compat.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/cachecontrol/controller.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/cachecontrol/filewrapper.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/cachecontrol/heuristics.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/cachecontrol/serialize.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/cachecontrol/wrapper.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/certifi/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/certifi/__main__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/certifi/cacert.pem`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/certifi/core.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/big5freq.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/big5prober.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/chardistribution.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/charsetgroupprober.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/charsetprober.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/cli/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/cli/chardetect.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/codingstatemachine.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/compat.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/cp949prober.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/enums.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/escprober.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/escsm.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/eucjpprober.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/euckrfreq.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/euckrprober.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/euctwfreq.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/euctwprober.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/gb2312freq.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/gb2312prober.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/hebrewprober.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/jisfreq.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/jpcntx.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/langbulgarianmodel.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/langgreekmodel.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/langhebrewmodel.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/langhungarianmodel.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/langrussianmodel.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/langthaimodel.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/langturkishmodel.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/latin1prober.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/mbcharsetprober.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/mbcsgroupprober.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/mbcssm.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/metadata/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/metadata/languages.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/sbcharsetprober.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/sbcsgroupprober.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/sjisprober.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/universaldetector.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/utf8prober.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/chardet/version.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/colorama/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/colorama/ansi.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/colorama/ansitowin32.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/colorama/initialise.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/colorama/win32.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/colorama/winterm.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/_backport/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/_backport/misc.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/_backport/shutil.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/_backport/sysconfig.cfg`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/_backport/sysconfig.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/_backport/tarfile.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/compat.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/database.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/index.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/locators.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/manifest.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/markers.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/metadata.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/resources.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/scripts.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/t32.exe`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/t64.exe`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/util.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/version.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/w32.exe`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/w64.exe`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distlib/wheel.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/distro.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/_ihatexml.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/_inputstream.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/_tokenizer.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/_trie/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/_trie/_base.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/_trie/py.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/_utils.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/constants.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/filters/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/filters/alphabeticalattributes.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/filters/base.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/filters/inject_meta_charset.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/filters/lint.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/filters/optionaltags.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/filters/sanitizer.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/filters/whitespace.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/html5parser.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/serializer.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/treeadapters/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/treeadapters/genshi.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/treeadapters/sax.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/treebuilders/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/treebuilders/base.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/treebuilders/dom.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/treebuilders/etree.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/treebuilders/etree_lxml.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/treewalkers/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/treewalkers/base.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/treewalkers/dom.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/treewalkers/etree.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/treewalkers/etree_lxml.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/html5lib/treewalkers/genshi.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/idna/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/idna/codec.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/idna/compat.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/idna/core.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/idna/idnadata.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/idna/intranges.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/idna/package_data.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/idna/uts46data.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/msgpack/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/msgpack/_version.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/msgpack/exceptions.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/msgpack/ext.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/msgpack/fallback.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/packaging/__about__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/packaging/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/packaging/_manylinux.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/packaging/_musllinux.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/packaging/_structures.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/packaging/markers.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/packaging/requirements.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/packaging/specifiers.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/packaging/tags.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/packaging/utils.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/packaging/version.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/pep517/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/pep517/build.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/pep517/check.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/pep517/colorlog.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/pep517/compat.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/pep517/dirtools.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/pep517/envbuild.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/pep517/in_process/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/pep517/in_process/_in_process.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/pep517/meta.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/pep517/wrappers.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/pkg_resources/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/pkg_resources/py31compat.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/progress/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/progress/bar.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/progress/counter.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/progress/spinner.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/pyparsing.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/__version__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/_internal_utils.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/adapters.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/api.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/auth.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/certs.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/compat.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/cookies.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/exceptions.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/help.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/hooks.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/models.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/packages.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/sessions.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/status_codes.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/structures.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/requests/utils.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/resolvelib/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/resolvelib/compat/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/resolvelib/compat/collections_abc.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/resolvelib/providers.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/resolvelib/reporters.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/resolvelib/resolvers.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/resolvelib/structs.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/six.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/tenacity/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/tenacity/_asyncio.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/tenacity/_utils.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/tenacity/after.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/tenacity/before.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/tenacity/before_sleep.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/tenacity/nap.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/tenacity/retry.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/tenacity/stop.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/tenacity/tornadoweb.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/tenacity/wait.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/tomli/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/tomli/_parser.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/tomli/_re.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/_collections.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/_version.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/connection.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/connectionpool.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/contrib/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/contrib/_appengine_environ.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/contrib/_securetransport/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/contrib/_securetransport/bindings.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/contrib/_securetransport/low_level.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/contrib/appengine.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/contrib/ntlmpool.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/contrib/pyopenssl.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/contrib/securetransport.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/contrib/socks.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/exceptions.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/fields.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/filepost.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/packages/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/packages/backports/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/packages/backports/makefile.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/packages/six.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/packages/ssl_match_hostname/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/packages/ssl_match_hostname/_implementation.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/poolmanager.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/request.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/response.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/util/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/util/connection.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/util/proxy.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/util/queue.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/util/request.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/util/response.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/util/retry.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/util/ssl_.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/util/ssltransport.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/util/timeout.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/util/url.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/urllib3/util/wait.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/vendor.txt`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/webencodings/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/webencodings/labels.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/webencodings/mklabels.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/webencodings/tests.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/_vendor/webencodings/x_user_defined.py`, `.gitmind/venv/lib/python3.9/site-packages/pip/py.typed`, `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/_vendor/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/_vendor/appdirs.py`, `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/_vendor/packaging/__about__.py`, `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/_vendor/packaging/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/_vendor/packaging/_compat.py`, `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/_vendor/packaging/_structures.py`, `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/_vendor/packaging/_typing.py`, `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/_vendor/packaging/markers.py`, `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/_vendor/packaging/requirements.py`, `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/_vendor/packaging/specifiers.py`, `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/_vendor/packaging/tags.py`, `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/_vendor/packaging/utils.py`, `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/_vendor/packaging/version.py`, `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/_vendor/pyparsing.py`, `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/extern/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/pkg_resources/tests/data/my-test-package-source/setup.py`, `.gitmind/venv/lib/python3.9/site-packages/requests-2.32.5.dist-info/INSTALLER`, `.gitmind/venv/lib/python3.9/site-packages/requests-2.32.5.dist-info/METADATA`, `.gitmind/venv/lib/python3.9/site-packages/requests-2.32.5.dist-info/RECORD`, `.gitmind/venv/lib/python3.9/site-packages/requests-2.32.5.dist-info/REQUESTED`, `.gitmind/venv/lib/python3.9/site-packages/requests-2.32.5.dist-info/WHEEL`, `.gitmind/venv/lib/python3.9/site-packages/requests-2.32.5.dist-info/licenses/LICENSE`, `.gitmind/venv/lib/python3.9/site-packages/requests-2.32.5.dist-info/top_level.txt`, `.gitmind/venv/lib/python3.9/site-packages/requests/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/requests/__version__.py`, `.gitmind/venv/lib/python3.9/site-packages/requests/_internal_utils.py`, `.gitmind/venv/lib/python3.9/site-packages/requests/adapters.py`, `.gitmind/venv/lib/python3.9/site-packages/requests/api.py`, `.gitmind/venv/lib/python3.9/site-packages/requests/auth.py`, `.gitmind/venv/lib/python3.9/site-packages/requests/certs.py`, `.gitmind/venv/lib/python3.9/site-packages/requests/compat.py`, `.gitmind/venv/lib/python3.9/site-packages/requests/cookies.py`, `.gitmind/venv/lib/python3.9/site-packages/requests/exceptions.py`, `.gitmind/venv/lib/python3.9/site-packages/requests/help.py`, `.gitmind/venv/lib/python3.9/site-packages/requests/hooks.py`, `.gitmind/venv/lib/python3.9/site-packages/requests/models.py`, `.gitmind/venv/lib/python3.9/site-packages/requests/packages.py`, `.gitmind/venv/lib/python3.9/site-packages/requests/sessions.py`, `.gitmind/venv/lib/python3.9/site-packages/requests/status_codes.py`, `.gitmind/venv/lib/python3.9/site-packages/requests/structures.py`, `.gitmind/venv/lib/python3.9/site-packages/requests/utils.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools-58.0.4.dist-info/INSTALLER`, `.gitmind/venv/lib/python3.9/site-packages/setuptools-58.0.4.dist-info/LICENSE`, `.gitmind/venv/lib/python3.9/site-packages/setuptools-58.0.4.dist-info/METADATA`, `.gitmind/venv/lib/python3.9/site-packages/setuptools-58.0.4.dist-info/RECORD`, `.gitmind/venv/lib/python3.9/site-packages/setuptools-58.0.4.dist-info/REQUESTED`, `.gitmind/venv/lib/python3.9/site-packages/setuptools-58.0.4.dist-info/WHEEL`, `.gitmind/venv/lib/python3.9/site-packages/setuptools-58.0.4.dist-info/entry_points.txt`, `.gitmind/venv/lib/python3.9/site-packages/setuptools-58.0.4.dist-info/top_level.txt`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_deprecation_warning.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/_msvccompiler.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/archive_util.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/bcppcompiler.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/ccompiler.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/cmd.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/bdist.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/bdist_dumb.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/bdist_msi.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/bdist_rpm.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/bdist_wininst.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/build.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/build_clib.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/build_ext.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/build_py.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/build_scripts.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/check.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/clean.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/config.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/install.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/install_data.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/install_egg_info.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/install_headers.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/install_lib.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/install_scripts.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/py37compat.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/register.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/sdist.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/command/upload.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/config.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/core.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/cygwinccompiler.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/debug.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/dep_util.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/dir_util.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/dist.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/errors.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/extension.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/fancy_getopt.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/file_util.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/filelist.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/log.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/msvc9compiler.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/msvccompiler.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/py35compat.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/py38compat.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/spawn.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/sysconfig.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/text_file.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/unixccompiler.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/util.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/version.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_distutils/versionpredicate.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_imp.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/more_itertools/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/more_itertools/more.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/more_itertools/recipes.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/ordered_set.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/packaging/__about__.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/packaging/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/packaging/_compat.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/packaging/_structures.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/packaging/_typing.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/packaging/markers.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/packaging/requirements.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/packaging/specifiers.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/packaging/tags.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/packaging/utils.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/packaging/version.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/_vendor/pyparsing.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/archive_util.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/build_meta.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/cli-32.exe`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/cli-64.exe`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/cli.exe`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/alias.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/bdist_egg.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/bdist_rpm.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/build_clib.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/build_ext.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/build_py.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/develop.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/dist_info.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/easy_install.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/egg_info.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/install.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/install_egg_info.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/install_lib.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/install_scripts.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/launcher manifest.xml`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/py36compat.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/register.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/rotate.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/saveopts.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/sdist.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/setopt.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/test.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/upload.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/command/upload_docs.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/config.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/dep_util.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/depends.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/dist.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/errors.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/extension.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/extern/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/glob.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/gui-32.exe`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/gui-64.exe`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/gui.exe`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/installer.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/launch.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/monkey.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/msvc.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/namespaces.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/package_index.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/py34compat.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/sandbox.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/script (dev).tmpl`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/script.tmpl`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/unicode_utils.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/version.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/wheel.py`, `.gitmind/venv/lib/python3.9/site-packages/setuptools/windows_support.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3-2.6.3.dist-info/INSTALLER`, `.gitmind/venv/lib/python3.9/site-packages/urllib3-2.6.3.dist-info/METADATA`, `.gitmind/venv/lib/python3.9/site-packages/urllib3-2.6.3.dist-info/RECORD`, `.gitmind/venv/lib/python3.9/site-packages/urllib3-2.6.3.dist-info/WHEEL`, `.gitmind/venv/lib/python3.9/site-packages/urllib3-2.6.3.dist-info/licenses/LICENSE.txt`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/_base_connection.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/_collections.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/_request_methods.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/_version.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/connection.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/connectionpool.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/contrib/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/contrib/emscripten/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/contrib/emscripten/connection.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/contrib/emscripten/emscripten_fetch_worker.js`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/contrib/emscripten/fetch.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/contrib/emscripten/request.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/contrib/emscripten/response.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/contrib/pyopenssl.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/contrib/socks.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/exceptions.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/fields.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/filepost.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/http2/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/http2/connection.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/http2/probe.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/poolmanager.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/py.typed`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/response.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/util/__init__.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/util/connection.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/util/proxy.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/util/request.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/util/response.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/util/retry.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/util/ssl_.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/util/ssl_match_hostname.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/util/ssltransport.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/util/timeout.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/util/url.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/util/util.py`, `.gitmind/venv/lib/python3.9/site-packages/urllib3/util/wait.py`, `.gitmind/venv/pyvenv.cfg`, `core/diff_reader.py`
+**What changed:** Added a new function to check if the current commit is the first one and updated the diff reading logic accordingly.
+
+**Why:** To handle the initial commit's diff correctly, as it differs from regular commits in git history.
+
+**Impact:** Improves handling of the first commit's diff in the application.
+
+**Files:** `.gitignore`, `.gitmind/core/diff_reader.py`, `core/diff_reader.py`
 
 ---
 
@@ -1139,12 +500,12 @@ Most recent first.
 
 **Feature:** `gitmind_engine` *(new)*
 
-**What changed:** Added initial gitmind engine with diff reader functionality
+**What changed:** added initial gitmind engine with diff reader functionality
 
-**Why:** To enable version control and metadata analysis capabilities within the project
+**Why:** to enable version control analysis and change tracking within a project
 
-**Impact:** This feature will enhance the project's ability to track changes, understand differences, and manage metadata more effectively
+**Impact:** significant for developers looking to enhance their ability to review code changes through AI-driven tools
 
 ---
 
-*Generated at 2026-04-11 03:38 UTC from `metadata.json`*
+*Generated at 2026-04-11 03:46 UTC from `metadata.json`*

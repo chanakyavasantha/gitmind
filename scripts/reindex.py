@@ -18,6 +18,7 @@ sys.path.insert(0, os.path.join(REPO_ROOT, "core"))
 
 from llm import analyze_diff
 from metadata import save
+from diff_reader import _is_noise
 
 
 def git(args) -> str:
@@ -47,7 +48,7 @@ def get_changed_files(commit: str, is_first: bool) -> list[str]:
         out = git(["diff-tree", "--no-commit-id", "-r", "--name-only", commit])
     else:
         out = git(["diff", "--name-only", f"{commit}^", commit])
-    return [f for f in out.splitlines() if f.strip()]
+    return [f for f in out.splitlines() if f.strip() and not _is_noise(f)]
 
 
 def get_commit_message(commit: str) -> str:
