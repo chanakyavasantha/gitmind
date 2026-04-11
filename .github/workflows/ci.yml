@@ -25,7 +25,7 @@ jobs:
           pip install pytest black
 
       - name: Check code style
-        run: black --check core/ cli/ tests/ scripts/
+        run: black --check --target-version py39 core/ cli/ tests/ scripts/
 
       - name: Run tests
         run: pytest tests/ -v

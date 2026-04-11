@@ -872,6 +872,16 @@
       "last_built_upon": "2026-04-10T22:26:01.702419",
       "is_new_feature": false,
       "commit_count": 1
+    },
+    "pin_to_py39": {
+      "introduced": "2026-04-10T22:31:15.120679",
+      "files_touched": [
+        ".github/workflows/ci.yml"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-10T22:31:15.120679",
+      "is_new_feature": false,
+      "commit_count": 1
     }
   },
   "history": [
@@ -2769,6 +2779,18 @@
       "files_touched": [
         "hooks/install.sh",
         "hooks/post-commit"
+      ]
+    },
+    {
+      "commit_hash": "475680751905f196963688d4750cfebc2309ff91",
+      "timestamp": "2026-04-10T22:31:15.120679",
+      "what_changed": "'Pin Black to --target-version Py39' changed",
+      "why_it_likely_changed": "'Match local and CI output Pinning black version in the configuration file (black.ini) may match Python 2 or older versions, as they tend not to handle imports correctly.' ",
+      "feature_name": "pin_to_py39",
+      "is_new_feature": false,
+      "impact": "'Pin Black version in the configuration file (black.ini) may match Python 2 or older versions, as they tend not to handle imports correctly.' ",
+      "files_touched": [
+        ".github/workflows/ci.yml"
       ]
     }
   ]
