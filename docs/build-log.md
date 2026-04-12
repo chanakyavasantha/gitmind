@@ -1,511 +1,350 @@
 # Build Log
 
-This page is generated automatically from `metadata.json` on every push — the tool is documenting itself.
+This page is generated automatically from `metadata.json` on every push — gitmind is documenting itself.
+Every commit was analyzed by a local LLM (Ollama + qwen2.5-coder:7b). No human wrote these summaries.
 
-Every entry below was written by gitmind analyzing its own commits via a local LLM (Ollama + deepseek-coder).
-No human wrote these summaries. The feature names, file lists, and change descriptions are all LLM output.
-
----
-
-## Tracked Features
-
-| Feature | Status | Commits | Introduced | Last Active |
-|---------|--------|---------|------------|-------------|
-| `qwen2_5_coder_update` | ✅ active | 1 | 2026-04-10 23:38 | 2026-04-10 23:38 |
-| `model_update` | ✅ active | 1 | 2026-04-10 23:38 | 2026-04-10 23:38 |
-| `reindex_commits_llm` | ✅ active | 1 | 2026-04-10 23:22 | 2026-04-10 23:22 |
-| `demo_content` | ✅ active | 1 | 2026-04-10 23:17 | 2026-04-10 23:17 |
-| `demo_generation` | ✅ active | 1 | 2026-04-10 23:02 | 2026-04-10 23:02 |
-| `pin_black` | ✅ active | 1 | 2026-04-10 22:46 | 2026-04-10 22:46 |
-| `pin_to_py39` | ✅ active | 1 | 2026-04-10 22:31 | 2026-04-10 22:31 |
-| `post_commit_guard` | ✅ active | 1 | 2026-04-10 22:25 | 2026-04-10 22:25 |
-| `commit_amendment` | ✅ active | 1 | 2026-04-10 22:14 | 2026-04-10 22:14 |
-| `black_code_style_check` | ✅ active | 1 | 2026-04-10 22:04 | 2026-04-10 22:04 |
-| `code_formatting` | ✅ active | 1 | 2026-04-10 21:59 | 2026-04-10 21:59 |
-| `auto_build_log` | ✅ active | 1 | 2026-04-10 21:53 | 2026-04-10 21:53 |
-| `repo_cleanup` | ✅ active | 1 | 2026-04-10 21:48 | 2026-04-10 21:48 |
-| `error_handling_ollama` | ✅ active | 1 | 2026-04-10 21:45 | 2026-04-10 21:45 |
-| `build_log` | ✅ active | 1 | 2026-04-10 21:43 | 2026-04-10 21:43 |
-| `docs_deploy_bot_config` | ✅ active | 1 | 2026-04-10 20:22 | 2026-04-10 20:22 |
-| `repo_setup` | ✅ active | 1 | 2026-04-10 20:21 | 2026-04-10 20:21 |
-| `feature_name_truncation` | ✅ active | 1 | 2026-04-10 20:10 | 2026-04-10 20:10 |
-| `ollama_json_format` | ✅ active | 1 | 2026-04-10 20:08 | 2026-04-10 20:08 |
-| `json_parsing_refactor` | ✅ active | 1 | 2026-04-10 20:08 | 2026-04-10 20:08 |
-| `first_commit_diff_handling` | ✅ active | 1 | 2026-04-10 20:05 | 2026-04-10 20:05 |
-| `gitmind_engine` | ✅ active | 1 | 2026-04-10 20:04 | 2026-04-10 20:04 |
+**23 commits** · 2026-04-10 → 2026-04-10
 
 ---
 
-## Files Per Feature
+## What Was Built
 
-**`auto_build_log`**
+High-level capability areas derived from files changed across all commits:
 
-- `.github/workflows/docs.yml`
-- `core/metadata.py`
-- `docs/build-log.md`
-- `metadata.json`
-- `scripts/generate_build_log.py`
-
-**`black_code_style_check`**
-
-- `.github/workflows/ci.yml`
-
-**`build_log`**
-
-- `docs/build-log.md`
-- `mkdocs.yml`
-
-**`code_formatting`**
-
-- `core/metadata.py`
-
-**`commit_amendment`**
-
-- `hooks/install.sh`
-- `hooks/post-commit`
-- `metadata.json`
-
-**`demo_content`**
-
-- `README.md`
-- `docs/build-log.md`
-- `docs/demo.cast`
-- `docs/demo.gif`
-- `metadata.json`
-- `scripts/generate_demo_cast.py`
-
-**`demo_generation`**
-
-- `README.md`
-- `docs/build-log.md`
-- `metadata.json`
-- `scripts/clean_metadata.py`
-- `scripts/generate_build_log.py`
-- `scripts/record_demo.sh`
-
-**`docs_deploy_bot_config`**
-
-- `.github/workflows/docs.yml`
-
-**`error_handling_ollama`**
-
-- `.gitmind/core/engine.py`
-- `.gitmind/core/llm.py`
-- `core/engine.py`
-- `core/llm.py`
-
-**`feature_name_truncation`**
-
-- `.gitmind/core/llm.py`
-- `README.md`
-- `core/llm.py`
-
-**`first_commit_diff_handling`**
-
-- `.gitignore`
-- `.gitmind/core/diff_reader.py`
-- `core/diff_reader.py`
-
-**`json_parsing_refactor`**
-
-- `.gitmind/core/llm.py`
-- `core/llm.py`
-
-**`model_update`**
-
-- `core/llm.py`
-- `docs/build-log.md`
-- `metadata.json`
-
-**`ollama_json_format`**
-
-- `.gitmind/core/llm.py`
-- `core/llm.py`
-
-**`pin_black`**
-
-- `.github/workflows/ci.yml`
-- `metadata.json`
-- `pyproject.toml`
-
-**`pin_to_py39`**
-
-- `.github/workflows/ci.yml`
-- `metadata.json`
-
-**`post_commit_guard`**
-
-- `hooks/install.sh`
-- `hooks/post-commit`
-- `metadata.json`
-
-**`qwen2_5_coder_update`**
-
-- `README.md`
-- `docs/index.md`
-- `docs/quickstart.md`
-- `hooks/install.sh`
-- `metadata.json`
-
-**`reindex_commits_llm`**
-
-- `docs/build-log.md`
-- `metadata.json`
-- `scripts/reindex.py`
-
-**`repo_cleanup`**
-
-- `.gitignore`
-- `.gitmind/core/diff_reader.py`
-- `.gitmind/core/engine.py`
-- `.gitmind/core/llm.py`
-- `.gitmind/core/metadata.py`
-- `.gitmind/metadata.json`
-- `core/diff_reader.py`
-- `core/llm.py`
-- `tests/test_core.py`
-
-**`repo_setup`**
-
-- `.github/ISSUE_TEMPLATE/bug_report.md`
-- `.github/ISSUE_TEMPLATE/feature_request.md`
-- `.github/PULL_REQUEST_TEMPLATE.md`
-- `.github/workflows/ci.yml`
-- `.github/workflows/docs.yml`
-- `.github/workflows/release.yml`
-- `.gitmind/core/diff_reader.py`
-- `.gitmind/core/engine.py`
-- `.gitmind/core/llm.py`
-- `.gitmind/core/metadata.py`
-- `.gitmind/metadata.json`
-- `CHANGELOG.md`
-- `CONTRIBUTING.md`
-- `LICENSE`
-- `README.md`
-- `cli/query.py`
-- `core/diff_reader.py`
-- `core/engine.py`
-- `core/llm.py`
-- `core/metadata.py`
-- `docs/cli-reference.md`
-- `docs/how-it-works.md`
-- `docs/index.md`
-- `docs/quickstart.md`
-- `docs/roadmap.md`
-- `mkdocs.yml`
-- `requirements.txt`
-- `tests/test_core.py`
+| Capability | What it covers | Files changed | Last active |
+|------------|----------------|:-------------:|-------------|
+| **Core Pipeline** | Diff reading, LLM analysis, metadata storage | 4 | 2026-04-10 |
+| **CI / CD** | Automated tests, docs deployment, releases | 3 | 2026-04-10 |
+| **CLI** | Query tool for features, files, staleness | 1 | 2026-04-10 |
+| **Documentation** | MkDocs site, quickstart, CLI reference, roadmap | 9 | 2026-04-10 |
+| **Test Suite** | Pytest coverage for core pipeline | 1 | 2026-04-10 |
+| **Developer Scripts** | Reindex, build log generation, demo recording | 5 | 2026-04-10 |
+| **Git Hooks** | Post-commit hook, install script, amend loop guard | 2 | 2026-04-10 |
 
 ---
 
-## Commit History
+## Development Timeline
 
-Most recent first.
+Most recent commit first.
 
-### `f1f2e97` — 2026-04-10 23:38
+### `b1f47ac` &nbsp; 2026-04-10 ✨
 
-**Feature:** `qwen2_5_coder_update`
+Added a filter to remove noise files from changed files list and reindexed all commits
 
-**What changed:** updated references from deepseek-coder to qwen2.5-coder:7b
+*To clean up the build log and improve LLM performance by reducing irrelevant file changes*
 
-**Why:** to update the documentation and codebase to reflect the new version of the language model being used
+**Impact:** Reduced build log noise and potentially improved LLM processing speed
+
+Files: `core/diff_reader.py` &nbsp;·&nbsp; `scripts/reindex.py`
+
+<small>*gitmind tag: `noise_filtering`*</small>
+
+---
+
+### `f1f2e97` &nbsp; 2026-04-10
+
+updated references from deepseek-coder to qwen2.5-coder:7b
+
+*to update the documentation and codebase to reflect the new version of the language model being used*
 
 **Impact:** potentially impacts how commits are analyzed by changing the model used for analysis
 
-**Files:** `README.md`, `docs/index.md`, `docs/quickstart.md`, `hooks/install.sh`, `metadata.json`
+Files: `README.md` &nbsp;·&nbsp; `docs/index.md` &nbsp;·&nbsp; `docs/quickstart.md` &nbsp;·&nbsp; `hooks/install.sh` &nbsp;·&nbsp; `metadata.json`
+
+<small>*gitmind tag: `qwen2_5_coder_update`*</small>
 
 ---
 
-### `b47d104` — 2026-04-10 23:38
+### `b47d104` &nbsp; 2026-04-10
 
-**Feature:** `model_update`
+Switched to Qwen2.5-coder model and reindexed all commits
 
-**What changed:** Switched to Qwen2.5-coder model and reindexed all commits
-
-**Why:** To improve code analysis accuracy with a more advanced model
+*To improve code analysis accuracy with a more advanced model*
 
 **Impact:** Enhances the quality of code analysis and understanding of commit history
 
-**Files:** `core/llm.py`, `docs/build-log.md`, `metadata.json`
+Files: `core/llm.py` &nbsp;·&nbsp; `docs/build-log.md` &nbsp;·&nbsp; `metadata.json`
+
+<small>*gitmind tag: `model_update`*</small>
 
 ---
 
-### `fb7f355` — 2026-04-10 23:22
+### `fb7f355` &nbsp; 2026-04-10 ✨
 
-**Feature:** `reindex_commits_llm` *(new)*
+Reindexed all commits through LLM, generating real diffs and metadata
 
-**What changed:** Reindexed all commits through LLM, generating real diffs and metadata
-
-**Why:** To improve the accuracy and usefulness of commit summaries and metadata
+*To improve the accuracy and usefulness of commit summaries and metadata*
 
 **Impact:** Enhances the reliability and comprehensiveness of commit logs and metadata across the project
 
-**Files:** `docs/build-log.md`, `metadata.json`, `scripts/reindex.py`
+Files: `docs/build-log.md` &nbsp;·&nbsp; `metadata.json` &nbsp;·&nbsp; `scripts/reindex.py`
+
+<small>*gitmind tag: `reindex_commits_llm`*</small>
 
 ---
 
-### `750b57c` — 2026-04-10 23:17
+### `750b57c` &nbsp; 2026-04-10 ✨
 
-**Feature:** `demo_content` *(new)*
+Added a demo GIF to README.md and cleaned up build log documentation
 
-**What changed:** Added a demo GIF to README.md and cleaned up build log documentation
-
-**Why:** To enhance the visibility and usability of the project by providing visual demonstrations
+*To enhance the visibility and usability of the project by providing visual demonstrations*
 
 **Impact:** Improves user understanding and engagement with the project through visual content
 
-**Files:** `README.md`, `docs/build-log.md`, `docs/demo.cast`, `docs/demo.gif`, `metadata.json`, `scripts/generate_demo_cast.py`
+Files: `README.md` &nbsp;·&nbsp; `docs/build-log.md` &nbsp;·&nbsp; `docs/demo.cast` &nbsp;·&nbsp; `docs/demo.gif` &nbsp;·&nbsp; `metadata.json` &nbsp;·&nbsp; `scripts/generate_demo_cast.py`
+
+<small>*gitmind tag: `demo_content`*</small>
 
 ---
 
-### `4e0a25c` — 2026-04-10 23:02
+### `4e0a25c` &nbsp; 2026-04-10 ✨
 
-**Feature:** `demo_generation` *(new)*
+Cleaned metadata.json and improved build log intro, added demo recording script
 
-**What changed:** Cleaned metadata.json and improved build log intro, added demo recording script
-
-**Why:** To maintain project documentation and improve user experience by adding practical steps for generating a demo.
+*To maintain project documentation and improve user experience by adding practical steps for generating a demo.*
 
 **Impact:** Enhances user engagement and documentation clarity
 
-**Files:** `README.md`, `docs/build-log.md`, `metadata.json`, `scripts/clean_metadata.py`, `scripts/generate_build_log.py`, `scripts/record_demo.sh`
+Files: `README.md` &nbsp;·&nbsp; `docs/build-log.md` &nbsp;·&nbsp; `metadata.json` &nbsp;·&nbsp; `scripts/clean_metadata.py` &nbsp;·&nbsp; `scripts/generate_build_log.py` &nbsp;·&nbsp; `scripts/record_demo.sh`
+
+<small>*gitmind tag: `demo_generation`*</small>
 
 ---
 
-### `a9921c1` — 2026-04-10 22:46
+### `a9921c1` &nbsp; 2026-04-10
 
-**Feature:** `pin_black`
+Pinned black version to 25.1.0 in CI and added pyproject.toml for consistent formatting
 
-**What changed:** Pinned black version to 25.1.0 in CI and added pyproject.toml for consistent formatting
-
-**Why:** To ensure consistent code style across the project and make CI more robust against different versions of black
+*To ensure consistent code style across the project and make CI more robust against different versions of black*
 
 **Impact:** This change ensures that all developers use the same version of black, which can help avoid formatting-related issues during code reviews and deployments.
 
-**Files:** `.github/workflows/ci.yml`, `metadata.json`, `pyproject.toml`
+Files: `.github/workflows/ci.yml` &nbsp;·&nbsp; `metadata.json` &nbsp;·&nbsp; `pyproject.toml`
+
+<small>*gitmind tag: `pin_black`*</small>
 
 ---
 
-### `0e890c6` — 2026-04-10 22:31
+### `0e890c6` &nbsp; 2026-04-10
 
-**Feature:** `pin_to_py39`
+Pin Black to --target-version py39 in the CI workflow
 
-**What changed:** Pin Black to --target-version py39 in the CI workflow
-
-**Why:** To ensure consistent code style checks across local development and CI environments, matching Python 2 or older versions handling imports correctly.
+*To ensure consistent code style checks across local development and CI environments, matching Python 2 or older versions handling imports correctly.*
 
 **Impact:** Ensures consistent code style checking across local and CI environments, potentially affecting developers working with Python 2 or older versions who may have issues with import handling.
 
-**Files:** `.github/workflows/ci.yml`, `metadata.json`
+Files: `.github/workflows/ci.yml` &nbsp;·&nbsp; `metadata.json`
+
+<small>*gitmind tag: `pin_to_py39`*</small>
 
 ---
 
-### `6814f6e` — 2026-04-10 22:25
+### `6814f6e` &nbsp; 2026-04-10
 
-**Feature:** `post_commit_guard`
+Added a guard against an infinite amend loop in the post-commit hook using the GITMIND_RUNNING environment variable.
 
-**What changed:** Added a guard against an infinite amend loop in the post-commit hook using the GITMIND_RUNNING environment variable.
-
-**Why:** To prevent the commit hook from firing again during the amend process, causing an infinite loop.
+*To prevent the commit hook from firing again during the amend process, causing an infinite loop.*
 
 **Impact:** Ensures that commits are updated safely without triggering the post-commit hook in a loop.
 
-**Files:** `hooks/install.sh`, `hooks/post-commit`, `metadata.json`
+Files: `hooks/install.sh` &nbsp;·&nbsp; `hooks/post-commit` &nbsp;·&nbsp; `metadata.json`
+
+<small>*gitmind tag: `post_commit_guard`*</small>
 
 ---
 
-### `198021e` — 2026-04-10 22:14
+### `198021e` &nbsp; 2026-04-10
 
-**Feature:** `commit_amendment`
+Amended git commits to include metadata.json and formatted tests with Black.
 
-**What changed:** Amended git commits to include metadata.json and formatted tests with Black.
-
-**Why:** To ensure all relevant files are included in commits and maintain code consistency.
+*To ensure all relevant files are included in commits and maintain code consistency.*
 
 **Impact:** May affect commit history and require additional verification steps during merges.
 
-**Files:** `hooks/install.sh`, `hooks/post-commit`, `metadata.json`
+Files: `hooks/install.sh` &nbsp;·&nbsp; `hooks/post-commit` &nbsp;·&nbsp; `metadata.json`
+
+<small>*gitmind tag: `commit_amendment`*</small>
 
 ---
 
-### `2b335c7` — 2026-04-10 22:04
+### `2b335c7` &nbsp; 2026-04-10
 
-**Feature:** `black_code_style_check`
+updated the directories checked by the Black CI check
 
-**What changed:** updated the directories checked by the Black CI check
-
-**Why:** to ensure code style consistency across more directories
+*to ensure code style consistency across more directories*
 
 **Impact:** may improve code quality and maintainability by covering more source files in the style check
 
-**Files:** `.github/workflows/ci.yml`
+Files: `.github/workflows/ci.yml`
+
+<small>*gitmind tag: `black_code_style_check`*</small>
 
 ---
 
-### `81e9625` — 2026-04-10 21:59
+### `81e9625` &nbsp; 2026-04-10
 
-**Feature:** `code_formatting`
+formatted code with black
 
-**What changed:** formatted code with black
-
-**Why:** to improve code readability and consistency
+*to improve code readability and consistency*
 
 **Impact:** minor formatting changes, no functional impact
 
-**Files:** `core/metadata.py`
+Files: `core/metadata.py`
+
+<small>*gitmind tag: `code_formatting`*</small>
 
 ---
 
-### `1c52311` — 2026-04-10 21:53
+### `1c52311` &nbsp; 2026-04-10 ✨
 
-**Feature:** `auto_build_log` *(new)*
+Added script to generate build log from metadata.json and modified docs.yml workflow
 
-**What changed:** Added script to generate build log from metadata.json and modified docs.yml workflow
-
-**Why:** To automate the generation of build logs for documentation purposes, improving efficiency and consistency
+*To automate the generation of build logs for documentation purposes, improving efficiency and consistency*
 
 **Impact:** Will reduce manual work in generating build logs and ensure they are consistent across builds
 
-**Files:** `.github/workflows/docs.yml`, `core/metadata.py`, `docs/build-log.md`, `metadata.json`, `scripts/generate_build_log.py`
+Files: `.github/workflows/docs.yml` &nbsp;·&nbsp; `core/metadata.py` &nbsp;·&nbsp; `docs/build-log.md` &nbsp;·&nbsp; `metadata.json` &nbsp;·&nbsp; `scripts/generate_build_log.py`
+
+<small>*gitmind tag: `auto_build_log`*</small>
 
 ---
 
-### `201839b` — 2026-04-10 21:48
+### `201839b` &nbsp; 2026-04-10
 
-**Feature:** `repo_cleanup`
+Removed .gitmind tracking and updated feature names
 
-**What changed:** Removed .gitmind tracking and updated feature names
-
-**Why:** To clean up unnecessary files and standardize naming conventions
+*To clean up unnecessary files and standardize naming conventions*
 
 **Impact:** Simplified repository management by removing redundant directories
 
-**Files:** `.gitignore`, `.gitmind/core/diff_reader.py`, `.gitmind/core/engine.py`, `.gitmind/core/llm.py`, `.gitmind/core/metadata.py`, `.gitmind/metadata.json`, `core/diff_reader.py`, `core/llm.py`, `tests/test_core.py`
+Files: `.gitignore` &nbsp;·&nbsp; `.gitmind/core/diff_reader.py` &nbsp;·&nbsp; `.gitmind/core/engine.py` &nbsp;·&nbsp; `.gitmind/core/llm.py` &nbsp;·&nbsp; `.gitmind/core/metadata.py` &nbsp;·&nbsp; `.gitmind/metadata.json` &nbsp;·&nbsp; *+3 more*
+
+<small>*gitmind tag: `repo_cleanup`*</small>
 
 ---
 
-### `ac5957f` — 2026-04-10 21:45
+### `ac5957f` &nbsp; 2026-04-10
 
-**Feature:** `error_handling_ollama`
+Added graceful error handling for Ollama timeout and connection errors
 
-**What changed:** Added graceful error handling for Ollama timeout and connection errors
-
-**Why:** To improve robustness and user experience by catching specific exceptions related to the Ollama service
+*To improve robustness and user experience by catching specific exceptions related to the Ollama service*
 
 **Impact:** Enhances the stability of the system when interacting with the Ollama service, making it more resilient to common issues like timeouts and connection errors
 
-**Files:** `.gitmind/core/engine.py`, `.gitmind/core/llm.py`, `core/engine.py`, `core/llm.py`
+Files: `.gitmind/core/engine.py` &nbsp;·&nbsp; `.gitmind/core/llm.py` &nbsp;·&nbsp; `core/engine.py` &nbsp;·&nbsp; `core/llm.py`
+
+<small>*gitmind tag: `error_handling_ollama`*</small>
 
 ---
 
-### `3644106` — 2026-04-10 21:43
+### `3644106` &nbsp; 2026-04-10 ✨
 
-**Feature:** `build_log` *(new)*
+Added a new document detailing the build log of gitmind including commit history and issues encountered.
 
-**What changed:** Added a new document detailing the build log of gitmind including commit history and issues encountered.
-
-**Why:** To provide transparency and context about the development process and issues faced during the build of gitmind.
+*To provide transparency and context about the development process and issues faced during the build of gitmind.*
 
 **Impact:** Enhances the documentation and helps in understanding the build history and potential issues of gitmind.
 
-**Files:** `docs/build-log.md`, `mkdocs.yml`
+Files: `docs/build-log.md` &nbsp;·&nbsp; `mkdocs.yml`
+
+<small>*gitmind tag: `build_log`*</small>
 
 ---
 
-### `5906386` — 2026-04-10 20:22
+### `5906386` &nbsp; 2026-04-10
 
-**Feature:** `docs_deploy_bot_config`
+Added write permission for contents and configured git for docs deploy bot in the GitHub Actions workflow
 
-**What changed:** Added write permission for contents and configured git for docs deploy bot in the GitHub Actions workflow
-
-**Why:** To ensure the bot has the necessary permissions to write to the repository's content and correctly identify itself when committing changes
+*To ensure the bot has the necessary permissions to write to the repository's content and correctly identify itself when committing changes*
 
 **Impact:** Improves the automation of deploying documentation by ensuring proper access and identity
 
-**Files:** `.github/workflows/docs.yml`
+Files: `.github/workflows/docs.yml`
+
+<small>*gitmind tag: `docs_deploy_bot_config`*</small>
 
 ---
 
-### `d84525a` — 2026-04-10 20:21
+### `d84525a` &nbsp; 2026-04-10 ✨
 
-**Feature:** `repo_setup` *(new)*
+Added issue templates and CI/CD workflows
 
-**What changed:** Added issue templates and CI/CD workflows
-
-**Why:** To improve repository setup with better documentation and automation
+*To improve repository setup with better documentation and automation*
 
 **Impact:** Enhanced repository organization, improved collaboration, and streamlined development processes
 
-**Files:** `.github/ISSUE_TEMPLATE/bug_report.md`, `.github/ISSUE_TEMPLATE/feature_request.md`, `.github/PULL_REQUEST_TEMPLATE.md`, `.github/workflows/ci.yml`, `.github/workflows/docs.yml`, `.github/workflows/release.yml`, `.gitmind/core/diff_reader.py`, `.gitmind/core/engine.py`, `.gitmind/core/llm.py`, `.gitmind/core/metadata.py`, `.gitmind/metadata.json`, `CHANGELOG.md`, `CONTRIBUTING.md`, `LICENSE`, `README.md`, `cli/query.py`, `core/diff_reader.py`, `core/engine.py`, `core/llm.py`, `core/metadata.py`, `docs/cli-reference.md`, `docs/how-it-works.md`, `docs/index.md`, `docs/quickstart.md`, `docs/roadmap.md`, `mkdocs.yml`, `requirements.txt`, `tests/test_core.py`
+Files: `.github/ISSUE_TEMPLATE/bug_report.md` &nbsp;·&nbsp; `.github/ISSUE_TEMPLATE/feature_request.md` &nbsp;·&nbsp; `.github/PULL_REQUEST_TEMPLATE.md` &nbsp;·&nbsp; `.github/workflows/ci.yml` &nbsp;·&nbsp; `.github/workflows/docs.yml` &nbsp;·&nbsp; `.github/workflows/release.yml` &nbsp;·&nbsp; *+22 more*
+
+<small>*gitmind tag: `repo_setup`*</small>
 
 ---
 
-### `0de4d70` — 2026-04-10 20:10
+### `0de4d70` &nbsp; 2026-04-10
 
-**Feature:** `feature_name_truncation`
+sanitized and truncated feature_name to 40 characters
 
-**What changed:** sanitized and truncated feature_name to 40 characters
-
-**Why:** to ensure feature_name compliance with system requirements
+*to ensure feature_name compliance with system requirements*
 
 **Impact:** modifies feature_name handling in core/llm.py
 
-**Files:** `.gitmind/core/llm.py`, `README.md`, `core/llm.py`
+Files: `.gitmind/core/llm.py` &nbsp;·&nbsp; `README.md` &nbsp;·&nbsp; `core/llm.py`
+
+<small>*gitmind tag: `feature_name_truncation`*</small>
 
 ---
 
-### `08fe52f` — 2026-04-10 20:08
+### `08fe52f` &nbsp; 2026-04-10
 
-**Feature:** `ollama_json_format`
+added 'format': 'json' to the JSON payload sent to the model
 
-**What changed:** added 'format': 'json' to the JSON payload sent to the model
-
-**Why:** to enforce valid JSON output from the model
+*to enforce valid JSON output from the model*
 
 **Impact:** ensures the model's output is in a consistent, parseable JSON format
 
-**Files:** `.gitmind/core/llm.py`, `core/llm.py`
+Files: `.gitmind/core/llm.py` &nbsp;·&nbsp; `core/llm.py`
+
+<small>*gitmind tag: `ollama_json_format`*</small>
 
 ---
 
-### `2f91e1d` — 2026-04-10 20:08
+### `2f91e1d` &nbsp; 2026-04-10
 
-**Feature:** `json_parsing_refactor`
+Refactored JSON parsing logic in llm.py to extract, coerce field types, and sanitize feature names
 
-**What changed:** Refactored JSON parsing logic in llm.py to extract, coerce field types, and sanitize feature names
-
-**Why:** To improve robustness and reliability of JSON data processing
+*To improve robustness and reliability of JSON data processing*
 
 **Impact:** Enhances the accuracy and safety of data handling in the code analysis tool
 
-**Files:** `.gitmind/core/llm.py`, `core/llm.py`
+Files: `.gitmind/core/llm.py` &nbsp;·&nbsp; `core/llm.py`
+
+<small>*gitmind tag: `json_parsing_refactor`*</small>
 
 ---
 
-### `ffaff32` — 2026-04-10 20:05
+### `ffaff32` &nbsp; 2026-04-10 ✨
 
-**Feature:** `first_commit_diff_handling` *(new)*
+Added a new function to check if the current commit is the first one and updated the diff reading logic accordingly.
 
-**What changed:** Added a new function to check if the current commit is the first one and updated the diff reading logic accordingly.
-
-**Why:** To handle the initial commit's diff correctly, as it differs from regular commits in git history.
+*To handle the initial commit's diff correctly, as it differs from regular commits in git history.*
 
 **Impact:** Improves handling of the first commit's diff in the application.
 
-**Files:** `.gitignore`, `.gitmind/core/diff_reader.py`, `core/diff_reader.py`
+Files: `.gitignore` &nbsp;·&nbsp; `.gitmind/core/diff_reader.py` &nbsp;·&nbsp; `core/diff_reader.py`
+
+<small>*gitmind tag: `first_commit_diff_handling`*</small>
 
 ---
 
-### `6e78acd` — 2026-04-10 20:04
+### `6e78acd` &nbsp; 2026-04-10 ✨
 
-**Feature:** `gitmind_engine` *(new)*
+added initial gitmind engine with diff reader functionality
 
-**What changed:** added initial gitmind engine with diff reader functionality
-
-**Why:** to enable version control analysis and change tracking within a project
+*to enable version control analysis and change tracking within a project*
 
 **Impact:** significant for developers looking to enhance their ability to review code changes through AI-driven tools
 
+<small>*gitmind tag: `gitmind_engine`*</small>
+
 ---
 
-*Generated at 2026-04-11 03:46 UTC from `metadata.json`*
+*Generated 2026-04-12 03:02 UTC from `metadata.json`*
