@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>gitmind dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0d1117;
+      --surface:   #161b22;
+      --surface-2: #21262d;
+      --border:    #30363d;
+      --text:      #e6edf3;
+      --muted:     #8b949e;
+      --green:     #3fb950;
+      --yellow:    #d29922;
+      --red:       #f85149;
+      --blue:      #58a6ff;
+      --purple:    #bc8cff;
+      --radius:    8px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+
+    /* ── Header ──────────────────────────────────── */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 28px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+    .logo-dot { color: var(--green); font-size: 22px; }
+    .header-meta { color: var(--muted); font-size: 13px; }
+    .header-stats {
+      display: flex;
+      gap: 20px;
+    }
+    .stat-pill {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 6px 16px;
+      min-width: 80px;
+    }
+    .stat-pill .value {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .stat-pill .label {
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .stat-pill.green .value { color: var(--green); }
+    .stat-pill.yellow .value { color: var(--yellow); }
+    .stat-pill.red .value { color: var(--red); }
+    .stat-pill.blue .value { color: var(--blue); }
+
+    /* ── Layout ──────────────────────────────────── */
+    main {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    /* ── Section ─────────────────────────────────── */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface-2);
+    }
+    .section-title {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--muted);
+    }
+    .section-body { padding: 20px; }
+
+    /* ── Feature Health ──────────────────────────── */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 12px;
+    }
+    .feature-card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--green);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      transition: border-color 0.15s, background 0.15s;
+      cursor: default;
+    }
+    .feature-card:hover { background: #2d333b; }
+    .feature-card.stale-warn { border-left-color: var(--yellow); }
+    .feature-card.stale-dead { border-left-color: var(--red); }
+
+    .feature-name {
+      font-weight: 600;
+      font-size: 13px;
+      margin-bottom: 8px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .feature-meta {
+      display: flex;
+      gap: 10px;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1px 6px;
+      font-size: 11px;
+      color: var(--muted);
+    }
+    .feature-last {
+      font-size: 11px;
+      color: var(--muted);
+    }
+    .staleness-bar-wrap {
+      margin-top: 10px;
+      height: 3px;
+      background: var(--border);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .staleness-bar {
+      height: 100%;
+      border-radius: 2px;
+      background: var(--green);
+      transition: width 0.3s ease;
+    }
+    .staleness-bar.warn { background: var(--yellow); }
+    .staleness-bar.dead { background: var(--red); }
+
+    /* ── Two-column row ──────────────────────────── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 28px;
+    }
+    @media (max-width: 900px) {
+      .two-col { grid-template-columns: 1fr; }
+    }
+
+    /* ── Chart ───────────────────────────────────── */
+    .chart-wrap {
+      position: relative;
+      height: 220px;
+    }
+
+    /* ── Activity Feed ───────────────────────────── */
+    .activity-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-height: 320px;
+      overflow-y: auto;
+    }
+    .activity-item {
+      display: flex;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+    .activity-item:last-child { border-bottom: none; }
+    .activity-hash {
+      font-family: "SF Mono", "Fira Code", monospace;
+      font-size: 11px;
+      color: var(--blue);
+      white-space: nowrap;
+      padding-top: 1px;
+    }
+    .activity-body { flex: 1; min-width: 0; }
+    .activity-what {
+      font-size: 13px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .activity-when {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .activity-tag {
+      font-size: 10px;
+      color: var(--purple);
+      font-family: "SF Mono", "Fira Code", monospace;
+    }
+
+    /* ── Staleness Report ────────────────────────── */
+    .threshold-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .threshold-row label {
+      font-size: 13px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    #threshold {
+      flex: 1;
+      max-width: 200px;
+      accent-color: var(--yellow);
+      cursor: pointer;
+    }
+    #threshold-val {
+      font-weight: 600;
+      color: var(--yellow);
+      min-width: 32px;
+    }
+
+    .stale-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+    }
+    .stale-table th {
+      text-align: left;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--muted);
+      padding: 0 12px 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .stale-table td {
+      padding: 10px 12px 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+      vertical-align: top;
+    }
+    .stale-table tr:last-child td { border-bottom: none; }
+    .stale-table .feature-col { font-weight: 600; }
+    .stale-table .days-badge {
+      display: inline-block;
+      background: rgba(248, 81, 73, 0.15);
+      color: var(--red);
+      border: 1px solid rgba(248, 81, 73, 0.3);
+      border-radius: 4px;
+      padding: 1px 7px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .stale-table .days-badge.warn {
+      background: rgba(210, 153, 34, 0.15);
+      color: var(--yellow);
+      border-color: rgba(210, 153, 34, 0.3);
+    }
+    .files-list {
+      font-size: 11px;
+      color: var(--muted);
+      font-family: "SF Mono", "Fira Code", monospace;
+    }
+    .empty-msg {
+      padding: 24px 0;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+    .empty-msg span { color: var(--green); }
+
+    /* ── Loading ─────────────────────────────────── */
+    #loading {
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 14px;
+      font-size: 18px;
+      color: var(--muted);
+    }
+    .spinner {
+      width: 36px;
+      height: 36px;
+      border: 3px solid var(--border);
+      border-top-color: var(--green);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Scrollbar ───────────────────────────────── */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  </style>
+</head>
+<body>
+
+<div id="loading">
+  <div class="spinner"></div>
+  Loading gitmind data…
+</div>
+
+<header id="header" style="display:none">
+  <div class="logo">
+    <span class="logo-dot">◆</span>
+    gitmind
+    <span class="header-meta" id="header-meta"></span>
+  </div>
+  <div class="header-stats" id="header-stats"></div>
+</header>
+
+<main id="main" style="display:none">
+
+  <!-- Feature Health -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-title">Feature Health</span>
+      <span id="feature-count" style="font-size:12px;color:var(--muted)"></span>
+    </div>
+    <div class="section-body">
+      <div class="features-grid" id="features-grid"></div>
+    </div>
+  </div>
+
+  <!-- Chart + Activity -->
+  <div class="two-col">
+    <div class="section">
+      <div class="section-header">
+        <span class="section-title">Commit Frequency</span>
+        <span style="font-size:12px;color:var(--muted)">last 12 weeks</span>
+      </div>
+      <div class="section-body">
+        <div class="chart-wrap">
+          <canvas id="freq-chart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-title">Recent Activity</span>
+        <span style="font-size:12px;color:var(--muted)">last 10 commits</span>
+      </div>
+      <div class="section-body" style="padding:0 20px">
+        <div class="activity-list" id="activity-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Staleness Report -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-title">Staleness Report</span>
+      <div class="threshold-row">
+        <label for="threshold">Inactive for more than</label>
+        <input type="range" id="threshold" min="1" max="365" value="90" step="1" />
+        <span id="threshold-val">90</span>
+        <label>days</label>
+      </div>
+    </div>
+    <div class="section-body">
+      <div id="stale-body"></div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+// ── Utilities ────────────────────────────────────────────────────
+
+function prettify(snake) {
+  return snake.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+}
+
+function relativeTime(isoStr) {
+  const date = new Date(isoStr);
+  if (isNaN(date)) return isoStr;
+  const now = new Date();
+  const diffMs = now - date;
+  const diffSec = Math.floor(diffMs / 1000);
+  const diffMin = Math.floor(diffSec / 60);
+  const diffHour = Math.floor(diffMin / 60);
+  const diffDay = Math.floor(diffHour / 24);
+  const diffWeek = Math.floor(diffDay / 7);
+  const diffMonth = Math.floor(diffDay / 30);
+
+  if (diffSec < 60) return 'just now';
+  if (diffMin < 60) return `${diffMin}m ago`;
+  if (diffHour < 24) return `${diffHour}h ago`;
+  if (diffDay < 7) return `${diffDay}d ago`;
+  if (diffWeek < 5) return `${diffWeek}w ago`;
+  if (diffMonth < 12) return `${diffMonth}mo ago`;
+  return `${Math.floor(diffDay / 365)}y ago`;
+}
+
+function daysSince(isoStr) {
+  const date = new Date(isoStr);
+  if (isNaN(date)) return 0;
+  return Math.floor((new Date() - date) / 86400000);
+}
+
+function fmtDate(isoStr) {
+  const d = new Date(isoStr);
+  if (isNaN(d)) return isoStr.slice(0, 10);
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+}
+
+function weekMonday(isoStr) {
+  const d = new Date(isoStr);
+  const day = d.getDay(); // 0=Sun
+  const diff = (day === 0 ? -6 : 1 - day);
+  d.setDate(d.getDate() + diff);
+  d.setHours(0, 0, 0, 0);
+  return d.toISOString().slice(0, 10);
+}
+
+function shortHash(hash) {
+  return (hash || '').slice(0, 7);
+}
+
+function capitalize(str) {
+  if (!str) return '';
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+// ── Render: Header ───────────────────────────────────────────────
+
+function renderHeader(data) {
+  const features = data.features || {};
+  const history = data.history || [];
+
+  const featureCount = Object.keys(features).length;
+  const activeCount = Object.values(features).filter(f => f.still_active).length;
+
+  const timestamps = history.map(h => new Date(h.timestamp)).filter(d => !isNaN(d));
+  const earliest = timestamps.length ? new Date(Math.min(...timestamps)) : null;
+  const latest   = timestamps.length ? new Date(Math.max(...timestamps)) : null;
+
+  const metaEl = document.getElementById('header-meta');
+  if (earliest && latest) {
+    const fmt = d => d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    metaEl.textContent = `· ${fmt(earliest)} → ${fmt(latest)}`;
+  }
+
+  const statsEl = document.getElementById('header-stats');
+  const pills = [
+    { value: history.length, label: 'Commits', cls: 'blue' },
+    { value: featureCount,   label: 'Features', cls: '' },
+    { value: activeCount,    label: 'Active',   cls: 'green' },
+  ];
+  statsEl.innerHTML = pills.map(p => `
+    <div class="stat-pill ${p.cls}">
+      <span class="value">${p.value}</span>
+      <span class="label">${p.label}</span>
+    </div>
+  `).join('');
+}
+
+// ── Render: Feature Cards ────────────────────────────────────────
+
+function renderFeatures(data) {
+  const features = data.features || {};
+  const grid = document.getElementById('features-grid');
+  const countEl = document.getElementById('feature-count');
+
+  const sorted = Object.entries(features).sort((a, b) => {
+    // Sort by days-since-last-touch descending (most stale first)
+    return daysSince(b[1].last_built_upon) - daysSince(a[1].last_built_upon) ||
+           (b[1].commit_count || 0) - (a[1].commit_count || 0);
+  });
+
+  countEl.textContent = `${sorted.length} tracked`;
+
+  // Max days across all features for proportional bar
+  const maxDays = Math.max(...sorted.map(([, f]) => daysSince(f.last_built_upon)), 1);
+
+  grid.innerHTML = sorted.map(([name, info]) => {
+    const days = daysSince(info.last_built_upon);
+    const fileCount = (info.files_touched || []).filter(f => !f.startsWith('.gitmind/')).length;
+    const commits = info.commit_count || 0;
+
+    let cardCls = '';
+    let barCls = '';
+    if (days > 90) { cardCls = 'stale-dead'; barCls = 'dead'; }
+    else if (days > 30) { cardCls = 'stale-warn'; barCls = 'warn'; }
+
+    const barWidth = Math.min(100, Math.round((days / Math.max(maxDays, 90)) * 100));
+    const lastTouched = relativeTime(info.last_built_upon);
+
+    return `
+      <div class="feature-card ${cardCls}" title="${name}">
+        <div class="feature-name">${prettify(name)}</div>
+        <div class="feature-meta">
+          <span class="badge">⬡ ${commits} commit${commits !== 1 ? 's' : ''}</span>
+          <span class="badge">◻ ${fileCount} file${fileCount !== 1 ? 's' : ''}</span>
+        </div>
+        <div class="feature-last">Last active: ${lastTouched}</div>
+        <div class="staleness-bar-wrap">
+          <div class="staleness-bar ${barCls}" style="width:${Math.max(barWidth, 4)}%"></div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+// ── Render: Activity Feed ────────────────────────────────────────
+
+function renderActivity(history) {
+  const list = document.getElementById('activity-list');
+  const recent = [...history].reverse().slice(0, 10);
+
+  list.innerHTML = recent.map(entry => `
+    <div class="activity-item">
+      <span class="activity-hash">${shortHash(entry.commit_hash)}</span>
+      <div class="activity-body">
+        <div class="activity-what">${capitalize(entry.what_changed || '—')}</div>
+        <div class="activity-when">
+          ${relativeTime(entry.timestamp)}
+          ${entry.feature_name ? `<span class="activity-tag"> · ${entry.feature_name}</span>` : ''}
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ── Render: Frequency Chart ──────────────────────────────────────
+
+function renderChart(history) {
+  // Build last 12 week buckets
+  const now = new Date();
+  const weeks = [];
+  for (let i = 11; i >= 0; i--) {
+    const d = new Date(now);
+    d.setDate(d.getDate() - i * 7);
+    d.setHours(0, 0, 0, 0);
+    const day = d.getDay();
+    const diff = (day === 0 ? -6 : 1 - day);
+    d.setDate(d.getDate() + diff);
+    weeks.push(d.toISOString().slice(0, 10));
+  }
+
+  const counts = Object.fromEntries(weeks.map(w => [w, 0]));
+  for (const entry of history) {
+    const wk = weekMonday(entry.timestamp);
+    if (wk in counts) counts[wk]++;
+  }
+
+  const labels = weeks.map(w => {
+    const d = new Date(w + 'T00:00:00');
+    return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  });
+  const values = weeks.map(w => counts[w]);
+
+  const maxVal = Math.max(...values, 1);
+  const colors = values.map(v => {
+    const ratio = v / maxVal;
+    if (ratio === 0) return 'rgba(48,54,61,0.6)';
+    if (ratio < 0.4) return 'rgba(63,185,80,0.4)';
+    if (ratio < 0.75) return 'rgba(63,185,80,0.65)';
+    return 'rgba(63,185,80,0.9)';
+  });
+
+  const ctx = document.getElementById('freq-chart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{
+        data: values,
+        backgroundColor: colors,
+        borderColor: colors.map(c => c.replace(/[\d.]+\)$/, '1)')),
+        borderWidth: 1,
+        borderRadius: 3,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            title: (items) => `Week of ${items[0].label}`,
+            label: (item) => ` ${item.raw} commit${item.raw !== 1 ? 's' : ''}`,
+          },
+          backgroundColor: '#21262d',
+          borderColor: '#30363d',
+          borderWidth: 1,
+          titleColor: '#e6edf3',
+          bodyColor: '#8b949e',
+        },
+      },
+      scales: {
+        x: {
+          grid: { color: 'rgba(48,54,61,0.5)' },
+          ticks: { color: '#8b949e', font: { size: 11 } },
+        },
+        y: {
+          grid: { color: 'rgba(48,54,61,0.5)' },
+          ticks: { color: '#8b949e', stepSize: 1, precision: 0, font: { size: 11 } },
+          beginAtZero: true,
+        },
+      },
+    },
+  });
+}
+
+// ── Render: Staleness Report ─────────────────────────────────────
+
+function renderStaleness(data, threshold) {
+  const features = data.features || {};
+  const container = document.getElementById('stale-body');
+
+  const stale = Object.entries(features)
+    .map(([name, info]) => ({ name, info, days: daysSince(info.last_built_upon) }))
+    .filter(x => x.days >= threshold)
+    .sort((a, b) => b.days - a.days);
+
+  if (stale.length === 0) {
+    container.innerHTML = `
+      <div class="empty-msg">
+        <span>✓</span> All features have been active within the last ${threshold} days.
+      </div>
+    `;
+    return;
+  }
+
+  const rows = stale.map(({ name, info, days }) => {
+    const files = (info.files_touched || [])
+      .filter(f => !f.startsWith('.gitmind/'))
+      .slice(0, 4);
+    const extra = (info.files_touched || []).filter(f => !f.startsWith('.gitmind/')).length - 4;
+    const fileStr = files.join(', ') + (extra > 0 ? ` +${extra} more` : '');
+    const badgeCls = days > 90 ? '' : 'warn';
+
+    return `
+      <tr>
+        <td class="feature-col">${prettify(name)}</td>
+        <td><span class="days-badge ${badgeCls}">${days}d</span></td>
+        <td>${fmtDate(info.last_built_upon)}</td>
+        <td>${info.commit_count || 0}</td>
+        <td class="files-list">${fileStr || '—'}</td>
+      </tr>
+    `;
+  }).join('');
+
+  container.innerHTML = `
+    <table class="stale-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Inactive</th>
+          <th>Last Active</th>
+          <th>Commits</th>
+          <th>Files</th>
+        </tr>
+      </thead>
+      <tbody>${rows}</tbody>
+    </table>
+  `;
+}
+
+// ── Init ─────────────────────────────────────────────────────────
+
+let _data = null;
+
+async function init() {
+  try {
+    const res = await fetch('/api/data');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    _data = await res.json();
+  } catch (e) {
+    document.getElementById('loading').innerHTML =
+      `<div style="color:var(--red);font-size:16px">Failed to load metadata.json<br><span style="font-size:13px;color:var(--muted)">${e.message}</span></div>`;
+    return;
+  }
+
+  const defaultDays = _data._config?.stale_days ?? 90;
+
+  document.getElementById('loading').style.display = 'none';
+  document.getElementById('header').style.display = '';
+  document.getElementById('main').style.display = '';
+
+  renderHeader(_data);
+  renderFeatures(_data);
+  renderActivity(_data.history || []);
+  renderChart(_data.history || []);
+
+  const slider = document.getElementById('threshold');
+  const valLabel = document.getElementById('threshold-val');
+  slider.value = defaultDays;
+  valLabel.textContent = defaultDays;
+  renderStaleness(_data, defaultDays);
+
+  slider.addEventListener('input', () => {
+    const days = parseInt(slider.value);
+    valLabel.textContent = days;
+    renderStaleness(_data, days);
+  });
+}
+
+init();
+</script>
+</body>
+</html>
