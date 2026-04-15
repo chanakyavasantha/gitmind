@@ -5,10 +5,6 @@
          <lastmod>2026-04-15</lastmod>
     </url>
     <url>
-         <loc>https://chanakyavasantha.github.io/gitmind/architecture/</loc>
-         <lastmod>2026-04-15</lastmod>
-    </url>
-    <url>
          <loc>https://chanakyavasantha.github.io/gitmind/build-log/</loc>
          <lastmod>2026-04-15</lastmod>
     </url>
@@ -17,15 +13,7 @@
          <lastmod>2026-04-15</lastmod>
     </url>
     <url>
-         <loc>https://chanakyavasantha.github.io/gitmind/contracts/</loc>
-         <lastmod>2026-04-15</lastmod>
-    </url>
-    <url>
          <loc>https://chanakyavasantha.github.io/gitmind/how-it-works/</loc>
-         <lastmod>2026-04-15</lastmod>
-    </url>
-    <url>
-         <loc>https://chanakyavasantha.github.io/gitmind/quality-findings/</loc>
          <lastmod>2026-04-15</lastmod>
     </url>
     <url>
@@ -37,7 +25,19 @@
          <lastmod>2026-04-15</lastmod>
     </url>
     <url>
-         <loc>https://chanakyavasantha.github.io/gitmind/decisions/001-add-incremental-architecture-docs-pipeline/</loc>
+         <loc>https://chanakyavasantha.github.io/gitmind/generated/architecture/</loc>
+         <lastmod>2026-04-15</lastmod>
+    </url>
+    <url>
+         <loc>https://chanakyavasantha.github.io/gitmind/generated/contracts/</loc>
+         <lastmod>2026-04-15</lastmod>
+    </url>
+    <url>
+         <loc>https://chanakyavasantha.github.io/gitmind/generated/quality-findings/</loc>
+         <lastmod>2026-04-15</lastmod>
+    </url>
+    <url>
+         <loc>https://chanakyavasantha.github.io/gitmind/generated/decisions/001-add-incremental-architecture-docs-pipeline/</loc>
          <lastmod>2026-04-15</lastmod>
     </url>
 </urlset>
