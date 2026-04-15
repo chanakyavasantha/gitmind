@@ -1,15 +1,23 @@
 {
-  "component_diagram": "graph TD\n    cli_dashboard_py[\"dashboard\"]\n    cli_query_py[\"query\"]\n    core_diff_reader_py[\"diff_reader\"]\n    core_doc_generator_py[\"doc_generator\"]\n    core_doc_generator_py --> core_system_model_py\n    core_engine_py[\"engine\"]\n    core_engine_py --> core_diff_reader_py\n    core_engine_py --> core_doc_generator_py\n    core_engine_py --> core_llm_py\n    core_engine_py --> core_metadata_py\n    core_engine_py --> core_system_model_py\n    core_llm_py[\"llm\"]\n    core_metadata_py[\"metadata\"]\n    core_system_model_py[\"system_model\"]",
+  "component_diagram": "graph TD\n    cli_dashboard_py[\"dashboard\"]\n    cli_query_py[\"query\"]\n    cli_query_py --> core_metadata_py\n    core_architecture_adr_py[\"adr\"]\n    core_architecture_adr_py --> core_architecture_llm_client_py\n    core_architecture_ast_utils_py[\"ast_utils\"]\n    core_architecture_contracts_py[\"contracts\"]\n    core_architecture_contracts_py --> core_architecture_ast_utils_py\n    core_architecture_contracts_py --> core_architecture_llm_client_py\n    core_architecture_docs_py[\"docs\"]\n    core_architecture_docs_py --> core_architecture_ast_utils_py\n    core_architecture_docs_py --> core_architecture_model_py\n    core_architecture_llm_client_py[\"llm_client\"]\n    core_architecture_model_py[\"model\"]\n    core_architecture_model_py --> core_architecture_ast_utils_py\n    core_diff_reader_py[\"diff_reader\"]\n    core_doc_generator_py[\"doc_generator\"]\n    core_doc_generator_py --> core_architecture_adr_py\n    core_doc_generator_py --> core_architecture_contracts_py\n    core_doc_generator_py --> core_architecture_docs_py\n    core_engine_py[\"engine\"]\n    core_engine_py --> core_diff_reader_py\n    core_engine_py --> core_llm_py\n    core_engine_py --> core_metadata_py\n    core_llm_py[\"llm\"]\n    core_metadata_py[\"metadata\"]\n    core_system_model_py[\"system_model\"]\n    core_system_model_py --> core_architecture_model_py",
   "finding_summary": {
     "finding_count": 10,
     "high_severity": 2,
-    "low_severity": 7,
-    "medium_severity": 2,
-    "module_count": 8,
+    "low_severity": 6,
+    "medium_severity": 3,
+    "module_count": 14,
     "strength_count": 1
   },
-  "generated_at": "2026-04-15T21:25:52Z",
+  "generated_at": "2026-04-15T21:52:09Z",
   "recent_findings": [
+    {
+      "category": "testing",
+      "id": "untested-critical:core/architecture/model.py",
+      "module": "core/architecture/model.py",
+      "severity": "high",
+      "summary": "This module orchestrates core behavior but no matching test file was found under tests/.",
+      "title": "core/architecture/model.py has no direct test coverage"
+    },
     {
       "category": "testing",
       "id": "untested-critical:core/engine.py",
@@ -19,28 +27,28 @@
       "title": "core/engine.py has no direct test coverage"
     },
     {
-      "category": "testing",
-      "id": "untested-critical:core/system_model.py",
-      "module": "core/system_model.py",
-      "severity": "high",
-      "summary": "This module orchestrates core behavior but no matching test file was found under tests/.",
-      "title": "core/system_model.py has no direct test coverage"
+      "category": "coupling",
+      "id": "central-module:core/architecture/ast_utils.py",
+      "module": "core/architecture/ast_utils.py",
+      "severity": "medium",
+      "summary": "3 modules depend on core/architecture/ast_utils.py; changes here are likely to have broad blast radius.",
+      "title": "core/architecture/ast_utils.py is a central dependency"
     },
     {
       "category": "maintainability",
-      "id": "module-size:core/doc_generator.py",
-      "module": "core/doc_generator.py",
+      "id": "module-size:core/architecture/docs.py",
+      "module": "core/architecture/docs.py",
       "severity": "medium",
-      "summary": "core/doc_generator.py has 786 lines; consider splitting parsing, rendering, and integration responsibilities.",
-      "title": "core/doc_generator.py is growing large"
+      "summary": "core/architecture/docs.py has 222 lines; consider splitting parsing, rendering, and integration responsibilities.",
+      "title": "core/architecture/docs.py is growing large"
     },
     {
       "category": "maintainability",
-      "id": "module-size:core/system_model.py",
-      "module": "core/system_model.py",
+      "id": "module-size:core/architecture/model.py",
+      "module": "core/architecture/model.py",
       "severity": "medium",
-      "summary": "core/system_model.py has 545 lines; consider splitting parsing, rendering, and integration responsibilities.",
-      "title": "core/system_model.py is growing large"
+      "summary": "core/architecture/model.py has 554 lines; consider splitting parsing, rendering, and integration responsibilities.",
+      "title": "core/architecture/model.py is growing large"
     },
     {
       "category": "operability",
@@ -90,70 +98,62 @@
       "severity": "low",
       "summary": "Adding a top-level docstring would improve generated documentation quality and intent capture.",
       "title": "core/metadata.py is missing a module docstring"
-    },
-    {
-      "category": "documentation",
-      "id": "missing-docstring:core/system_model.py",
-      "module": "core/system_model.py",
-      "severity": "low",
-      "summary": "Adding a top-level docstring would improve generated documentation quality and intent capture.",
-      "title": "core/system_model.py is missing a module docstring"
     }
   ],
   "system_summary": {
-    "dependency_edges": 6,
+    "dependency_edges": 14,
     "entrypoint_count": 4,
-    "module_count": 8,
-    "public_api_count": 25
+    "module_count": 14,
+    "public_api_count": 28
   },
   "top_coupled_modules": [
     {
       "dependencies": 0,
+      "dependents": 3,
+      "path": "core/architecture/ast_utils.py",
+      "role": "module"
+    },
+    {
+      "dependencies": 1,
       "dependents": 2,
-      "path": "core/system_model.py",
+      "path": "core/architecture/model.py",
       "role": "architecture_model"
+    },
+    {
+      "dependencies": 0,
+      "dependents": 2,
+      "path": "core/architecture/llm_client.py",
+      "role": "integration"
+    },
+    {
+      "dependencies": 0,
+      "dependents": 2,
+      "path": "core/metadata.py",
+      "role": "storage"
+    },
+    {
+      "dependencies": 2,
+      "dependents": 1,
+      "path": "core/architecture/contracts.py",
+      "role": "module"
+    },
+    {
+      "dependencies": 2,
+      "dependents": 1,
+      "path": "core/architecture/docs.py",
+      "role": "documentation"
     },
     {
       "dependencies": 1,
       "dependents": 1,
-      "path": "core/doc_generator.py",
-      "role": "documentation"
+      "path": "core/architecture/adr.py",
+      "role": "module"
     },
     {
       "dependencies": 0,
       "dependents": 1,
       "path": "core/diff_reader.py",
       "role": "git_adapter"
-    },
-    {
-      "dependencies": 0,
-      "dependents": 1,
-      "path": "core/llm.py",
-      "role": "integration"
-    },
-    {
-      "dependencies": 0,
-      "dependents": 1,
-      "path": "core/metadata.py",
-      "role": "storage"
-    },
-    {
-      "dependencies": 5,
-      "dependents": 0,
-      "path": "core/engine.py",
-      "role": "orchestrator"
-    },
-    {
-      "dependencies": 0,
-      "dependents": 0,
-      "path": "cli/dashboard.py",
-      "role": "dashboard"
-    },
-    {
-      "dependencies": 0,
-      "dependents": 0,
-      "path": "cli/query.py",
-      "role": "cli"
     }
   ]
 }

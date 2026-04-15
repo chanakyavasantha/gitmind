@@ -2,6 +2,14 @@
   "findings": [
     {
       "category": "testing",
+      "id": "untested-critical:core/architecture/model.py",
+      "module": "core/architecture/model.py",
+      "severity": "high",
+      "summary": "This module orchestrates core behavior but no matching test file was found under tests/.",
+      "title": "core/architecture/model.py has no direct test coverage"
+    },
+    {
+      "category": "testing",
       "id": "untested-critical:core/engine.py",
       "module": "core/engine.py",
       "severity": "high",
@@ -9,28 +17,28 @@
       "title": "core/engine.py has no direct test coverage"
     },
     {
-      "category": "testing",
-      "id": "untested-critical:core/system_model.py",
-      "module": "core/system_model.py",
-      "severity": "high",
-      "summary": "This module orchestrates core behavior but no matching test file was found under tests/.",
-      "title": "core/system_model.py has no direct test coverage"
+      "category": "coupling",
+      "id": "central-module:core/architecture/ast_utils.py",
+      "module": "core/architecture/ast_utils.py",
+      "severity": "medium",
+      "summary": "3 modules depend on core/architecture/ast_utils.py; changes here are likely to have broad blast radius.",
+      "title": "core/architecture/ast_utils.py is a central dependency"
     },
     {
       "category": "maintainability",
-      "id": "module-size:core/doc_generator.py",
-      "module": "core/doc_generator.py",
+      "id": "module-size:core/architecture/docs.py",
+      "module": "core/architecture/docs.py",
       "severity": "medium",
-      "summary": "core/doc_generator.py has 786 lines; consider splitting parsing, rendering, and integration responsibilities.",
-      "title": "core/doc_generator.py is growing large"
+      "summary": "core/architecture/docs.py has 222 lines; consider splitting parsing, rendering, and integration responsibilities.",
+      "title": "core/architecture/docs.py is growing large"
     },
     {
       "category": "maintainability",
-      "id": "module-size:core/system_model.py",
-      "module": "core/system_model.py",
+      "id": "module-size:core/architecture/model.py",
+      "module": "core/architecture/model.py",
       "severity": "medium",
-      "summary": "core/system_model.py has 545 lines; consider splitting parsing, rendering, and integration responsibilities.",
-      "title": "core/system_model.py is growing large"
+      "summary": "core/architecture/model.py has 554 lines; consider splitting parsing, rendering, and integration responsibilities.",
+      "title": "core/architecture/model.py is growing large"
     },
     {
       "category": "operability",
@@ -80,23 +88,15 @@
       "severity": "low",
       "summary": "Adding a top-level docstring would improve generated documentation quality and intent capture.",
       "title": "core/metadata.py is missing a module docstring"
-    },
-    {
-      "category": "documentation",
-      "id": "missing-docstring:core/system_model.py",
-      "module": "core/system_model.py",
-      "severity": "low",
-      "summary": "Adding a top-level docstring would improve generated documentation quality and intent capture.",
-      "title": "core/system_model.py is missing a module docstring"
     }
   ],
-  "generated_at": "2026-04-15T21:25:52Z",
+  "generated_at": "2026-04-15T21:52:09Z",
   "summary": {
     "finding_count": 10,
     "high_severity": 2,
-    "low_severity": 7,
-    "medium_severity": 2,
-    "module_count": 8,
+    "low_severity": 6,
+    "medium_severity": 3,
+    "module_count": 14,
     "strength_count": 1
   }
 }

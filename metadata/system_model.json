@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-15T21:25:52Z",
-  "last_commit_hash": "local",
+  "generated_at": "2026-04-15T21:52:09Z",
+  "last_commit_hash": "local-cleanup",
   "modules": {
     "cli/dashboard.py": {
       "dependencies": [],
@@ -28,7 +28,7 @@
         "Path",
         "urlparse"
       ],
-      "last_seen": "2026-04-15T21:25:52Z",
+      "last_seen": "2026-04-15T21:52:09Z",
       "line_count": 149,
       "local_imports": [
         "argparse",
@@ -98,22 +98,35 @@
       ]
     },
     "cli/query.py": {
-      "dependencies": [],
+      "dependencies": [
+        "core/metadata.py"
+      ],
       "dependents": [],
       "docstring": "gitmind query CLI\nUsage:\n  python cli/query.py features          - list all tracked features\n  python cli/query.py files <feature>   - show files touched by a feature\n  python cli/query.py history           - show commit history with summaries\n  python cli/query.py stale [--days N]  - show features with no recent activity",
       "entrypoints": {
         "has_main": true,
         "is_dashboard": false
       },
-      "external_imports": [],
+      "external_imports": [
+        "datetime",
+        "json",
+        "os",
+        "sys"
+      ],
       "imported_symbols": [
         "datetime",
         "load",
         "timedelta"
       ],
-      "last_seen": "2026-04-15T21:25:19Z",
+      "last_seen": "2026-04-15T21:52:09Z",
       "line_count": 91,
-      "local_imports": [],
+      "local_imports": [
+        "datetime",
+        "json",
+        "metadata",
+        "os",
+        "sys"
+      ],
       "module": "cli.query",
       "path": "cli/query.py",
       "public_api_count": 4,
@@ -144,8 +157,362 @@
           "signature": "def cmd_stale(days)"
         }
       ],
+      "raw_imports": [
+        "datetime",
+        "json",
+        "metadata",
+        "os",
+        "sys"
+      ],
       "role": "cli",
       "writes_to": []
+    },
+    "core/architecture/adr.py": {
+      "dependencies": [
+        "core/architecture/llm_client.py"
+      ],
+      "dependents": [
+        "core/doc_generator.py"
+      ],
+      "docstring": "ADR generation helpers for newly introduced features.",
+      "entrypoints": {
+        "has_main": false,
+        "is_dashboard": false
+      },
+      "external_imports": [
+        "datetime",
+        "os",
+        "re",
+        "typing"
+      ],
+      "imported_symbols": [
+        "Optional",
+        "datetime",
+        "llm_json"
+      ],
+      "last_seen": "2026-04-15T21:52:09Z",
+      "line_count": 148,
+      "local_imports": [
+        "datetime",
+        "llm_client",
+        "os",
+        "re",
+        "typing"
+      ],
+      "module": "core.architecture.adr",
+      "path": "core/architecture/adr.py",
+      "public_api_count": 1,
+      "public_classes": [],
+      "public_functions": [
+        {
+          "docstring": "Generate an ADR for a new-feature commit.",
+          "lineno": 63,
+          "name": "generate_adr",
+          "signature": "def generate_adr(summary: dict, commit_hash: str, commit_message: str, repo_root: str) -> Optional[str]"
+        }
+      ],
+      "raw_imports": [
+        "datetime",
+        "llm_client",
+        "os",
+        "re",
+        "typing"
+      ],
+      "role": "module",
+      "writes_to": []
+    },
+    "core/architecture/ast_utils.py": {
+      "dependencies": [],
+      "dependents": [
+        "core/architecture/contracts.py",
+        "core/architecture/docs.py",
+        "core/architecture/model.py"
+      ],
+      "docstring": "AST-backed helpers used by documentation and architecture rendering.",
+      "entrypoints": {
+        "has_main": false,
+        "is_dashboard": false
+      },
+      "external_imports": [
+        "ast",
+        "os"
+      ],
+      "imported_symbols": [],
+      "last_seen": "2026-04-15T21:52:09Z",
+      "line_count": 93,
+      "local_imports": [
+        "ast",
+        "os"
+      ],
+      "module": "core.architecture.ast_utils",
+      "path": "core/architecture/ast_utils.py",
+      "public_api_count": 2,
+      "public_classes": [],
+      "public_functions": [
+        {
+          "docstring": "Extract public function and class signatures from a Python module.",
+          "lineno": 12,
+          "name": "extract_signatures",
+          "signature": "def extract_signatures(filepath: str) -> list[dict]"
+        },
+        {
+          "docstring": "Return source .py files in tracked source directories.",
+          "lineno": 77,
+          "name": "scan_source_files",
+          "signature": "def scan_source_files(repo_root: str) -> list[str]"
+        }
+      ],
+      "raw_imports": [
+        "ast",
+        "os"
+      ],
+      "role": "module",
+      "writes_to": []
+    },
+    "core/architecture/contracts.py": {
+      "dependencies": [
+        "core/architecture/ast_utils.py",
+        "core/architecture/llm_client.py"
+      ],
+      "dependents": [
+        "core/doc_generator.py"
+      ],
+      "docstring": "Incremental contract generation for changed source modules.",
+      "entrypoints": {
+        "has_main": false,
+        "is_dashboard": false
+      },
+      "external_imports": [
+        "datetime",
+        "json",
+        "os",
+        "re",
+        "typing"
+      ],
+      "imported_symbols": [
+        "Optional",
+        "SKIP_FILES",
+        "SOURCE_DIRS",
+        "datetime",
+        "extract_signatures",
+        "llm_json"
+      ],
+      "last_seen": "2026-04-15T21:52:09Z",
+      "line_count": 205,
+      "local_imports": [
+        "ast_utils",
+        "datetime",
+        "json",
+        "llm_client",
+        "os",
+        "re",
+        "typing"
+      ],
+      "module": "core.architecture.contracts",
+      "path": "core/architecture/contracts.py",
+      "public_api_count": 1,
+      "public_classes": [],
+      "public_functions": [
+        {
+          "docstring": "Update docs/contracts.md for changed source files.",
+          "lineno": 52,
+          "name": "update_contracts",
+          "signature": "def update_contracts(changed_files: list[str], repo_root: str) -> Optional[str]"
+        }
+      ],
+      "raw_imports": [
+        "ast_utils",
+        "datetime",
+        "json",
+        "llm_client",
+        "os",
+        "re",
+        "typing"
+      ],
+      "role": "module",
+      "writes_to": [
+        "docs/"
+      ]
+    },
+    "core/architecture/docs.py": {
+      "dependencies": [
+        "core/architecture/ast_utils.py",
+        "core/architecture/model.py"
+      ],
+      "dependents": [
+        "core/doc_generator.py"
+      ],
+      "docstring": "Markdown renderers for architecture snapshots and findings.",
+      "entrypoints": {
+        "has_main": false,
+        "is_dashboard": false
+      },
+      "external_imports": [
+        "datetime",
+        "os"
+      ],
+      "imported_symbols": [
+        "datetime",
+        "extract_signatures",
+        "load_findings",
+        "load_system_model",
+        "scan_source_files"
+      ],
+      "last_seen": "2026-04-15T21:52:09Z",
+      "line_count": 222,
+      "local_imports": [
+        "ast_utils",
+        "datetime",
+        "model",
+        "os"
+      ],
+      "module": "core.architecture.docs",
+      "path": "core/architecture/docs.py",
+      "public_api_count": 2,
+      "public_classes": [],
+      "public_functions": [
+        {
+          "docstring": "Render docs/architecture.md from the persisted system model.",
+          "lineno": 10,
+          "name": "generate_architecture_doc",
+          "signature": "def generate_architecture_doc(repo_root: str) -> str"
+        },
+        {
+          "docstring": "Render docs/quality-findings.md from the stored findings JSON.",
+          "lineno": 181,
+          "name": "generate_findings_doc",
+          "signature": "def generate_findings_doc(repo_root: str) -> str"
+        }
+      ],
+      "raw_imports": [
+        "ast_utils",
+        "datetime",
+        "model",
+        "os"
+      ],
+      "role": "documentation",
+      "writes_to": [
+        "docs/"
+      ]
+    },
+    "core/architecture/llm_client.py": {
+      "dependencies": [],
+      "dependents": [
+        "core/architecture/adr.py",
+        "core/architecture/contracts.py"
+      ],
+      "docstring": "Small Ollama client for architecture-oriented generation tasks.",
+      "entrypoints": {
+        "has_main": false,
+        "is_dashboard": false
+      },
+      "external_imports": [
+        "json",
+        "re",
+        "requests"
+      ],
+      "imported_symbols": [],
+      "last_seen": "2026-04-15T21:52:09Z",
+      "line_count": 37,
+      "local_imports": [
+        "json",
+        "re",
+        "requests"
+      ],
+      "module": "core.architecture.llm_client",
+      "path": "core/architecture/llm_client.py",
+      "public_api_count": 1,
+      "public_classes": [],
+      "public_functions": [
+        {
+          "docstring": "Call Ollama and parse the first JSON object in the response.",
+          "lineno": 13,
+          "name": "llm_json",
+          "signature": "def llm_json(prompt: str, timeout: int) -> dict"
+        }
+      ],
+      "raw_imports": [
+        "json",
+        "re",
+        "requests"
+      ],
+      "role": "integration",
+      "writes_to": [
+        "http://localhost:11434"
+      ]
+    },
+    "core/architecture/model.py": {
+      "dependencies": [
+        "core/architecture/ast_utils.py"
+      ],
+      "dependents": [
+        "core/architecture/docs.py",
+        "core/system_model.py"
+      ],
+      "docstring": "Incremental system model extraction plus rule-based architecture findings.",
+      "entrypoints": {
+        "has_main": true,
+        "is_dashboard": false
+      },
+      "external_imports": [
+        "ast",
+        "datetime",
+        "json",
+        "os"
+      ],
+      "imported_symbols": [
+        "SKIP_FILES",
+        "SOURCE_DIRS",
+        "SOURCE_EXT",
+        "datetime"
+      ],
+      "last_seen": "2026-04-15T21:52:09Z",
+      "line_count": 554,
+      "local_imports": [
+        "ast",
+        "ast_utils",
+        "datetime",
+        "json",
+        "os"
+      ],
+      "module": "core.architecture.model",
+      "path": "core/architecture/model.py",
+      "public_api_count": 3,
+      "public_classes": [],
+      "public_functions": [
+        {
+          "docstring": "",
+          "lineno": 59,
+          "name": "load_system_model",
+          "signature": "def load_system_model(repo_root: str) -> dict"
+        },
+        {
+          "docstring": "",
+          "lineno": 72,
+          "name": "load_findings",
+          "signature": "def load_findings(repo_root: str) -> dict"
+        },
+        {
+          "docstring": "",
+          "lineno": 470,
+          "name": "update_system_model",
+          "signature": "def update_system_model(changed_files: list[str], repo_root: str, commit_hash: str) -> dict"
+        }
+      ],
+      "raw_imports": [
+        "ast",
+        "ast_utils",
+        "datetime",
+        "json",
+        "os"
+      ],
+      "role": "architecture_model",
+      "writes_to": [
+        "docs/",
+        "http://localhost:11434",
+        "metadata.json",
+        "metadata/"
+      ]
     },
     "core/diff_reader.py": {
       "dependencies": [],
@@ -157,11 +524,15 @@
         "has_main": false,
         "is_dashboard": false
       },
-      "external_imports": [],
+      "external_imports": [
+        "subprocess"
+      ],
       "imported_symbols": [],
-      "last_seen": "2026-04-15T21:25:19Z",
+      "last_seen": "2026-04-15T21:52:09Z",
       "line_count": 83,
-      "local_imports": [],
+      "local_imports": [
+        "subprocess"
+      ],
       "module": "core.diff_reader",
       "path": "core/diff_reader.py",
       "public_api_count": 4,
@@ -192,104 +563,56 @@
           "signature": "def get_commit_hash() -> str"
         }
       ],
+      "raw_imports": [
+        "subprocess"
+      ],
       "role": "git_adapter",
       "writes_to": []
     },
     "core/doc_generator.py": {
       "dependencies": [
-        "core/system_model.py"
+        "core/architecture/adr.py",
+        "core/architecture/contracts.py",
+        "core/architecture/docs.py"
       ],
-      "dependents": [
-        "core/engine.py"
-      ],
-      "docstring": "Generates FAANG-style living documentation from the codebase + commit metadata.\n\nProduces three continuously-updated documents:\n  docs/architecture.md   \u2014 Mermaid component diagram + data flow + module roles\n  docs/contracts.md      \u2014 Real function signatures (via AST) + LLM-written guarantees\n  docs/decisions/NNN.md  \u2014 ADR with alternatives considered (only for new features)\n\nKey principle: code is parsed with `ast` for accuracy; LLM is used only to explain\nintent and trade-offs \u2014 never to guess at signatures or behavior.",
+      "dependents": [],
+      "docstring": "Compatibility wrapper for architecture documentation generation.",
       "entrypoints": {
         "has_main": false,
         "is_dashboard": false
       },
-      "external_imports": [
-        "ast",
-        "datetime",
-        "json",
-        "os",
-        "re",
-        "requests",
-        "subprocess",
-        "typing"
-      ],
+      "external_imports": [],
       "imported_symbols": [
-        "Optional",
-        "datetime",
-        "load_findings",
-        "load_system_model"
+        "generate_adr",
+        "generate_architecture_doc",
+        "generate_findings_doc",
+        "update_contracts"
       ],
-      "last_seen": "2026-04-15T21:25:52Z",
-      "line_count": 786,
+      "last_seen": "2026-04-15T21:52:09Z",
+      "line_count": 12,
       "local_imports": [
-        "ast",
-        "datetime",
-        "json",
-        "os",
-        "re",
-        "requests",
-        "subprocess",
-        "system_model",
-        "typing"
+        "architecture.adr",
+        "architecture.contracts",
+        "architecture.docs"
       ],
       "module": "core.doc_generator",
       "path": "core/doc_generator.py",
-      "public_api_count": 4,
+      "public_api_count": 0,
       "public_classes": [],
-      "public_functions": [
-        {
-          "docstring": "Rebuild docs/architecture.md from the persisted system model.\nFalls back to source scanning only if the model is not available yet.\nReturns the file path written.",
-          "lineno": 197,
-          "name": "generate_architecture_doc",
-          "signature": "def generate_architecture_doc(repo_root: str) -> str"
-        },
-        {
-          "docstring": "",
-          "lineno": 373,
-          "name": "generate_findings_doc",
-          "signature": "def generate_findings_doc(repo_root: str) -> str"
-        },
-        {
-          "docstring": "Update docs/contracts.md with real contracts for changed source files.\nUses AST for signatures and actual source for LLM context.\nReturns path written or None if nothing to update.",
-          "lineno": 458,
-          "name": "update_contracts",
-          "signature": "def update_contracts(changed_files: list[str], repo_root: str) -> Optional[str]"
-        },
-        {
-          "docstring": "Generate an ADR for a new feature commit.\nReturns path written, or None if skipped.",
-          "lineno": 688,
-          "name": "generate_adr",
-          "signature": "def generate_adr(summary: dict, commit_hash: str, commit_message: str, repo_root: str) -> Optional[str]"
-        }
-      ],
+      "public_functions": [],
       "raw_imports": [
-        "ast",
-        "datetime",
-        "json",
-        "os",
-        "re",
-        "requests",
-        "subprocess",
-        "system_model",
-        "typing"
+        "architecture.adr",
+        "architecture.contracts",
+        "architecture.docs"
       ],
-      "role": "documentation",
-      "writes_to": [
-        "docs/",
-        "http://localhost:11434"
-      ]
+      "role": "compatibility",
+      "writes_to": []
     },
     "core/engine.py": {
       "dependencies": [
         "core/diff_reader.py",
-        "core/doc_generator.py",
         "core/llm.py",
-        "core/metadata.py",
-        "core/system_model.py"
+        "core/metadata.py"
       ],
       "dependents": [],
       "docstring": "",
@@ -298,6 +621,7 @@
         "is_dashboard": false
       },
       "external_imports": [
+        "architecture",
         "os",
         "sys"
       ],
@@ -315,16 +639,15 @@
         "update_contracts",
         "update_system_model"
       ],
-      "last_seen": "2026-04-15T21:25:52Z",
+      "last_seen": "2026-04-15T21:52:09Z",
       "line_count": 86,
       "local_imports": [
+        "architecture",
         "diff_reader",
-        "doc_generator",
         "llm",
         "metadata",
         "os",
-        "sys",
-        "system_model"
+        "sys"
       ],
       "module": "core.engine",
       "path": "core/engine.py",
@@ -339,13 +662,12 @@
         }
       ],
       "raw_imports": [
+        "architecture",
         "diff_reader",
-        "doc_generator",
         "llm",
         "metadata",
         "os",
-        "sys",
-        "system_model"
+        "sys"
       ],
       "role": "orchestrator",
       "writes_to": []
@@ -360,11 +682,19 @@
         "has_main": false,
         "is_dashboard": false
       },
-      "external_imports": [],
+      "external_imports": [
+        "json",
+        "re",
+        "requests"
+      ],
       "imported_symbols": [],
-      "last_seen": "2026-04-15T21:25:19Z",
+      "last_seen": "2026-04-15T21:52:09Z",
       "line_count": 142,
-      "local_imports": [],
+      "local_imports": [
+        "json",
+        "re",
+        "requests"
+      ],
       "module": "core.llm",
       "path": "core/llm.py",
       "public_api_count": 1,
@@ -377,6 +707,11 @@
           "signature": "def analyze_diff(diff: str, commit_message: str, changed_files: list) -> dict"
         }
       ],
+      "raw_imports": [
+        "json",
+        "re",
+        "requests"
+      ],
       "role": "integration",
       "writes_to": [
         "http://localhost:11434"
@@ -385,6 +720,7 @@
     "core/metadata.py": {
       "dependencies": [],
       "dependents": [
+        "cli/query.py",
         "core/engine.py"
       ],
       "docstring": "",
@@ -392,13 +728,21 @@
         "has_main": false,
         "is_dashboard": false
       },
-      "external_imports": [],
+      "external_imports": [
+        "datetime",
+        "json",
+        "os"
+      ],
       "imported_symbols": [
         "datetime"
       ],
-      "last_seen": "2026-04-15T21:25:19Z",
+      "last_seen": "2026-04-15T21:52:09Z",
       "line_count": 58,
-      "local_imports": [],
+      "local_imports": [
+        "datetime",
+        "json",
+        "os"
+      ],
       "module": "core.metadata",
       "path": "core/metadata.py",
       "public_api_count": 3,
@@ -423,83 +767,54 @@
           "signature": "def update(summary: dict, commit_hash: str) -> dict"
         }
       ],
+      "raw_imports": [
+        "datetime",
+        "json",
+        "os"
+      ],
       "role": "storage",
       "writes_to": [
         "metadata.json"
       ]
     },
     "core/system_model.py": {
-      "dependencies": [],
-      "dependents": [
-        "core/doc_generator.py",
-        "core/engine.py"
+      "dependencies": [
+        "core/architecture/model.py"
       ],
-      "docstring": "",
+      "dependents": [],
+      "docstring": "Compatibility wrapper for the incremental architecture model.",
       "entrypoints": {
-        "has_main": true,
+        "has_main": false,
         "is_dashboard": false
       },
-      "external_imports": [
-        "ast",
-        "datetime",
-        "json",
-        "os"
-      ],
+      "external_imports": [],
       "imported_symbols": [
-        "datetime"
+        "load_findings",
+        "load_system_model",
+        "update_system_model"
       ],
-      "last_seen": "2026-04-15T21:25:52Z",
-      "line_count": 545,
+      "last_seen": "2026-04-15T21:52:09Z",
+      "line_count": 5,
       "local_imports": [
-        "ast",
-        "datetime",
-        "json",
-        "os"
+        "architecture.model"
       ],
       "module": "core.system_model",
       "path": "core/system_model.py",
-      "public_api_count": 3,
+      "public_api_count": 0,
       "public_classes": [],
-      "public_functions": [
-        {
-          "docstring": "",
-          "lineno": 53,
-          "name": "load_system_model",
-          "signature": "def load_system_model(repo_root: str) -> dict"
-        },
-        {
-          "docstring": "",
-          "lineno": 66,
-          "name": "load_findings",
-          "signature": "def load_findings(repo_root: str) -> dict"
-        },
-        {
-          "docstring": "",
-          "lineno": 465,
-          "name": "update_system_model",
-          "signature": "def update_system_model(changed_files: list[str], repo_root: str, commit_hash: str) -> dict"
-        }
-      ],
+      "public_functions": [],
       "raw_imports": [
-        "ast",
-        "datetime",
-        "json",
-        "os"
+        "architecture.model"
       ],
-      "role": "architecture_model",
-      "writes_to": [
-        "docs/",
-        "http://localhost:11434",
-        "metadata.json",
-        "metadata/"
-      ]
+      "role": "compatibility",
+      "writes_to": []
     }
   },
   "repo_root": "/Users/chanakyavasantha/Code/gitmind",
   "stats": {
-    "dependency_edges": 6,
+    "dependency_edges": 14,
     "entrypoint_count": 4,
-    "module_count": 8,
-    "public_api_count": 25
+    "module_count": 14,
+    "public_api_count": 28
   }
 }

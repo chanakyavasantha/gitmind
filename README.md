@@ -181,11 +181,12 @@ Tested on the gitmind repo itself during initial development:
 ```
 gitmind/
 ├── core/
+│   ├── architecture/     # extraction, analyzers, contracts, ADRs, renderers
 │   ├── diff_reader.py    # reads git diffs, handles first-commit edge case
 │   ├── llm.py            # Ollama interface with JSON enforcement + coercion
 │   ├── metadata.py       # read/write metadata.json
-│   ├── system_model.py   # incremental architecture model + findings
-│   ├── doc_generator.py  # renders architecture docs, contracts, ADRs
+│   ├── system_model.py   # compatibility wrapper for architecture model
+│   ├── doc_generator.py  # compatibility wrapper for doc generation
 │   └── engine.py         # orchestrates commit-time updates
 ├── hooks/
 │   ├── post-commit       # bash hook installed into target repo

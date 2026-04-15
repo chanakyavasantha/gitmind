@@ -360,6 +360,33 @@
       "last_built_upon": "2026-04-15T17:45:37.330302",
       "is_new_feature": true,
       "commit_count": 1
+    },
+    "architecture_docs_refactor": {
+      "introduced": "2026-04-15T17:57:53.326945",
+      "files_touched": [
+        "README.md",
+        "core/architecture/__init__.py",
+        "core/architecture/adr.py",
+        "core/architecture/ast_utils.py",
+        "core/architecture/contracts.py",
+        "core/architecture/docs.py",
+        "core/architecture/llm_client.py",
+        "core/architecture/model.py",
+        "core/doc_generator.py",
+        "core/engine.py",
+        "core/system_model.py",
+        "docs/architecture.md",
+        "docs/contracts.md",
+        "docs/decisions/001-add-incremental-architecture-docs-pipeline.md",
+        "docs/quality-findings.md",
+        "metadata/dashboard.json",
+        "metadata/findings.json",
+        "metadata/system_model.json"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-15T17:57:53.326945",
+      "is_new_feature": false,
+      "commit_count": 1
     }
   },
   "history": [
@@ -776,6 +803,35 @@
         "metadata/system_model.json",
         "mkdocs.yml",
         "tests/test_core.py"
+      ]
+    },
+    {
+      "commit_hash": "fb648e713a157f3f831c735cae052aae4a1fe546",
+      "timestamp": "2026-04-15T17:57:53.326945",
+      "what_changed": "Refactored the architecture documentation pipeline",
+      "why_it_likely_changed": "To improve organization and clarity of the system's architecture and its components",
+      "feature_name": "architecture_docs_refactor",
+      "is_new_feature": false,
+      "impact": "Enhances maintainability and readability of the project by better categorizing and isolating architectural-related files",
+      "files_touched": [
+        "README.md",
+        "core/architecture/__init__.py",
+        "core/architecture/adr.py",
+        "core/architecture/ast_utils.py",
+        "core/architecture/contracts.py",
+        "core/architecture/docs.py",
+        "core/architecture/llm_client.py",
+        "core/architecture/model.py",
+        "core/doc_generator.py",
+        "core/engine.py",
+        "core/system_model.py",
+        "docs/architecture.md",
+        "docs/contracts.md",
+        "docs/decisions/001-add-incremental-architecture-docs-pipeline.md",
+        "docs/quality-findings.md",
+        "metadata/dashboard.json",
+        "metadata/findings.json",
+        "metadata/system_model.json"
       ]
     }
   ]

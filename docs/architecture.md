@@ -1,7 +1,7 @@
 # Architecture
 
 *Auto-generated from the incremental system model. Do not edit manually.*
-*Last updated: 2026-04-15 17:25*
+*Last updated: 2026-04-15 17:52*
 
 ---
 
@@ -15,9 +15,9 @@ git commit -> hook -> engine -> diff reader -> semantic metadata -> incremental 
 
 ## Current Snapshot
 
-- Modules tracked: 8
-- Public API symbols: 25
-- Dependency edges: 6
+- Modules tracked: 14
+- Public API symbols: 28
+- Dependency edges: 14
 - Entry points: 4
 - Findings: 10 risks, 1 strengths
 
@@ -29,18 +29,32 @@ git commit -> hook -> engine -> diff reader -> semantic metadata -> incremental 
 graph TD
     cli_dashboard_py["dashboard"]
     cli_query_py["query"]
+    cli_query_py --> core_metadata_py
+    core_architecture_adr_py["adr"]
+    core_architecture_adr_py --> core_architecture_llm_client_py
+    core_architecture_ast_utils_py["ast_utils"]
+    core_architecture_contracts_py["contracts"]
+    core_architecture_contracts_py --> core_architecture_ast_utils_py
+    core_architecture_contracts_py --> core_architecture_llm_client_py
+    core_architecture_docs_py["docs"]
+    core_architecture_docs_py --> core_architecture_ast_utils_py
+    core_architecture_docs_py --> core_architecture_model_py
+    core_architecture_llm_client_py["llm_client"]
+    core_architecture_model_py["model"]
+    core_architecture_model_py --> core_architecture_ast_utils_py
     core_diff_reader_py["diff_reader"]
     core_doc_generator_py["doc_generator"]
-    core_doc_generator_py --> core_system_model_py
+    core_doc_generator_py --> core_architecture_adr_py
+    core_doc_generator_py --> core_architecture_contracts_py
+    core_doc_generator_py --> core_architecture_docs_py
     core_engine_py["engine"]
     core_engine_py --> core_diff_reader_py
-    core_engine_py --> core_doc_generator_py
     core_engine_py --> core_llm_py
     core_engine_py --> core_metadata_py
-    core_engine_py --> core_system_model_py
     core_llm_py["llm"]
     core_metadata_py["metadata"]
     core_system_model_py["system_model"]
+    core_system_model_py --> core_architecture_model_py
 ```
 
 ---
@@ -65,6 +79,78 @@ gitmind query CLI
 
 - Lines: 91
 - Public API symbols: 4
+- Depends on: `core/metadata.py`
+- External imports: `datetime`, `json`, `os`, `sys`
+
+### `core/architecture/adr.py`
+
+**Role:** `module`
+
+ADR generation helpers for newly introduced features.
+
+- Lines: 148
+- Public API symbols: 1
+- Depends on: `core/architecture/llm_client.py`
+- Used by: `core/doc_generator.py`
+- External imports: `datetime`, `os`, `re`, `typing`
+
+### `core/architecture/ast_utils.py`
+
+**Role:** `module`
+
+AST-backed helpers used by documentation and architecture rendering.
+
+- Lines: 93
+- Public API symbols: 2
+- Used by: `core/architecture/contracts.py`, `core/architecture/docs.py`, `core/architecture/model.py`
+- External imports: `ast`, `os`
+
+### `core/architecture/contracts.py`
+
+**Role:** `module`
+
+Incremental contract generation for changed source modules.
+
+- Lines: 205
+- Public API symbols: 1
+- Depends on: `core/architecture/ast_utils.py`, `core/architecture/llm_client.py`
+- Used by: `core/doc_generator.py`
+- External imports: `datetime`, `json`, `os`, `re`, `typing`
+
+### `core/architecture/docs.py`
+
+**Role:** `documentation`
+
+Markdown renderers for architecture snapshots and findings.
+
+- Lines: 222
+- Public API symbols: 2
+- Depends on: `core/architecture/ast_utils.py`, `core/architecture/model.py`
+- Used by: `core/doc_generator.py`
+- External imports: `datetime`, `os`
+
+### `core/architecture/llm_client.py`
+
+**Role:** `integration`
+
+Small Ollama client for architecture-oriented generation tasks.
+
+- Lines: 37
+- Public API symbols: 1
+- Used by: `core/architecture/adr.py`, `core/architecture/contracts.py`
+- External imports: `json`, `re`, `requests`
+
+### `core/architecture/model.py`
+
+**Role:** `architecture_model`
+
+Incremental system model extraction plus rule-based architecture findings.
+
+- Lines: 554
+- Public API symbols: 3
+- Depends on: `core/architecture/ast_utils.py`
+- Used by: `core/architecture/docs.py`, `core/system_model.py`
+- External imports: `ast`, `datetime`, `json`, `os`
 
 ### `core/diff_reader.py`
 
@@ -73,18 +159,17 @@ gitmind query CLI
 - Lines: 83
 - Public API symbols: 4
 - Used by: `core/engine.py`
+- External imports: `subprocess`
 
 ### `core/doc_generator.py`
 
-**Role:** `documentation`
+**Role:** `compatibility`
 
-Generates FAANG-style living documentation from the codebase + commit metadata.
+Compatibility wrapper for architecture documentation generation.
 
-- Lines: 786
-- Public API symbols: 4
-- Depends on: `core/system_model.py`
-- Used by: `core/engine.py`
-- External imports: `ast`, `datetime`, `json`, `os`, `re`, `requests`
+- Lines: 12
+- Public API symbols: 0
+- Depends on: `core/architecture/adr.py`, `core/architecture/contracts.py`, `core/architecture/docs.py`
 
 ### `core/engine.py`
 
@@ -92,8 +177,8 @@ Generates FAANG-style living documentation from the codebase + commit metadata.
 
 - Lines: 86
 - Public API symbols: 1
-- Depends on: `core/diff_reader.py`, `core/doc_generator.py`, `core/llm.py`, `core/metadata.py`, `core/system_model.py`
-- External imports: `os`, `sys`
+- Depends on: `core/diff_reader.py`, `core/llm.py`, `core/metadata.py`
+- External imports: `architecture`, `os`, `sys`
 
 ### `core/llm.py`
 
@@ -102,6 +187,7 @@ Generates FAANG-style living documentation from the codebase + commit metadata.
 - Lines: 142
 - Public API symbols: 1
 - Used by: `core/engine.py`
+- External imports: `json`, `re`, `requests`
 
 ### `core/metadata.py`
 
@@ -109,16 +195,18 @@ Generates FAANG-style living documentation from the codebase + commit metadata.
 
 - Lines: 58
 - Public API symbols: 3
-- Used by: `core/engine.py`
+- Used by: `cli/query.py`, `core/engine.py`
+- External imports: `datetime`, `json`, `os`
 
 ### `core/system_model.py`
 
-**Role:** `architecture_model`
+**Role:** `compatibility`
 
-- Lines: 545
-- Public API symbols: 3
-- Used by: `core/doc_generator.py`, `core/engine.py`
-- External imports: `ast`, `datetime`, `json`, `os`
+Compatibility wrapper for the incremental architecture model.
+
+- Lines: 5
+- Public API symbols: 0
+- Depends on: `core/architecture/model.py`
 
 ---
 
@@ -142,22 +230,47 @@ _Extracted directly from the current architecture model._
 - `def cmd_history()`
 - `def cmd_stale(days)`
 
+### `core/architecture/adr.py`
+
+- `def generate_adr(summary: dict, commit_hash: str, commit_message: str, repo_root: str) -> Optional[str]`
+  > Generate an ADR for a new-feature commit.
+
+### `core/architecture/ast_utils.py`
+
+- `def extract_signatures(filepath: str) -> list[dict]`
+  > Extract public function and class signatures from a Python module.
+- `def scan_source_files(repo_root: str) -> list[str]`
+  > Return source .py files in tracked source directories.
+
+### `core/architecture/contracts.py`
+
+- `def update_contracts(changed_files: list[str], repo_root: str) -> Optional[str]`
+  > Update docs/contracts.md for changed source files.
+
+### `core/architecture/docs.py`
+
+- `def generate_architecture_doc(repo_root: str) -> str`
+  > Render docs/architecture.md from the persisted system model.
+- `def generate_findings_doc(repo_root: str) -> str`
+  > Render docs/quality-findings.md from the stored findings JSON.
+
+### `core/architecture/llm_client.py`
+
+- `def llm_json(prompt: str, timeout: int) -> dict`
+  > Call Ollama and parse the first JSON object in the response.
+
+### `core/architecture/model.py`
+
+- `def load_system_model(repo_root: str) -> dict`
+- `def load_findings(repo_root: str) -> dict`
+- `def update_system_model(changed_files: list[str], repo_root: str, commit_hash: str) -> dict`
+
 ### `core/diff_reader.py`
 
 - `def get_latest_diff() -> str`
 - `def get_changed_files() -> list[str]`
 - `def get_commit_message() -> str`
 - `def get_commit_hash() -> str`
-
-### `core/doc_generator.py`
-
-- `def generate_architecture_doc(repo_root: str) -> str`
-  > Rebuild docs/architecture.md from the persisted system model.
-- `def generate_findings_doc(repo_root: str) -> str`
-- `def update_contracts(changed_files: list[str], repo_root: str) -> Optional[str]`
-  > Update docs/contracts.md with real contracts for changed source files.
-- `def generate_adr(summary: dict, commit_hash: str, commit_message: str, repo_root: str) -> Optional[str]`
-  > Generate an ADR for a new feature commit.
 
 ### `core/engine.py`
 
@@ -172,9 +285,3 @@ _Extracted directly from the current architecture model._
 - `def load() -> dict`
 - `def save(data: dict)`
 - `def update(summary: dict, commit_hash: str) -> dict`
-
-### `core/system_model.py`
-
-- `def load_system_model(repo_root: str) -> dict`
-- `def load_findings(repo_root: str) -> dict`
-- `def update_system_model(changed_files: list[str], repo_root: str, commit_hash: str) -> dict`

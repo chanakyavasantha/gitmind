@@ -12,13 +12,13 @@ from diff_reader import (
 )
 from llm import analyze_diff
 from metadata import update, _repo_root
-from doc_generator import (
+from architecture import (
     generate_adr,
     generate_architecture_doc,
     generate_findings_doc,
+    update_system_model,
     update_contracts,
 )
-from system_model import update_system_model
 
 
 def run():
