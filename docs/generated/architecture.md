@@ -1,7 +1,7 @@
 # Architecture
 
 *Auto-generated from the incremental system model. Do not edit manually.*
-*Last updated: 2026-04-15 17:52*
+*Last updated: 2026-04-15 18:02*
 
 ---
 
@@ -88,7 +88,7 @@ gitmind query CLI
 
 ADR generation helpers for newly introduced features.
 
-- Lines: 148
+- Lines: 151
 - Public API symbols: 1
 - Depends on: `core/architecture/llm_client.py`
 - Used by: `core/doc_generator.py`
@@ -111,7 +111,7 @@ AST-backed helpers used by documentation and architecture rendering.
 
 Incremental contract generation for changed source modules.
 
-- Lines: 205
+- Lines: 209
 - Public API symbols: 1
 - Depends on: `core/architecture/ast_utils.py`, `core/architecture/llm_client.py`
 - Used by: `core/doc_generator.py`
@@ -123,7 +123,7 @@ Incremental contract generation for changed source modules.
 
 Markdown renderers for architecture snapshots and findings.
 
-- Lines: 222
+- Lines: 231
 - Public API symbols: 2
 - Depends on: `core/architecture/ast_utils.py`, `core/architecture/model.py`
 - Used by: `core/doc_generator.py`
@@ -245,14 +245,14 @@ _Extracted directly from the current architecture model._
 ### `core/architecture/contracts.py`
 
 - `def update_contracts(changed_files: list[str], repo_root: str) -> Optional[str]`
-  > Update docs/contracts.md for changed source files.
+  > Update docs/generated/contracts.md for changed source files.
 
 ### `core/architecture/docs.py`
 
 - `def generate_architecture_doc(repo_root: str) -> str`
-  > Render docs/architecture.md from the persisted system model.
+  > Render docs/generated/architecture.md from the persisted system model.
 - `def generate_findings_doc(repo_root: str) -> str`
-  > Render docs/quality-findings.md from the stored findings JSON.
+  > Render docs/generated/quality-findings.md from the stored findings JSON.
 
 ### `core/architecture/llm_client.py`
 

@@ -7,8 +7,17 @@ from .ast_utils import extract_signatures, scan_source_files
 from .model import load_findings, load_system_model
 
 
+GENERATED_DOCS_DIR = os.path.join("docs", "generated")
+
+
+def _generated_output(repo_root: str, filename: str) -> str:
+    output_dir = os.path.join(repo_root, GENERATED_DOCS_DIR)
+    os.makedirs(output_dir, exist_ok=True)
+    return os.path.join(output_dir, filename)
+
+
 def generate_architecture_doc(repo_root: str) -> str:
-    """Render docs/architecture.md from the persisted system model."""
+    """Render docs/generated/architecture.md from the persisted system model."""
     model = load_system_model(repo_root)
     modules = model.get("modules", {})
     if not modules:
@@ -172,14 +181,14 @@ def generate_architecture_doc(repo_root: str) -> str:
                 lines.append(f"  > {item['docstring'].splitlines()[0]}")
         lines.append("")
 
-    output_path = os.path.join(repo_root, "docs", "architecture.md")
+    output_path = _generated_output(repo_root, "architecture.md")
     with open(output_path, "w") as f:
         f.write("\n".join(lines))
     return output_path
 
 
 def generate_findings_doc(repo_root: str) -> str:
-    """Render docs/quality-findings.md from the stored findings JSON."""
+    """Render docs/generated/quality-findings.md from the stored findings JSON."""
     findings = load_findings(repo_root)
     summary = findings.get("summary", {})
     now = datetime.now().strftime("%Y-%m-%d %H:%M")
@@ -216,7 +225,7 @@ def generate_findings_doc(repo_root: str) -> str:
         lines.append(f"- Summary: {finding.get('summary', '')}")
         lines.append("")
 
-    output_path = os.path.join(repo_root, "docs", "quality-findings.md")
+    output_path = _generated_output(repo_root, "quality-findings.md")
     with open(output_path, "w") as f:
         f.write("\n".join(lines))
     return output_path

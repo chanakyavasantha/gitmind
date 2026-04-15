@@ -10,6 +10,9 @@ from .ast_utils import SKIP_FILES, SOURCE_DIRS, extract_signatures
 from .llm_client import llm_json
 
 
+GENERATED_CONTRACTS_PATH = os.path.join("docs", "generated", "contracts.md")
+
+
 _CONTRACTS_PROMPT = """You are a senior engineer writing precise API contracts for internal documentation.
 
 You are given the ACTUAL source code of a module (not a diff — the full current file).
@@ -50,7 +53,7 @@ Rules:
 
 
 def update_contracts(changed_files: list[str], repo_root: str) -> Optional[str]:
-    """Update docs/contracts.md for changed source files."""
+    """Update docs/generated/contracts.md for changed source files."""
     source_files = []
     for rel_path in changed_files:
         if rel_path.startswith(".gitmind/") or not rel_path.endswith(".py"):
@@ -66,7 +69,8 @@ def update_contracts(changed_files: list[str], repo_root: str) -> Optional[str]:
     if not source_files:
         return None
 
-    contracts_path = os.path.join(repo_root, "docs", "contracts.md")
+    contracts_path = os.path.join(repo_root, GENERATED_CONTRACTS_PATH)
+    os.makedirs(os.path.dirname(contracts_path), exist_ok=True)
     existing = _parse_contracts_cache(contracts_path) if os.path.exists(contracts_path) else {}
 
     for rel_path in source_files:

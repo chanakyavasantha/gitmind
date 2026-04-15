@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-15T21:52:09Z",
-  "last_commit_hash": "local-cleanup",
+  "generated_at": "2026-04-15T22:02:26Z",
+  "last_commit_hash": "docs-reorg",
   "modules": {
     "cli/dashboard.py": {
       "dependencies": [],
@@ -28,7 +28,7 @@
         "Path",
         "urlparse"
       ],
-      "last_seen": "2026-04-15T21:52:09Z",
+      "last_seen": "2026-04-15T22:02:26Z",
       "line_count": 149,
       "local_imports": [
         "argparse",
@@ -118,7 +118,7 @@
         "load",
         "timedelta"
       ],
-      "last_seen": "2026-04-15T21:52:09Z",
+      "last_seen": "2026-04-15T22:02:26Z",
       "line_count": 91,
       "local_imports": [
         "datetime",
@@ -190,8 +190,8 @@
         "datetime",
         "llm_json"
       ],
-      "last_seen": "2026-04-15T21:52:09Z",
-      "line_count": 148,
+      "last_seen": "2026-04-15T22:02:26Z",
+      "line_count": 151,
       "local_imports": [
         "datetime",
         "llm_client",
@@ -206,7 +206,7 @@
       "public_functions": [
         {
           "docstring": "Generate an ADR for a new-feature commit.",
-          "lineno": 63,
+          "lineno": 66,
           "name": "generate_adr",
           "signature": "def generate_adr(summary: dict, commit_hash: str, commit_message: str, repo_root: str) -> Optional[str]"
         }
@@ -238,7 +238,7 @@
         "os"
       ],
       "imported_symbols": [],
-      "last_seen": "2026-04-15T21:52:09Z",
+      "last_seen": "2026-04-15T22:02:26Z",
       "line_count": 93,
       "local_imports": [
         "ast",
@@ -297,8 +297,8 @@
         "extract_signatures",
         "llm_json"
       ],
-      "last_seen": "2026-04-15T21:52:09Z",
-      "line_count": 205,
+      "last_seen": "2026-04-15T22:02:26Z",
+      "line_count": 209,
       "local_imports": [
         "ast_utils",
         "datetime",
@@ -314,8 +314,8 @@
       "public_classes": [],
       "public_functions": [
         {
-          "docstring": "Update docs/contracts.md for changed source files.",
-          "lineno": 52,
+          "docstring": "Update docs/generated/contracts.md for changed source files.",
+          "lineno": 55,
           "name": "update_contracts",
           "signature": "def update_contracts(changed_files: list[str], repo_root: str) -> Optional[str]"
         }
@@ -358,8 +358,8 @@
         "load_system_model",
         "scan_source_files"
       ],
-      "last_seen": "2026-04-15T21:52:09Z",
-      "line_count": 222,
+      "last_seen": "2026-04-15T22:02:26Z",
+      "line_count": 231,
       "local_imports": [
         "ast_utils",
         "datetime",
@@ -372,14 +372,14 @@
       "public_classes": [],
       "public_functions": [
         {
-          "docstring": "Render docs/architecture.md from the persisted system model.",
-          "lineno": 10,
+          "docstring": "Render docs/generated/architecture.md from the persisted system model.",
+          "lineno": 19,
           "name": "generate_architecture_doc",
           "signature": "def generate_architecture_doc(repo_root: str) -> str"
         },
         {
-          "docstring": "Render docs/quality-findings.md from the stored findings JSON.",
-          "lineno": 181,
+          "docstring": "Render docs/generated/quality-findings.md from the stored findings JSON.",
+          "lineno": 190,
           "name": "generate_findings_doc",
           "signature": "def generate_findings_doc(repo_root: str) -> str"
         }
@@ -412,7 +412,7 @@
         "requests"
       ],
       "imported_symbols": [],
-      "last_seen": "2026-04-15T21:52:09Z",
+      "last_seen": "2026-04-15T22:02:26Z",
       "line_count": 37,
       "local_imports": [
         "json",
@@ -466,7 +466,7 @@
         "SOURCE_EXT",
         "datetime"
       ],
-      "last_seen": "2026-04-15T21:52:09Z",
+      "last_seen": "2026-04-15T22:02:26Z",
       "line_count": 554,
       "local_imports": [
         "ast",
@@ -528,7 +528,7 @@
         "subprocess"
       ],
       "imported_symbols": [],
-      "last_seen": "2026-04-15T21:52:09Z",
+      "last_seen": "2026-04-15T22:02:26Z",
       "line_count": 83,
       "local_imports": [
         "subprocess"
@@ -588,7 +588,7 @@
         "generate_findings_doc",
         "update_contracts"
       ],
-      "last_seen": "2026-04-15T21:52:09Z",
+      "last_seen": "2026-04-15T22:02:26Z",
       "line_count": 12,
       "local_imports": [
         "architecture.adr",
@@ -639,7 +639,7 @@
         "update_contracts",
         "update_system_model"
       ],
-      "last_seen": "2026-04-15T21:52:09Z",
+      "last_seen": "2026-04-15T22:02:26Z",
       "line_count": 86,
       "local_imports": [
         "architecture",
@@ -688,7 +688,7 @@
         "requests"
       ],
       "imported_symbols": [],
-      "last_seen": "2026-04-15T21:52:09Z",
+      "last_seen": "2026-04-15T22:02:26Z",
       "line_count": 142,
       "local_imports": [
         "json",
@@ -736,7 +736,7 @@
       "imported_symbols": [
         "datetime"
       ],
-      "last_seen": "2026-04-15T21:52:09Z",
+      "last_seen": "2026-04-15T22:02:26Z",
       "line_count": 58,
       "local_imports": [
         "datetime",
@@ -793,7 +793,7 @@
         "load_system_model",
         "update_system_model"
       ],
-      "last_seen": "2026-04-15T21:52:09Z",
+      "last_seen": "2026-04-15T22:02:26Z",
       "line_count": 5,
       "local_imports": [
         "architecture.model"

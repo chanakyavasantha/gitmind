@@ -8,7 +8,7 @@
     "module_count": 14,
     "strength_count": 1
   },
-  "generated_at": "2026-04-15T21:52:09Z",
+  "generated_at": "2026-04-15T22:02:26Z",
   "recent_findings": [
     {
       "category": "testing",
@@ -39,7 +39,7 @@
       "id": "module-size:core/architecture/docs.py",
       "module": "core/architecture/docs.py",
       "severity": "medium",
-      "summary": "core/architecture/docs.py has 222 lines; consider splitting parsing, rendering, and integration responsibilities.",
+      "summary": "core/architecture/docs.py has 231 lines; consider splitting parsing, rendering, and integration responsibilities.",
       "title": "core/architecture/docs.py is growing large"
     },
     {

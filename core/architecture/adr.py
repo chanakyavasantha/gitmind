@@ -8,6 +8,9 @@ from typing import Optional
 from .llm_client import llm_json
 
 
+GENERATED_DECISIONS_DIR = os.path.join("docs", "generated", "decisions")
+
+
 _ADR_PROMPT = """You are a software architect writing an Architecture Decision Record (ADR).
 
 ADRs capture not just WHAT was decided, but WHY — including alternatives that were rejected.
@@ -67,7 +70,7 @@ def generate_adr(
     repo_root: str,
 ) -> Optional[str]:
     """Generate an ADR for a new-feature commit."""
-    decisions_dir = os.path.join(repo_root, "docs", "decisions")
+    decisions_dir = os.path.join(repo_root, GENERATED_DECISIONS_DIR)
     prompt = _ADR_PROMPT.format(
         feature_name=summary.get("feature_name", "unknown"),
         what_changed=summary.get("what_changed", ""),

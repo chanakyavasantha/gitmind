@@ -14,6 +14,23 @@ Every commit is automatically analyzed by a local LLM (Ollama + qwen2.5-coder:7b
 
 ---
 
+## Features
+
+| Feature | Status |
+|---------|--------|
+| Semantic commit summaries with local LLM analysis | ✅ Available |
+| Feature-level metadata and commit history tracking | ✅ Available |
+| Staleness detection for inactive features | ✅ Available |
+| Incremental architecture model generation | ✅ Available |
+| Auto-generated architecture, contracts, and quality findings docs | ✅ Available |
+| Local dashboard for feature health and architecture findings | ✅ Available |
+| Architecture Decision Record generation for new features | ✅ Available |
+| Full-system professional diagrams and review dashboard expansion | Coming Soon |
+| On-demand docs rebuild CLI | Coming Soon |
+| Editor integrations and richer repo analysis workflows | Coming Soon |
+
+---
+
 ## Demo
 
 ![gitmind demo](docs/demo.gif)
@@ -107,9 +124,9 @@ gitmind now keeps both human-readable docs and machine-readable architecture sta
 
 Generated markdown:
 
-- `docs/architecture.md` — current system structure, component graph, and public API reference
-- `docs/contracts.md` — module contracts for changed source files
-- `docs/quality-findings.md` — architecture risks, quality findings, and strengths
+- `docs/generated/architecture.md` — current system structure, component graph, and public API reference
+- `docs/generated/contracts.md` — module contracts for changed source files
+- `docs/generated/quality-findings.md` — architecture risks, quality findings, and strengths
 
 Generated JSON:
 

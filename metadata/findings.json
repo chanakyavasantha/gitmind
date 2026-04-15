@@ -29,7 +29,7 @@
       "id": "module-size:core/architecture/docs.py",
       "module": "core/architecture/docs.py",
       "severity": "medium",
-      "summary": "core/architecture/docs.py has 222 lines; consider splitting parsing, rendering, and integration responsibilities.",
+      "summary": "core/architecture/docs.py has 231 lines; consider splitting parsing, rendering, and integration responsibilities.",
       "title": "core/architecture/docs.py is growing large"
     },
     {
@@ -90,7 +90,7 @@
       "title": "core/metadata.py is missing a module docstring"
     }
   ],
-  "generated_at": "2026-04-15T21:52:09Z",
+  "generated_at": "2026-04-15T22:02:26Z",
   "summary": {
     "finding_count": 10,
     "high_severity": 2,

@@ -34,10 +34,11 @@ nav:
   - How It Works: how-it-works.md
   - CLI Reference: cli-reference.md
   - Build Log: build-log.md
-  - Architecture: architecture.md
-  - Module Contracts: contracts.md
-  - Quality Findings: quality-findings.md
-  - Decisions: decisions/
+  - Generated Docs:
+      - Architecture: generated/architecture.md
+      - Module Contracts: generated/contracts.md
+      - Quality Findings: generated/quality-findings.md
+      - Decisions: generated/decisions/
   - Roadmap: roadmap.md
 
 markdown_extensions:

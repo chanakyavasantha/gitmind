@@ -387,6 +387,29 @@
       "last_built_upon": "2026-04-15T17:57:53.326945",
       "is_new_feature": false,
       "commit_count": 1
+    },
+    "documentation_updates": {
+      "introduced": "2026-04-15T18:03:50.402300",
+      "files_touched": [
+        "README.md",
+        "core/architecture/adr.py",
+        "core/architecture/contracts.py",
+        "core/architecture/docs.py",
+        "docs/generated/architecture.md",
+        "docs/generated/contracts.md",
+        "docs/generated/decisions/001-add-incremental-architecture-docs-pipeline.md",
+        "docs/generated/quality-findings.md",
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata/dashboard.json",
+        "metadata/findings.json",
+        "metadata/system_model.json",
+        "mkdocs.yml"
+      ],
+      "still_active": true,
+      "last_built_upon": "2026-04-15T18:03:50.402300",
+      "is_new_feature": false,
+      "commit_count": 1
     }
   },
   "history": [
@@ -832,6 +855,31 @@
         "metadata/dashboard.json",
         "metadata/findings.json",
         "metadata/system_model.json"
+      ]
+    },
+    {
+      "commit_hash": "c2d720a93240d3076f6b2935a5e64bfac9b47395",
+      "timestamp": "2026-04-15T18:03:50.402300",
+      "what_changed": "Organized generated documentation and updated README to include a features table",
+      "why_it_likely_changed": "To improve clarity and accessibility of project capabilities in the README",
+      "feature_name": "documentation_updates",
+      "is_new_feature": false,
+      "impact": "Enhances user understanding and usability of the project by providing a comprehensive overview of available features and their statuses",
+      "files_touched": [
+        "README.md",
+        "core/architecture/adr.py",
+        "core/architecture/contracts.py",
+        "core/architecture/docs.py",
+        "docs/generated/architecture.md",
+        "docs/generated/contracts.md",
+        "docs/generated/decisions/001-add-incremental-architecture-docs-pipeline.md",
+        "docs/generated/quality-findings.md",
+        "hooks/install.sh",
+        "hooks/post-commit",
+        "metadata/dashboard.json",
+        "metadata/findings.json",
+        "metadata/system_model.json",
+        "mkdocs.yml"
       ]
     }
   ]

@@ -1,7 +1,7 @@
 # Quality Findings
 
 *Auto-generated from the incremental system model. Do not edit manually.*
-*Last updated: 2026-04-15 17:52*
+*Last updated: 2026-04-15 18:02*
 
 ---
 
@@ -43,7 +43,7 @@
 - Severity: `medium`
 - Category: `maintainability`
 - Module: `core/architecture/docs.py`
-- Summary: core/architecture/docs.py has 222 lines; consider splitting parsing, rendering, and integration responsibilities.
+- Summary: core/architecture/docs.py has 231 lines; consider splitting parsing, rendering, and integration responsibilities.
 
 ### core/architecture/model.py is growing large
 
