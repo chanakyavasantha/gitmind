@@ -313,6 +313,90 @@
     }
     .empty-msg span { color: var(--green); }
 
+    /* ── Architecture ───────────────────────────── */
+    .arch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+    }
+    .arch-card {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+    }
+    .arch-card .label {
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+    .arch-card .value {
+      font-size: 24px;
+      font-weight: 700;
+      margin-top: 4px;
+    }
+    .arch-card .sub {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 6px;
+    }
+    .hotspot-list,
+    .finding-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .hotspot-item,
+    .finding-item {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 14px;
+    }
+    .hotspot-head,
+    .finding-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 6px;
+      align-items: center;
+    }
+    .mono {
+      font-family: "SF Mono", "Fira Code", monospace;
+      font-size: 12px;
+    }
+    .severity {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border: 1px solid var(--border);
+    }
+    .severity.high {
+      color: var(--red);
+      background: rgba(248, 81, 73, 0.12);
+      border-color: rgba(248, 81, 73, 0.28);
+    }
+    .severity.medium {
+      color: var(--yellow);
+      background: rgba(210, 153, 34, 0.12);
+      border-color: rgba(210, 153, 34, 0.28);
+    }
+    .severity.low {
+      color: var(--blue);
+      background: rgba(88, 166, 255, 0.12);
+      border-color: rgba(88, 166, 255, 0.28);
+    }
+    .finding-summary,
+    .hotspot-meta {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
     /* ── Loading ─────────────────────────────────── */
     #loading {
       position: fixed;
@@ -409,6 +493,39 @@
     </div>
     <div class="section-body">
       <div id="stale-body"></div>
+    </div>
+  </div>
+
+  <!-- Architecture -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-title">Architecture Health</span>
+      <span id="arch-generated" style="font-size:12px;color:var(--muted)"></span>
+    </div>
+    <div class="section-body">
+      <div class="arch-grid" id="arch-grid"></div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="section">
+      <div class="section-header">
+        <span class="section-title">Coupling Hotspots</span>
+        <span style="font-size:12px;color:var(--muted)">blast radius leaders</span>
+      </div>
+      <div class="section-body">
+        <div class="hotspot-list" id="hotspot-list"></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-header">
+        <span class="section-title">Recent Findings</span>
+        <span style="font-size:12px;color:var(--muted)">architecture and quality</span>
+      </div>
+      <div class="section-body">
+        <div class="finding-list" id="finding-list"></div>
+      </div>
     </div>
   </div>
 
@@ -709,6 +826,74 @@ function renderStaleness(data, threshold) {
   `;
 }
 
+// ── Render: Architecture ────────────────────────────────────────
+
+function renderArchitecture(data) {
+  const arch = data.architecture || {};
+  const findings = data.findings || {};
+  const summary = arch.system_summary || {};
+  const findingSummary = arch.finding_summary || findings.summary || {};
+
+  document.getElementById('arch-generated').textContent =
+    arch.generated_at ? `updated ${relativeTime(arch.generated_at)}` : '';
+
+  const cards = [
+    {
+      label: 'Modules',
+      value: summary.module_count || 0,
+      sub: `${summary.public_api_count || 0} public API symbols`,
+    },
+    {
+      label: 'Dependencies',
+      value: summary.dependency_edges || 0,
+      sub: `${summary.entrypoint_count || 0} entrypoints tracked`,
+    },
+    {
+      label: 'Risks',
+      value: findingSummary.finding_count || 0,
+      sub: `${findingSummary.high_severity || 0} high severity`,
+    },
+    {
+      label: 'Strengths',
+      value: findingSummary.strength_count || 0,
+      sub: 'captured in system findings',
+    },
+  ];
+
+  document.getElementById('arch-grid').innerHTML = cards.map(card => `
+    <div class="arch-card">
+      <div class="label">${card.label}</div>
+      <div class="value">${card.value}</div>
+      <div class="sub">${card.sub}</div>
+    </div>
+  `).join('');
+
+  const hotspots = arch.top_coupled_modules || [];
+  document.getElementById('hotspot-list').innerHTML = hotspots.length ? hotspots.map(item => `
+    <div class="hotspot-item">
+      <div class="hotspot-head">
+        <span class="mono">${item.path}</span>
+        <span class="badge">${item.role}</span>
+      </div>
+      <div class="hotspot-meta">
+        ${item.dependents} dependents · ${item.dependencies} dependencies
+      </div>
+    </div>
+  `).join('') : `<div class="empty-msg">No architecture data yet.</div>`;
+
+  const recentFindings = arch.recent_findings || findings.findings || [];
+  document.getElementById('finding-list').innerHTML = recentFindings.length ? recentFindings.slice(0, 8).map(item => `
+    <div class="finding-item">
+      <div class="finding-head">
+        <span>${item.title}</span>
+        <span class="severity ${item.severity || 'low'}">${item.severity || 'low'}</span>
+      </div>
+      <div class="finding-summary">${item.summary || ''}</div>
+      ${item.module ? `<div class="hotspot-meta mono" style="margin-top:8px">${item.module}</div>` : ''}
+    </div>
+  `).join('') : `<div class="empty-msg">No findings yet.</div>`;
+}
+
 // ── Init ─────────────────────────────────────────────────────────
 
 let _data = null;
@@ -734,6 +919,7 @@ async function init() {
   renderFeatures(_data);
   renderActivity(_data.history || []);
   renderChart(_data.history || []);
+  renderArchitecture(_data);
 
   const slider = document.getElementById('threshold');
   const valLabel = document.getElementById('threshold-val');

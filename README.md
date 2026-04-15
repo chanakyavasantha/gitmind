@@ -8,9 +8,9 @@
 ![Ollama](https://img.shields.io/badge/LLM-Ollama-black)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)
 
-**Semantic version control.** Git tells you what changed — gitmind tells you why, and what's safe to remove.
+**Semantic version control plus living architecture docs.** Git tells you what changed — gitmind tells you why, what system structure exists today, and where the risks are.
 
-Every commit is automatically analyzed by a local LLM (Ollama + qwen2.5-coder:7b) and stored as structured metadata alongside your code. No API costs. No external services. Works with any editor.
+Every commit is automatically analyzed by a local LLM (Ollama + qwen2.5-coder:7b), then merged into structured metadata and an incremental architecture model stored alongside your code. No API costs. No external services. Works with any editor.
 
 ---
 
@@ -46,9 +46,13 @@ diff_reader.py  →  reads diff + commit message
     ↓
 llm.py          →  Ollama (qwen2.5-coder:7b) analyzes the diff
     ↓
-metadata.json   →  semantic summary stored in repo
+metadata.json   →  semantic commit/feature history
     ↓
-query.py        →  CLI to query features, files, staleness
+system_model.json / findings.json / dashboard.json
+    ↓
+docs/*.md       →  architecture, contracts, quality findings
+    ↓
+dashboard.py    →  local architecture and staleness dashboard
 ```
 
 ---
@@ -94,6 +98,36 @@ python3 cli/query.py history
 # Dead code candidates — no activity in 90 days
 python3 cli/query.py stale --days 90
 ```
+
+---
+
+## Generated Docs And Dashboard
+
+gitmind now keeps both human-readable docs and machine-readable architecture state in the repo.
+
+Generated markdown:
+
+- `docs/architecture.md` — current system structure, component graph, and public API reference
+- `docs/contracts.md` — module contracts for changed source files
+- `docs/quality-findings.md` — architecture risks, quality findings, and strengths
+
+Generated JSON:
+
+- `metadata/system_model.json` — incremental architecture model
+- `metadata/findings.json` — structured findings for the current codebase
+- `metadata/dashboard.json` — precomputed dashboard payload
+
+To inspect them:
+
+```bash
+# Open the local dashboard
+python3 cli/dashboard.py
+
+# Or serve the docs site
+mkdocs serve
+```
+
+The dashboard runs at `http://localhost:4242` by default.
 
 ---
 
@@ -150,15 +184,20 @@ gitmind/
 │   ├── diff_reader.py    # reads git diffs, handles first-commit edge case
 │   ├── llm.py            # Ollama interface with JSON enforcement + coercion
 │   ├── metadata.py       # read/write metadata.json
-│   └── engine.py         # orchestrates the pipeline
+│   ├── system_model.py   # incremental architecture model + findings
+│   ├── doc_generator.py  # renders architecture docs, contracts, ADRs
+│   └── engine.py         # orchestrates commit-time updates
 ├── hooks/
 │   ├── post-commit       # bash hook installed into target repo
 │   └── install.sh        # copies gitmind into any repo, installs hook
 ├── cli/
-│   └── query.py          # CLI query tool
+│   ├── query.py          # feature/history query tool
+│   ├── dashboard.py      # local dashboard server
+│   └── dashboard.html    # dashboard UI
+├── metadata/             # generated architecture model + dashboard payload
+├── docs/                 # generated and hand-written docs
 ├── tests/
 │   └── test_core.py      # pytest suite
-├── docs/                 # MkDocs documentation
 └── requirements.txt
 ```
 

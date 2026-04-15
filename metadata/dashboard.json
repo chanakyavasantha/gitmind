@@ -1,0 +1,159 @@
+{
+  "component_diagram": "graph TD\n    cli_dashboard_py[\"dashboard\"]\n    cli_query_py[\"query\"]\n    core_diff_reader_py[\"diff_reader\"]\n    core_doc_generator_py[\"doc_generator\"]\n    core_doc_generator_py --> core_system_model_py\n    core_engine_py[\"engine\"]\n    core_engine_py --> core_diff_reader_py\n    core_engine_py --> core_doc_generator_py\n    core_engine_py --> core_llm_py\n    core_engine_py --> core_metadata_py\n    core_engine_py --> core_system_model_py\n    core_llm_py[\"llm\"]\n    core_metadata_py[\"metadata\"]\n    core_system_model_py[\"system_model\"]",
+  "finding_summary": {
+    "finding_count": 10,
+    "high_severity": 2,
+    "low_severity": 7,
+    "medium_severity": 2,
+    "module_count": 8,
+    "strength_count": 1
+  },
+  "generated_at": "2026-04-15T21:25:52Z",
+  "recent_findings": [
+    {
+      "category": "testing",
+      "id": "untested-critical:core/engine.py",
+      "module": "core/engine.py",
+      "severity": "high",
+      "summary": "This module orchestrates core behavior but no matching test file was found under tests/.",
+      "title": "core/engine.py has no direct test coverage"
+    },
+    {
+      "category": "testing",
+      "id": "untested-critical:core/system_model.py",
+      "module": "core/system_model.py",
+      "severity": "high",
+      "summary": "This module orchestrates core behavior but no matching test file was found under tests/.",
+      "title": "core/system_model.py has no direct test coverage"
+    },
+    {
+      "category": "maintainability",
+      "id": "module-size:core/doc_generator.py",
+      "module": "core/doc_generator.py",
+      "severity": "medium",
+      "summary": "core/doc_generator.py has 786 lines; consider splitting parsing, rendering, and integration responsibilities.",
+      "title": "core/doc_generator.py is growing large"
+    },
+    {
+      "category": "maintainability",
+      "id": "module-size:core/system_model.py",
+      "module": "core/system_model.py",
+      "severity": "medium",
+      "summary": "core/system_model.py has 545 lines; consider splitting parsing, rendering, and integration responsibilities.",
+      "title": "core/system_model.py is growing large"
+    },
+    {
+      "category": "operability",
+      "id": "dashboard-server",
+      "module": "cli/dashboard.py",
+      "severity": "low",
+      "summary": "This is fine for local use, but richer dashboards may want a structured API layer if interactions grow.",
+      "title": "Dashboard uses a basic single-process HTTP server"
+    },
+    {
+      "category": "architecture",
+      "id": "llm-boundary",
+      "kind": "strength",
+      "module": "core/llm.py",
+      "severity": "low",
+      "summary": "Keeping Ollama calls in one module lowers coupling; preserve that boundary as the architecture tooling expands.",
+      "title": "LLM integration is nicely isolated"
+    },
+    {
+      "category": "documentation",
+      "id": "missing-docstring:core/diff_reader.py",
+      "module": "core/diff_reader.py",
+      "severity": "low",
+      "summary": "Adding a top-level docstring would improve generated documentation quality and intent capture.",
+      "title": "core/diff_reader.py is missing a module docstring"
+    },
+    {
+      "category": "documentation",
+      "id": "missing-docstring:core/engine.py",
+      "module": "core/engine.py",
+      "severity": "low",
+      "summary": "Adding a top-level docstring would improve generated documentation quality and intent capture.",
+      "title": "core/engine.py is missing a module docstring"
+    },
+    {
+      "category": "documentation",
+      "id": "missing-docstring:core/llm.py",
+      "module": "core/llm.py",
+      "severity": "low",
+      "summary": "Adding a top-level docstring would improve generated documentation quality and intent capture.",
+      "title": "core/llm.py is missing a module docstring"
+    },
+    {
+      "category": "documentation",
+      "id": "missing-docstring:core/metadata.py",
+      "module": "core/metadata.py",
+      "severity": "low",
+      "summary": "Adding a top-level docstring would improve generated documentation quality and intent capture.",
+      "title": "core/metadata.py is missing a module docstring"
+    },
+    {
+      "category": "documentation",
+      "id": "missing-docstring:core/system_model.py",
+      "module": "core/system_model.py",
+      "severity": "low",
+      "summary": "Adding a top-level docstring would improve generated documentation quality and intent capture.",
+      "title": "core/system_model.py is missing a module docstring"
+    }
+  ],
+  "system_summary": {
+    "dependency_edges": 6,
+    "entrypoint_count": 4,
+    "module_count": 8,
+    "public_api_count": 25
+  },
+  "top_coupled_modules": [
+    {
+      "dependencies": 0,
+      "dependents": 2,
+      "path": "core/system_model.py",
+      "role": "architecture_model"
+    },
+    {
+      "dependencies": 1,
+      "dependents": 1,
+      "path": "core/doc_generator.py",
+      "role": "documentation"
+    },
+    {
+      "dependencies": 0,
+      "dependents": 1,
+      "path": "core/diff_reader.py",
+      "role": "git_adapter"
+    },
+    {
+      "dependencies": 0,
+      "dependents": 1,
+      "path": "core/llm.py",
+      "role": "integration"
+    },
+    {
+      "dependencies": 0,
+      "dependents": 1,
+      "path": "core/metadata.py",
+      "role": "storage"
+    },
+    {
+      "dependencies": 5,
+      "dependents": 0,
+      "path": "core/engine.py",
+      "role": "orchestrator"
+    },
+    {
+      "dependencies": 0,
+      "dependents": 0,
+      "path": "cli/dashboard.py",
+      "role": "dashboard"
+    },
+    {
+      "dependencies": 0,
+      "dependents": 0,
+      "path": "cli/query.py",
+      "role": "cli"
+    }
+  ]
+}

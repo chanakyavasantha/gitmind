@@ -46,8 +46,15 @@ else
     python3 "$ENGINE"
 fi
 REPO_ROOT="$(git rev-parse --show-toplevel)"
-if [ -f "$REPO_ROOT/metadata.json" ]; then
-    git add "$REPO_ROOT/metadata.json"
+# Stage metadata + any auto-generated docs and model artifacts
+git add "$REPO_ROOT/metadata.json" 2>/dev/null || true
+git add "$REPO_ROOT/metadata/" 2>/dev/null || true
+git add "$REPO_ROOT/docs/decisions/" 2>/dev/null || true
+git add "$REPO_ROOT/docs/contracts.md" 2>/dev/null || true
+git add "$REPO_ROOT/docs/architecture.md" 2>/dev/null || true
+git add "$REPO_ROOT/docs/quality-findings.md" 2>/dev/null || true
+# Only amend if gitmind actually staged something
+if ! git diff --cached --quiet; then
     git commit --amend --no-edit --no-verify --quiet
 fi
 EOF

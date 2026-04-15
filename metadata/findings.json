@@ -1,0 +1,102 @@
+{
+  "findings": [
+    {
+      "category": "testing",
+      "id": "untested-critical:core/engine.py",
+      "module": "core/engine.py",
+      "severity": "high",
+      "summary": "This module orchestrates core behavior but no matching test file was found under tests/.",
+      "title": "core/engine.py has no direct test coverage"
+    },
+    {
+      "category": "testing",
+      "id": "untested-critical:core/system_model.py",
+      "module": "core/system_model.py",
+      "severity": "high",
+      "summary": "This module orchestrates core behavior but no matching test file was found under tests/.",
+      "title": "core/system_model.py has no direct test coverage"
+    },
+    {
+      "category": "maintainability",
+      "id": "module-size:core/doc_generator.py",
+      "module": "core/doc_generator.py",
+      "severity": "medium",
+      "summary": "core/doc_generator.py has 786 lines; consider splitting parsing, rendering, and integration responsibilities.",
+      "title": "core/doc_generator.py is growing large"
+    },
+    {
+      "category": "maintainability",
+      "id": "module-size:core/system_model.py",
+      "module": "core/system_model.py",
+      "severity": "medium",
+      "summary": "core/system_model.py has 545 lines; consider splitting parsing, rendering, and integration responsibilities.",
+      "title": "core/system_model.py is growing large"
+    },
+    {
+      "category": "operability",
+      "id": "dashboard-server",
+      "module": "cli/dashboard.py",
+      "severity": "low",
+      "summary": "This is fine for local use, but richer dashboards may want a structured API layer if interactions grow.",
+      "title": "Dashboard uses a basic single-process HTTP server"
+    },
+    {
+      "category": "architecture",
+      "id": "llm-boundary",
+      "kind": "strength",
+      "module": "core/llm.py",
+      "severity": "low",
+      "summary": "Keeping Ollama calls in one module lowers coupling; preserve that boundary as the architecture tooling expands.",
+      "title": "LLM integration is nicely isolated"
+    },
+    {
+      "category": "documentation",
+      "id": "missing-docstring:core/diff_reader.py",
+      "module": "core/diff_reader.py",
+      "severity": "low",
+      "summary": "Adding a top-level docstring would improve generated documentation quality and intent capture.",
+      "title": "core/diff_reader.py is missing a module docstring"
+    },
+    {
+      "category": "documentation",
+      "id": "missing-docstring:core/engine.py",
+      "module": "core/engine.py",
+      "severity": "low",
+      "summary": "Adding a top-level docstring would improve generated documentation quality and intent capture.",
+      "title": "core/engine.py is missing a module docstring"
+    },
+    {
+      "category": "documentation",
+      "id": "missing-docstring:core/llm.py",
+      "module": "core/llm.py",
+      "severity": "low",
+      "summary": "Adding a top-level docstring would improve generated documentation quality and intent capture.",
+      "title": "core/llm.py is missing a module docstring"
+    },
+    {
+      "category": "documentation",
+      "id": "missing-docstring:core/metadata.py",
+      "module": "core/metadata.py",
+      "severity": "low",
+      "summary": "Adding a top-level docstring would improve generated documentation quality and intent capture.",
+      "title": "core/metadata.py is missing a module docstring"
+    },
+    {
+      "category": "documentation",
+      "id": "missing-docstring:core/system_model.py",
+      "module": "core/system_model.py",
+      "severity": "low",
+      "summary": "Adding a top-level docstring would improve generated documentation quality and intent capture.",
+      "title": "core/system_model.py is missing a module docstring"
+    }
+  ],
+  "generated_at": "2026-04-15T21:25:52Z",
+  "summary": {
+    "finding_count": 10,
+    "high_severity": 2,
+    "low_severity": 7,
+    "medium_severity": 2,
+    "module_count": 8,
+    "strength_count": 1
+  }
+}

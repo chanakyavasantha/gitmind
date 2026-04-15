@@ -9,6 +9,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "core"))
 import metadata as meta_module
 from metadata import load, update
 from llm import _extract_json, _coerce
+from system_model import update_system_model, load_system_model, load_findings
 
 
 # --- metadata tests ---
@@ -207,3 +208,99 @@ def test_build_diff_section_uses_full_diff_for_small_diffs():
     small_diff = "small diff content"
     section = _build_diff_section(small_diff, ["a.py"])
     assert "small diff content" in section
+
+
+# --- system model tests ---
+
+
+def test_update_system_model_creates_incremental_model(tmp_path):
+    (tmp_path / "core").mkdir()
+    (tmp_path / "cli").mkdir()
+    (tmp_path / "metadata").mkdir()
+    (tmp_path / "tests").mkdir()
+
+    (tmp_path / "core" / "alpha.py").write_text(
+        '"""Alpha module."""\n'
+        "from core.beta import helper\n\n"
+        "def run():\n"
+        "    return helper()\n"
+    )
+    (tmp_path / "core" / "beta.py").write_text(
+        '"""Beta module."""\n\n'
+        "def helper():\n"
+        "    return 'ok'\n"
+    )
+
+    result = update_system_model(
+        changed_files=["core/alpha.py", "core/beta.py"],
+        repo_root=str(tmp_path),
+        commit_hash="abc123",
+    )
+
+    model = result["model"]
+    assert model["last_commit_hash"] == "abc123"
+    assert "core/alpha.py" in model["modules"]
+    assert model["modules"]["core/alpha.py"]["dependencies"] == ["core/beta.py"]
+
+
+def test_update_system_model_removes_deleted_modules(tmp_path):
+    (tmp_path / "core").mkdir()
+    (tmp_path / "metadata").mkdir()
+
+    file_path = tmp_path / "core" / "alpha.py"
+    file_path.write_text("def run():\n    return 1\n")
+
+    update_system_model(
+        changed_files=["core/alpha.py"],
+        repo_root=str(tmp_path),
+        commit_hash="first",
+    )
+    file_path.unlink()
+
+    result = update_system_model(
+        changed_files=["core/alpha.py"],
+        repo_root=str(tmp_path),
+        commit_hash="second",
+    )
+
+    assert "core/alpha.py" not in result["model"]["modules"]
+
+
+def test_update_system_model_generates_findings_for_critical_untested_modules(tmp_path):
+    (tmp_path / "core").mkdir()
+    (tmp_path / "metadata").mkdir()
+    (tmp_path / "tests").mkdir()
+
+    (tmp_path / "core" / "engine.py").write_text(
+        '"""Engine."""\n\n'
+        "def run():\n"
+        "    return 1\n"
+    )
+
+    update_system_model(
+        changed_files=["core/engine.py"],
+        repo_root=str(tmp_path),
+        commit_hash="abc123",
+    )
+
+    findings = load_findings(str(tmp_path))
+    assert any(
+        item["id"] == "untested-critical:core/engine.py"
+        for item in findings["findings"]
+    )
+
+
+def test_load_system_model_reads_persisted_file(tmp_path):
+    (tmp_path / "core").mkdir()
+    (tmp_path / "metadata").mkdir()
+    (tmp_path / "core" / "sample.py").write_text("def ping():\n    return 'pong'\n")
+
+    update_system_model(
+        changed_files=["core/sample.py"],
+        repo_root=str(tmp_path),
+        commit_hash="persist",
+    )
+
+    loaded = load_system_model(str(tmp_path))
+    assert loaded["last_commit_hash"] == "persist"
+    assert "core/sample.py" in loaded["modules"]

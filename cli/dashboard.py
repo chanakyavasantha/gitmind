@@ -38,7 +38,17 @@ def find_metadata() -> Path:
     return Path.cwd() / "metadata.json"
 
 
-def make_handler(metadata_path: Path, stale_days: int):
+def find_dashboard_data() -> Path:
+    metadata_path = find_metadata()
+    return metadata_path.parent / "metadata" / "dashboard.json"
+
+
+def find_findings() -> Path:
+    metadata_path = find_metadata()
+    return metadata_path.parent / "metadata" / "findings.json"
+
+
+def make_handler(metadata_path: Path, dashboard_path: Path, findings_path: Path, stale_days: int):
     class Handler(BaseHTTPRequestHandler):
         def log_message(self, format, *args):
             pass  # suppress per-request noise
@@ -58,6 +68,12 @@ def make_handler(metadata_path: Path, stale_days: int):
                 return
             with open(metadata_path) as f:
                 data = json.load(f)
+            if dashboard_path.exists():
+                with open(dashboard_path) as f:
+                    data["architecture"] = json.load(f)
+            if findings_path.exists():
+                with open(findings_path) as f:
+                    data["findings"] = json.load(f)
             # Inject server-side config so the frontend knows the default threshold
             data["_config"] = {"stale_days": stale_days}
             body = json.dumps(data).encode()
@@ -106,13 +122,17 @@ def main():
         print("  Install gitmind in a repo and make at least one commit first.")
         sys.exit(1)
 
-    Handler = make_handler(metadata_path, args.days)
+    dashboard_path = find_dashboard_data()
+    findings_path = find_findings()
+    Handler = make_handler(metadata_path, dashboard_path, findings_path, args.days)
 
     with socketserver.TCPServer(("", args.port), Handler) as server:
         url = f"http://localhost:{args.port}"
         print(f"\n  ◆ gitmind dashboard")
         print(f"  → {url}")
         print(f"  → reading: {metadata_path}")
+        if dashboard_path.exists():
+            print(f"  → architecture: {dashboard_path}")
         print(f"  → staleness default: {args.days} days")
         print(f"\n  Press Ctrl+C to stop\n")
 
